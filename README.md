@@ -55,8 +55,8 @@ Store results from GSLIB
 =========================================================================================================================
 ## This is the index of updated model.
 upr/                 #upr model <br />
-upr/base_ss          #model spin-up for base model, revised from upr_base_mcmahon_ss <br />
-upr/base_oppc        #oppc simulation, revsied from upr_base_mamahon_oppc <br />
+upr/base_ss          #model spin-up for base model, revised from upr_base_ss <br />
+upr/base_oppc        #oppc simulation, revsied from upr_base_oppc <br />
 upr/facies003_ss     #model spin-up for facies-based model (realization 003) <br />
 upr/facies003_oppc   #oppc simulation for facies-based model (realization 003) <br />
 upr/facies004_ss     #model spin-up for facies-based model (realization 004) <br />
