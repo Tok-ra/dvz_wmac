@@ -1,0 +1,45 @@
+# ----------------
+# extract tank location from intera zonation file and
+# insert the tanks into other zonation files 
+
+import numpy as np
+
+setup_dir = "/people/song884/wmac/fy18/fine_model/model_setup/facies/"
+intera_zon = setup_dir+"new_grid_heterogeneous_vz.zon"
+old_zon = setup_dir+"sgrfacies_renum_003.ups"
+
+
+
+nx = 89
+ny = 93
+nz = 330
+
+# ---- here we're using materials from sisim realizations
+# ---- need compare intera model with sisim
+
+old_material = np.genfromtxt(old_zon).flatten(order="C")
+
+intera_material = np.genfromtxt(intera_zon).flatten(order="C")
+intera_material = intera_material.reshape((nx, ny, nz), order="F")
+
+intera_material_0 = np.where(intera_material == 0)
+
+grids = np.meshgrid(range(nx),range(ny),range(nz),indexing="ij")
+
+tank_cells = []
+for ipoint in range(len(intera_material_0[0])):
+    bottom_material = intera_material[intera_material_0[0][ipoint],
+                                      intera_material_0[1][ipoint],
+                                      np.arange(0,intera_material_0[1][ipoint])]
+
+    top_material = intera_material[intera_material_0[0][ipoint],
+                                   intera_material_0[1][ipoint],
+                    np.arange(intera_material_0[1][ipoint]+1, nz)]
+
+    if (any(bottom_material!=0) and any(top_material!=0)):
+        print(ipoint)
+        tank_cells.append(ipoint)
+    
+
+
+
