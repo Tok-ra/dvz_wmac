@@ -1,15 +1,43 @@
-# DVZ WMA-C
+# DVZ WMA-C FY2018
+Case setup
+
 ## Target
 1) Remapping material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.
 2) Rerun the simulation and compare results from 4 models (EHM, two facies based, and one water content based model)
 
+## summary of case setup
+
+
 ## Other changes to the model
+### planned
 1) Change tank regions to curved domes (done by Mark)
      Use insert_tanks2.py in. /facies: generate tank regions with curved domes.
 2) Make tank regions inactive 
      Change material id of tanks from 8 to 0 and comment out corresponding sections in input files
+### the final tank shapes were taken from intera
+
+
+## model simulation scenario
+Tank residual scenario: pre-hanford (ss); operational (op), and post-closure (pc)
+thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 
 ## Workflow to generate new models
+### EHM model
+1. zonation file 
+   //the original file was sent by Nazmul Hasan on 06/28/2018 as "new_grid_ehm_89x93x330_original.zon"
+   this zonation is for past leak simulations//
+   Based on this Intera's refined zoantion file. Two zonation files are created for EHM model
+   1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon", this is replace all tanks and backfills with H1
+   2. pc,op,oppc:  "wma_c_oppc_hanford_ehm_89x93x330.zon",this is the same as Intera's file
+2. boundary condtions
+   the boundary condtions was revised from MLR'and ZFZ's coarse scale model setup
+###   3. do we need prepare seperated one to distingguish pre/op???
+
+
+
+
+
+
 1) Generate/compare new source regions for the refined grid 
 2) Replace the zonation files in the EHM model with intera one
 3) Regenerate zonation files for facies case
