@@ -1,3 +1,8 @@
+eSTOMP constance
+gravity: 9.81
+water density: 998.32
+air pressure: 101325
+
 # DVZ WMA-C FY2018
 Case setup
 
@@ -23,15 +28,40 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 
 ## Workflow to generate new models
 ### EHM model
-1. zonation file 
+#### 1. zonation file 
    //the original file was sent by Nazmul Hasan on 06/28/2018 as "new_grid_ehm_89x93x330_original.zon"
    this zonation is for past leak simulations//
    Based on this Intera's refined zoantion file. Two zonation files are created for EHM model
    1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon", this is replace all tanks and backfills with H1
    2. pc,op,oppc:  "wma_c_oppc_hanford_ehm_89x93x330.zon",this is the same as Intera's file
-2. boundary condtions
+   ###   3. do we need prepare seperated one to distingguish pre/op???   
+
+#### 2. boundary condtions
+   The revisions are based on two differences between the fine and coarse model
+   a. the fine scale model is thiner than coarse model
+	  fine scale model z = [110,209.99]
+	  coarse scale model z = [95,211]
+      This requires change the reference points for intial condtion, side condtions
+   b. the z index changed
+	  fine scale model z = [1,89]
+	  coarse scale model z = [1,330]
+	  This requires change anything related to Z index
+	  
+   1. revision for Initial Condition (IC)
+	  For coarse scale model, the WL is 122.25, minimum z is 95
+      IC is set using two condtions, saturated part and unsaturated part
+           "Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,
+            Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,"
+      z[17] = 122.75m, dx[17]= 0.5 z[17]-0.5*dx[17] = 122.25
+
+      The idea
+
+   	  For fine scale model, the WL is 122.25, minimum z is 110
+	  325106.932+
+	  
+   
    the boundary condtions was revised from MLR'and ZFZ's coarse scale model setup
-###   3. do we need prepare seperated one to distingguish pre/op???
+
 
 
 
