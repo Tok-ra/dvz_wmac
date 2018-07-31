@@ -41,7 +41,6 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 
 #### 2. boundary condtions
    The revisions are based on two differences between the fine and coarse model  
-   
    a. the fine scale model is thiner than coarse model  
 	    > fine scale model z = [110,209.99]  
 	    > coarse scale model z = [95,211]  
