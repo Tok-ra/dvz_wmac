@@ -90,10 +90,9 @@ For the unsaturated part
 
 need remap the recharge area  
 a new script **upper_lnk.py** is written with **wmac_bc.py** as reference.  
-upper_lnk.py use polygon functions from shapele package  
+**upper_lnk.py** use polygon functions from shapele package  
 	
-	
-**	Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv**
+# Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv #
    
 1) Generate/compare new source regions for the refined grid 
 2) Replace the zonation files in the EHM model with intera one
