@@ -18,9 +18,11 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 ## Summary of case setup
 ### EHM model
 #### 1. zonation file 
-the original file was sent by Nazmul Hasan on 06/28/2018 as "newgridehm89x93x330original.zon"  
-this zonation is for past leak simulations
-Based on this Intera's refined zoantion file. Two zonation files are created for EHM model  
+
+> the original file was sent by Nazmul Hasan (Intera) on 06/28/2018 as "newgridehm89x93x330original.zon"  
+> this zonation is for past leak simulations
+
+Based on Intera's refined zoantion file. Two zonation files are created for EHM model  
 1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon"  
    replace all tanks and backfills with H1 in Intera's file  
    **change_oppc_zonation_to_hanford.py**
@@ -64,7 +66,7 @@ For the unsaturated part.
 ###### Setup of Fine scale model ######
 
 > Aqueous Pressure,201204.21372,Pa,,,,,-9793.52,1/m,1,89,1,93,1,43,  
-> Aqueous Pressure,73006.80650.,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,  
+> Aqueous Pressure,73006.80650,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,  
 
 For the saturated part.  
 
@@ -79,12 +81,18 @@ For the unsaturated part
 
 ###### remap the recharge area ######
 
-**upper_lnk.py** is written with **wmac_bc.py** as reference.  
-**upper_lnk.py** use polygon functions from shapele package  
+**upper_lst.py** is written with **wmac_bc.py** as reference.  
+**upper_lst.py** use polygon functions from shapele package  
+
 
 ###### pre_hanford period ######
-3.4mm/yr for all polygons  
+
+3.5mm/yr for all polygons  
 remove tank areas from MLR's input, the original setup might be reducdant  
+
+# coarse model only has one resurface_file, but there're two resurface polygons #
+use two resurface file in the fine scale model, need check with MLR  
+
 
 ###### oppc period ######
 
@@ -114,9 +122,12 @@ however, here I still follow MLR and ZFZ's setup to define the saturated region
 
 > Both east/east lst file end at  z[41] = 122.2715
 
-**side_lnk.py** is used to generate the **westaquifer.lst** and **eastaquifer.lst**
+**side_lst.py** is used to generate the **westaquifer.lst** and **eastaquifer.lst**
 
 
+#### 3. output
+revise the aquifer surface flux coords to keep consistant with the finer grid
+**Need double check the screen interal of 299-E27-14, 299-E17-15**
 
 
 

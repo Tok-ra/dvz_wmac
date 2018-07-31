@@ -41,7 +41,7 @@ tank_index = tank_index[0,:]+tank_index[1,:]*nx+tank_index[2,:]*nx*ny
 
 
 # find backfill locations
-backfill_index = np.asarray(np.where(oppc == 9))
+backfill_index = np.asarray(np.where(oppc == 8))
 
 pre_hanford = oppc
 pre_hanford[tank_index] = 7

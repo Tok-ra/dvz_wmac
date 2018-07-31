@@ -115,6 +115,9 @@ def retrieve_grids(grid_card):
 if __name__ == '__main__':
     grid_card = "/people/song884/wmac/fy18/fine_model/model_setup/grids/fine_grid_card"
     poly_dir = "/people/song884/wmac/fy18/fine_model/model_setup/polygons/"
+    zonation = "/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon"
+
+    
     # boundary type
     fid_east = 1
     fid_west = -1
@@ -127,13 +130,19 @@ if __name__ == '__main__':
     xo, yo, zo, xe, ye, ze, dx, dy, dz, nx, ny, nz, x, y, z = retrieve_grids(
         grid_card)
 
+    # read zonation file
+    zid = np.genfromtxt(zonation).flatten(order="C").astype(int)
+    zid_array = zid.reshape((nx, ny, nz), order="F")
+    
+
     # generate lst file for west boundary
     west_lst = []
     for  iz in z_west:    
         for iy in range(ny):
             for ix in [0]:
-                line = [ix+1,iy+1,iz+1,fid_west]
-                west_lst.append(" ".join(map(str,line)))
+                if zid_array[ix,iy,iz]!=0:
+                    line = [ix+1,iy+1,iz+1,fid_west]
+                    west_lst.append(" ".join(map(str,line)))
     fname = open(poly_dir+"west_aquifer.lst",'w')
     fname.write("\n".join(west_lst))
     fname.close()
@@ -144,8 +153,9 @@ if __name__ == '__main__':
     for  iz in z_east:    
         for iy in range(ny):
             for ix in [nx-1]:
-                line = [ix+1,iy+1,iz+1,fid_east]
-                east_lst.append(" ".join(map(str,line)))
+                if zid_array[ix,iy,iz]!=0:
+                    line = [ix+1,iy+1,iz+1,fid_east]
+                    east_lst.append(" ".join(map(str,line)))
     fname = open(poly_dir+"east_aquifer.lst",'w')
     fname.write("\n".join(east_lst))
     fname.close()
