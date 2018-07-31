@@ -29,8 +29,9 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 ## Workflow to generate new models
 ### EHM model
 #### 1. zonation file 
-   //the original file was sent by Nazmul Hasan on 06/28/2018 as "new_grid_ehm_89x93x330_original.zon"  
-   this zonation is for past leak simulations//  
+*   the original file was sent by Nazmul Hasan on 06/28/2018 as "newgridehm89x93x330original.zon"  
+   this zonation is for past leak simulations
+*   
    Based on this Intera's refined zoantion file. Two zonation files are created for EHM model  
    1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon"  
       replace all tanks and backfills with H1 in Intera's file  
@@ -46,45 +47,35 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 > fine scale model z = [110,209.99]  
 > coarse scale model z = [95,211]  
 > This requires to change the reference points for initial condtion, side condtions  
-
    b. the z index changed
-	  fine scale model z = [1,89]
-	  coarse scale model z = [1,330]
-	  This requires to change anything related to Z index
-	  
-   1. revision for Initial Condition (IC)
-
-      Setup coarse scale model
+> fine scale model z = [1,89]  
+> scale model z = [1,330]  
+> requires to change anything related to Z index  
+   1. revision for Initial Condition (IC)  
+      Coarse scale model  
       IC is set using two condtions, saturated part and unsaturated part  
-           "Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
-            Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,"  
-
-	  For the saturated part.
-         > z[1] = 97.5m  
-         > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m  
-         > At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372  
-      For the unsaturated part.
-	  
-	  
-    > z[18] = 123.25m
-    > At z=123.1805m, the pressure is 73000-97.9352(123.1805-123.25)=73006.80650
+> Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
+>             Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,  
+     	For the saturated part.
+> z[1] = 97.5m  
+> The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m  
+> At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372  
+        For the unsaturated part.
+> z[18] = 123.25m  
+> At z=123.1805m, the pressure is 73000-97.9352(123.1805-123.25)=73006.80650  
+      Set similar IC for fine scale model  
+> "Aqueous Pressure,201204.21372,Pa,,,,,-9793.52,1/m,1,89,1,93,1,43,  
+>              Aqueous Pressure,73006.80650.,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,"  
+		For the saturated part.  
+> z[1] = 110.1515m  
+> The water table is at (201204.21372-101325)/9793.52+110.1515 = 120.35m  
+        For the unsaturated part
+> z[44] = 123.1805m  
    
-      Set similar IC for fine scale model
-            "Aqueous Pressure,201204.21372,Pa,,,,,-9793.52,1/m,1,89,1,93,1,43,
-             Aqueous Pressure,73006.80650.,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,"
-          For the saturated part.
-		  
-    > z[1] = 110.1515m
-    > The water table is at (201204.21372-101325)/9793.52+110.1515 = 120.35m
-	
-      For the unsaturated part
-		  
-    > z[44] = 123.1805m
-   
-   2. revision for recharge
-    need remap the recharge area
-    > a new script **upper_lnk.py** is written with **wmac_bc.py** as reference. 
-	> upper_lnk.py use polygon functions from shapele package
+   2. revision for recharge  
+    need remap the recharge area  
+> a new script **upper_lnk.py** is written with **wmac_bc.py** as reference.  
+>  upper_lnk.py use polygon functions from shapele package  
 	
 	
 **	Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv**
