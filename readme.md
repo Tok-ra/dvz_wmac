@@ -42,18 +42,24 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 #### 2. boundary condtions
    The revisions are based on two differences between the fine and coarse model  
    a. the fine scale model is thiner than coarse model  
-	    > fine scale model z = [110,209.99]  
-	    > coarse scale model z = [95,211]  
-	    > This requires to change the reference points for initial condtion, side condtions  
+
+> fine scale model z = [110,209.99]  
+> 	    coarse scale model z = [95,211]  
+> 	    This requires to change the reference points for initial condtion, side condtions
+
    b. the z index changed  
-	    > fine scale model z = [1,89]  
-	    > scale model z = [1,330]  
-	    > requires to change anything related to Z index  
+
+> fine scale model z = [1,89]  
+> 	    scale model z = [1,330]  
+> 	    requires to change anything related to Z index
+
    1. revision for Initial Condition (IC)  
       Coarse scale model  
-         IC is set using two condtions, saturated part and unsaturated part  
-		   > Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
-		   > Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,  
+
+    > IC is set using two condtions, saturated part and unsaturated part  
+    > 		 Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
+    > 		  Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,
+
          For the saturated part.  
 		   > z[1] = 97.5m  
 		   > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m  
