@@ -58,13 +58,10 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
             Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,"
 
 	  For the saturated part.
-	  
-    > z[1] = 97.5m
-    > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m	
-    > At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372
-	  
-	  
-    For the unsaturated part.
+         > z[1] = 97.5m
+         > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m	
+         > At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372
+      For the unsaturated part.
 	  
 	  
     > z[18] = 123.25m
