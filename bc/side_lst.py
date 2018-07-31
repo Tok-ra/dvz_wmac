@@ -1,33 +1,17 @@
-# SUMMARY:      upper_lnk.py
-# USAGE:        generate lnk files surface recharge boundary
+# SUMMARY:      side_lnk.py
+# USAGE:        generate lnk files from side boundary
 # ORG:          Pacific Northwest National Laboratory
 # AUTHOR:       Xuehang Song
 # E-MAIL:       xuehang.song@pnnl.gov
 # ORIG-DATE:    Jun-2018
-# DESCRIPTION:  This scripts is revised based on Mark Rockhold's (MLR) work
-# DESCRIPTION:  The main reason is 1) convert it to python3,
-# DESCRIPTION:  2) learn how MLR create the boundary
-# DESCRIP-END.
+# DESCRIPTION:  
+# DESCRIPTION:  
+# DESCRIP-END.  
 # COMMENTS:     only deal cartesian sturtured grids
 #
 # Last Change: 2018-07-29
 
 ## below is MLR's original description
-"""
-    Purpose:
-    1) Reads stomp model cell face coordinates and zonation info.
-    2) Reads list of vertices defining polygons for different plan-view 
-       portions of model domain. Rotates the coordinates.
-    3) Loops through x-y locations for grid, determines the polygon each
-       x-y point lies within, and creates linked lists of cell faces for BCs.
-
-    Author: 
-       Mark Rockhold, PNNL, 24-Feb-2015 
-
-    Project:
-       ASCEM, Site Applications, Hanford WMA-C 
-"""
-
 import numpy as np
 import re
 import sys
@@ -130,90 +114,38 @@ def retrieve_grids(grid_card):
 
 if __name__ == '__main__':
     grid_card = "/people/song884/wmac/fy18/fine_model/model_setup/grids/fine_grid_card"
-    zonation = "/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon"
     poly_dir = "/people/song884/wmac/fy18/fine_model/model_setup/polygons/"
-
     # boundary type
-    fid = 3
-        
-    # model_origin: the 'real' coordinate of model (0,0,0)
-    origin_x = 574656.09 + 10 
-    origin_y = 136454.41 + 10
-    origin_z = 0
+    fid_east = 1
+    fid_west = -1
     
-    # rotation specifications
-    xpiv = 574667.0
-    ypiv = 136453.0
-    deg = -45.0
-    xoffset = 0.0
-    yoffset = 0.0
-    pi = 3.14159265358979
-    rot = deg*pi/180.0
-    
-    # read x, y, z coordinates
+    # z range in west/east boundary
+    z_east = np.arange(0, 41)
+    z_west = np.arange(0, 41)    
+
+    # read x, y, z coordinates    
     xo, yo, zo, xe, ye, ze, dx, dy, dz, nx, ny, nz, x, y, z = retrieve_grids(
         grid_card)
-    xcf = np.append(x-0.5*dx,xe)+origin_x
-    ycf = np.append(y-0.5*dy,ye)+origin_y
-    zcf = np.append(z-0.5*dz,ze)+origin_z        
-    x = x+origin_x
-    y = y+origin_y
-    z = z+origin_z
-    xo = xo+origin_x
-    yo = yo+origin_y
-    zo = zo+origin_z
-    xe = xe+origin_x
-    ye = ye+origin_y
-    ze = ze+origin_z
 
-    
-    # read zonation file
-    zid = np.genfromtxt(zonation).flatten(order="C").astype(int)
-    zid_array = zid.reshape((nx, ny, nz), order="F")
-    
-    # read polygon
-    all_poly = np.sort(glob.glob(poly_dir + "*csv"))
-
-
-    # build polygons
-    poly_shapes = {}    
-    for ipoly in all_poly:
-        print(ipoly)
-        # read data and do rotation
-        poly_data = np.genfromtxt(ipoly,delimiter=",")
-        easting = poly_data[:, 0]
-        northing = poly_data[:, 1]
-        xdis = easting - xpiv
-        ydis = northing - ypiv 
-        xp = xdis*np.cos(rot) + ydis*np.sin(rot) + xpiv - xoffset
-        yp = -xdis*np.sin(rot) + ydis*np.cos(rot) + ypiv - yoffset
-        # use multipoint to build polygon
-        poly_shapes[ipoly] = MultiPoint([(xp[i], yp[i]) for i in range(len(xp))]).convex_hull
-
-
-    # generate linked lists for upper BCs
-    upper_lnk = {}
-    for ipoly in all_poly:
-        upper_lnk[ipoly] = []
-        #  find columns  in polygon
+    # generate lst file for west boundary
+    west_lst = []
+    for  iz in z_west:    
         for iy in range(ny):
-            for ix in range(nx):
-                point = Point((x[ix],y[iy]))
-                # extract the top active cells
-                if point.within(poly_shapes[ipoly]):
-                    iz = np.max(np.where(zid_array[ix,iy,:]>0))
-                    line = [ix+1,iy+1,iz+1,fid]
-                    upper_lnk[ipoly].append(" ".join(map(str,line)))
-        fname = open(ipoly.split(".")[0]+".lnk",'w')
-        fname.write("\n".join(upper_lnk[ipoly]))
-        fname.close()
-                    
+            for ix in [0]:
+                line = [ix+1,iy+1,iz+1,fid_west]
+                west_lst.append(" ".join(map(str,line)))
+    fname = open(poly_dir+"west_aquifer.lst",'w')
+    fname.write("\n".join(west_lst))
+    fname.close()
 
-#     fig = plt.figure()
-#     ax=fig.add_subplot(111)
-#     for ipoly in all_poly:
-#         print(ipoly)
-#         xxx,yyy = poly_shapes[ipoly].exterior.xy
-#         plt.plot(xxx,yyy)
-# #    plt.plot([xo,xe,xe,xo,xo],[yo,yo,ye,ye,yo],"b")
-#     plt.show()
+
+    # generate lst file for east boundary    
+    east_lst = []
+    for  iz in z_east:    
+        for iy in range(ny):
+            for ix in [nx-1]:
+                line = [ix+1,iy+1,iz+1,fid_east]
+                east_lst.append(" ".join(map(str,line)))
+    fname = open(poly_dir+"east_aquifer.lst",'w')
+    fname.write("\n".join(east_lst))
+    fname.close()

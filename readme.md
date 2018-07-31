@@ -1,32 +1,21 @@
 **eSTOMP constant**  
-gravity: 9.81  
-water density: 998.32  
-air pressure: 101325  
+
+> gravity: 9.81  
+> water density: 998.32  
+> air pressure: 101325  
 
 # DVZ WMA-C FY2018
-Case setup
 
 ## Target 
-1) Remapping material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.
-2) Rerun the simulation and compare results from 4 models (EHM, two facies based, and one water content based model)
-
-## summary of case setup
+1) Remapping material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
+2) Rerun the simulation and compare results from 4 models (EHM, two facies based, and one water content based model)  
 
 
-## Other changes to the model
-### planned
-1) Change tank regions to curved domes (done by Mark)  
-   Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
-2) Make tank regions inactive   
-   Change material id of tanks from 8 to 0 and comment out corresponding sections in input files
-### the final tank shapes were taken from intera
-
-
-## model simulation scenario
+## Model simulation scenario
 Tank residual scenario: pre-hanford (ss); operational (op), and post-closure (pc)  
 thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)  
 
-## Workflow to generate new models
+## Summary of case setup
 ### EHM model
 #### 1. zonation file 
 the original file was sent by Nazmul Hasan on 06/28/2018 as "newgridehm89x93x330original.zon"  
@@ -52,7 +41,7 @@ b. the z index changed
 > scale model z = [1,330]  
 > requires to change anything related to Z index  
 
-##### revision for Initial Condition (IC) #####
+##### 2.1 revision for Initial Condition (IC) #####
 
 ###### Coarse scale model ######
 
@@ -86,18 +75,65 @@ For the unsaturated part
 
 > z[44] = 123.1805m  
    
-##### revision for recharge #####
+##### 2.2 revision for uppper recharge boundary  #####
 
-need remap the recharge area  
-a new script **upper_lnk.py** is written with **wmac_bc.py** as reference.  
+###### remap the recharge area ######
+
+**upper_lnk.py** is written with **wmac_bc.py** as reference.  
 **upper_lnk.py** use polygon functions from shapele package  
-	
+
+###### pre_hanford period ######
+3.4mm/yr for all polygons  
+remove tank areas from MLR's input, the original setup might be reducdant  
+
+###### oppc period ######
+
+##### 2.3 revision for side boundary  #####
+
+###### pre_hanford period ######
+Map MLR and ZFZ's setup to the new grids  
+from MLR and ZFZ's input file:  
+
+> From Bill McMahon:  
+> dh/dx {northwest - southeast}  =  0.2000E-04 m/m (= 0.195870 pa/m)  
+> distance(I-direction) = 737.90  m  
+> MLR and ZFZ: Water table elev is at 122.25 m  
+> GW elevation at west boundary = 122.25 m  
+> GW elevation at east boundary = 122.25 - 737.90*2E-5 = 122.235242 m  
+
+Then the pressure at the center of bottom cell (110m)  along west boundary is  
+
+> 101325+(122.25-110)*9793.52 = 221295.62 pa  
+
+the pressure at the center of bottom cell (110m) along east boundary is  
+
+> 101325+(122.235242-110)*9793.52 = 221151.08723184 pa  
+
+It should be fine to just use entire west/east boundary as seepage  
+however, here I still follow MLR and ZFZ's setup to define the saturated region  
+
+> Both east/east lst file end at  z[41] = 122.2715
+
+**side_lnk.py** is used to generate the **westaquifer.lst** and **eastaquifer.lst**
+
+
+
+
+
 # Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv #
-   
+
+## Need to 
 1) Generate/compare new source regions for the refined grid 
 2) Replace the zonation files in the EHM model with intera one
 3) Regenerate zonation files for facies case
 4) with 3) results, generate zonation files for water content model. 
+
+## Other changes
+### the final tank shapes were taken from intera
+1) Change tank regions to curved domes (done by Mark)  
+   Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
+2) Make tank regions inactive   
+   Change material id of tanks from 8 to 0 and comment out corresponding sections in input files  
 
 ## Input files from Mark
 ### InteraFiles
