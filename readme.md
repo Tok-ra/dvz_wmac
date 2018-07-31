@@ -57,8 +57,8 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
       Coarse scale model  
 
     > IC is set using two condtions, saturated part and unsaturated part  
-    > 		 Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
-    > 		  Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,
+    > Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
+    > Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,
 
          For the saturated part.  
 		   > z[1] = 97.5m  
