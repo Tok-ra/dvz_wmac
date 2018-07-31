@@ -62,8 +62,10 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
     > z[1] = 97.5m
     > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m	
     > At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372
-	
-	  For the unsaturated part,
+	  
+	  
+    For the unsaturated part.
+	  
 	  
     > z[18] = 123.25m
     > At z=123.1805m, the pressure is 73000-97.9352(123.1805-123.25)=73006.80650
