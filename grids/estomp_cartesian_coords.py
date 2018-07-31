@@ -1,3 +1,16 @@
+# SUMMARY:      read estomp coords
+# USAGE:        this is only a temperoary tool to read grids from two omdels
+# ORG:          Pacific Northwest National Laboratory
+# AUTHOR:       Xuehang Song
+# E-MAIL:       xuehang.song@pnnl.gov
+# ORIG-DATE:    July-2018
+# DESCRIPTION:  
+# DESCRIP-END.
+# COMMENTS:     
+#
+# Last Change: 2018-07-24
+
+
 import numpy as np
 import re
 import sys

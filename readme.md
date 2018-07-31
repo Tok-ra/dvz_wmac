@@ -32,42 +32,55 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
    //the original file was sent by Nazmul Hasan on 06/28/2018 as "new_grid_ehm_89x93x330_original.zon"
    this zonation is for past leak simulations//
    Based on this Intera's refined zoantion file. Two zonation files are created for EHM model
-   1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon", this is replace all tanks and backfills with H1
-   2. pc,op,oppc:  "wma_c_oppc_hanford_ehm_89x93x330.zon",this is the same as Intera's file
-   ###   3. do we need prepare seperated one to distingguish pre/op???   
+   1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon", 
+      replace all tanks and backfills with H1 in Intera's file
+	  <change_oppc_zonation_to_hanford.py>
+   2. pc,op,oppc:  "wma_c_oppc_ehm_89x93x330.zon",this is the same as Intera's file
+## do we need prepare seperated one to distingguish pre/op???
 
 #### 2. boundary condtions
    The revisions are based on two differences between the fine and coarse model
    a. the fine scale model is thiner than coarse model
 	  fine scale model z = [110,209.99]
 	  coarse scale model z = [95,211]
-      This requires change the reference points for intial condtion, side condtions
+      This requires to change the reference points for initial condtion, side condtions
    b. the z index changed
 	  fine scale model z = [1,89]
 	  coarse scale model z = [1,330]
-	  This requires change anything related to Z index
+	  This requires to change anything related to Z index
 	  
    1. revision for Initial Condition (IC)
-	  For coarse scale model, the WL is 122.25, minimum z is 95
+
+      Setup coarse scale model
       IC is set using two condtions, saturated part and unsaturated part
            "Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,
             Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,"
-      z[17] = 122.75m, dx[17]= 0.5 z[17]-0.5*dx[17] = 122.25
 
-      The idea
-
-   	  For fine scale model, the WL is 122.25, minimum z is 110
-	  325106.932+
-	  
+	  For the saturated part.
+    > z[1] = 97.5m
+    > The water table is at (325106.932-101325)/9793.52+97.5 = 120.35m	
+    > At z=110.1515m, the pressure is "325106.932-9793.52(110.1515-97.5)=201204.21372
+	  For the unsaturated part,
+    > z[18] = 123.25m
+    > At z=123.1805m, the pressure is 73000-97.9352(123.1805-123.25)=73006.80650
    
-   the boundary condtions was revised from MLR'and ZFZ's coarse scale model setup
-
-
-
-
-
-
-
+      Set similar IC for fine scale model
+            "Aqueous Pressure,201204.21372,Pa,,,,,-9793.52,1/m,1,89,1,93,1,43,
+             Aqueous Pressure,73006.80650.,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,"
+          For the saturated part.
+    > z[1] = 110.1515m
+    > The water table is at (201204.21372-101325)/9793.52+110.1515 = 120.35m
+          For the unsaturated part,
+    > z[44] = 123.1805m
+   
+   2. revision for recharge
+    need remap the recharge area
+    > a new script **upper_lnk.py** is written with **wmac_bc.py** as reference. 
+	> upper_lnk.py use polygon functions from shapele package
+	
+	
+**	Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv**
+   
 1) Generate/compare new source regions for the refined grid 
 2) Replace the zonation files in the EHM model with intera one
 3) Regenerate zonation files for facies case
@@ -79,11 +92,10 @@ Inputs from intera, including input deck, zonation file, source region
 
 ### Simulations
 No file
-
 ### Tank_polygons
 Use make_poly.py: read tank coordinates and elevation, generate polygon points for each tanks
 
-### BC
+### bc
 Use wmac_bc.py: read in zonation file, face file, surface area polygon; generate different source region.
 
 ### Facies

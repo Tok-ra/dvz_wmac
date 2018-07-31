@@ -47,6 +47,8 @@ new_material[tank_index] = 0
 fout = open(new_zon,'w')
 fout.write("\n".join(map(str,new_material)))
 fout.close()
+
+
 # grids = np.meshgrid(range(nz), range(ny), range(nx),indexing="ij")
 # grids = np.array(grids).reshape(3,nx*ny*nz)
 # grids = grids[(2,1,0),:]
