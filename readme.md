@@ -16,9 +16,9 @@ Case setup
 ## Other changes to the model
 ### planned
 1) Change tank regions to curved domes (done by Mark)  
-     Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
+   Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
 2) Make tank regions inactive   
-     Change material id of tanks from 8 to 0 and comment out corresponding sections in input files
+   Change material id of tanks from 8 to 0 and comment out corresponding sections in input files
 ### the final tank shapes were taken from intera
 
 
@@ -29,36 +29,35 @@ thank leak scenario: pre-hanford (ss); operational-post-closure (oppc)
 ## Workflow to generate new models
 ### EHM model
 #### 1. zonation file 
-*   the original file was sent by Nazmul Hasan on 06/28/2018 as "newgridehm89x93x330original.zon"  
-   this zonation is for past leak simulations
-*   
-   Based on this Intera's refined zoantion file. Two zonation files are created for EHM model  
-   1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon"  
-      replace all tanks and backfills with H1 in Intera's file  
-	  <change_oppc_zonation_to_hanford.py>  
-   2. pc,op,oppc:  "wma_c_oppc_ehm_89x93x330.zon",this is the same as Intera's file 
+the original file was sent by Nazmul Hasan on 06/28/2018 as "newgridehm89x93x330original.zon"  
+this zonation is for past leak simulations
+Based on this Intera's refined zoantion file. Two zonation files are created for EHM model  
+1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon"  
+   replace all tanks and backfills with H1 in Intera's file  
+   **change_oppc_zonation_to_hanford.py**
+2. pc,op,oppc:  "wma_c_oppc_ehm_89x93x330.zon",this is the same as Intera's file 
 ## do we need prepare seperated one to distingguish pre/op??? 
 
 #### 2. boundary condtions
-   The revisions are based on two differences between the fine and coarse model  
-   a. the fine scale model is thiner than coarse model  
+The revisions are based on two differences between the fine and coarse model  
+a. the fine scale model is thiner than coarse model  
 
 > fine scale model z = [110,209.99]  
 > 	    coarse scale model z = [95,211]  
-> 	    This requires to change the reference points for initial condtion, side condtions
+> 	    This requires to change the reference points for initial condtion, side condtions  
 
-   b. the z index changed  
+b. the z index changed  
 
 > fine scale model z = [1,89]  
 > 	    scale model z = [1,330]  
-> 	    requires to change anything related to Z index
+> 	    requires to change anything related to Z index  
 
-   1. revision for Initial Condition (IC)  
-      Coarse scale model  
+##### revision for Initial Condition (IC) #####
+Coarse scale model  
 
-    > IC is set using two condtions, saturated part and unsaturated part  
-    >     Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
-    >     Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,
+> IC is set using two condtions, saturated part and unsaturated part  
+> Aqueous Pressure,325106.932,Pa,,,,,-9793.52,1/m,1,89,1,93,1,17,  
+> Aqueous Pressure, 73000.,Pa,,,,,-97.9352,1/m,1,89,1,93,18,95,
 
          For the saturated part.  
 		   > z[1] = 97.5m  
