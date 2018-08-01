@@ -22,7 +22,7 @@ Questions
 # DVZ WMA-C FY2018
 
 ## Target 
-1) Remapp material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
+1) Remap material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
 2) Rerun the simulation and compare results from 4 models (EHM, two facies based, and one water content based model)  
 
 ## Need to 
