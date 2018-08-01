@@ -1,11 +1,11 @@
 Questions  
-do we need prepare seperated one to distingguish pre/op???  
-coarse model only has one resurface_file, but there're two resurface polygons  
-use two resurface file in the fine scale model, need check with MLR  
-same side boudnary for pre-hanford and oppc period?  
-There should be scripts/data to automaticlly generate the sources, ask MLR  
-the base model of coarse scale simlation doesn't have tanks  
-the base model has different resolution as the facies model
+1. do we need prepare seperated one to distingguish pre/op???  
+2. coarse model only has one resurface_file, but there're two resurface polygons files  
+   use two resurface file in the fine scale model, need check with MLR  
+4. same side boudnary for pre-hanford and oppc period?  
+5. There should be scripts/data to automaticlly generate the sources, ask MLR  
+6. the base model of coarse scale simlation doesn't have tanks  
+7. the base model has different resolution as the facies model
 Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
 
 
