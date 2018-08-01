@@ -123,19 +123,27 @@ coords["xo"],coords["yo"] ,coords["zo"] ,coords["xe"] ,coords["ye"],coords["ze"]
 )
 coarse = coords
 
+
+input_file = '/people/song884/wmac/fy18/fine_model/model_setup/grids/input_facies003_ss_hi_wt'
+coords = {}
+coords["xo"],coords["yo"] ,coords["zo"] ,coords["xe"] ,coords["ye"],coords["ze"],coords["dx"] ,coords["dy"],coords["dz"] ,coords["nx"] ,coords["ny"],coords["nz"] ,coords["x"] ,coords["y"],coords["z"] = retrieve_grids(input_file
+)
+facies = coords
+
+
 with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon") as f:
     pre_hanford_zon = f.read()
 with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_oppc_ehm_89x93x330.zon") as f:
     oppc_zon = f.read()
-with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_operational_alternative_i_17.zon") as f:
-    coarse_oppc_zon = f.read()
+with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/sgrfacies_renum_004_plustanks.ups") as f:
+    facies_oppc_zon = f.read()
 
 pre_hanford = np.asarray([int(x) for x in re.split(" |\n", pre_hanford_zon) if x])
 oppc = np.asarray([int(x) for x in re.split(" |\n",oppc_zon) if x])
-coarse_oppc = np.asarray([int(x) for x in re.split(" |\n",coarse_oppc_zon) if x])
+facies_oppc = np.asarray([int(x) for x in re.split(" |\n",facies_oppc_zon) if x])
 
 
 pre_hanford_array = pre_hanford.reshape((fine["nx"],fine["ny"],fine["nz"] ), order="F")
 oppc_array = oppc.reshape((fine["nx"],fine["ny"],fine["nz"] ), order="F")
-coarse_oppc_array = coarse_oppc.reshape((coarse["nx"],coarse["ny"],coarse["nz"]), order="F")
+facies_oppc_array = facies_oppc.reshape((facies["nx"],facies["ny"],facies["nz"]), order="F")
 

@@ -4,6 +4,8 @@ coarse model only has one resurface_file, but there're two resurface polygons
 use two resurface file in the fine scale model, need check with MLR  
 same side boudnary for pre-hanford and oppc period?  
 There should be scripts/data to automaticlly generate the sources, ask MLR  
+the base model of coarse scale simlation doesn't have tanks  
+the base model has different resolution as the facies model
 Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
 
 
@@ -186,14 +188,15 @@ Because the horizontal resolution doesn't change, so only change z-index to the 
 revise the aquifer surface flux coords to keep consistant with the finer grid  
 **Need double check the screen interval of 299-E27-14, 299-E17-15**
 
-
-
-## Other changes
+### 5. Other changes
 ### the final tank shapes were taken from intera
 1) Change tank regions to curved domes (done by Mark)  
    Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
 2) Make tank regions inactive   
    Change material id of tanks from 8 to 0 and comment out corresponding sections in input files  
+
+
+============================================================================================  
 
 ## Input files from Mark
 ### InteraFiles
