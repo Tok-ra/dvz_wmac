@@ -1,15 +1,15 @@
 Questions  
-1. do we need prepare seperated materials to distingguish op/pc???  
-   update: I'm use same materials for op and pc period.
+1. do we need prepare different materials to distingguish op/pc???  
+   update: use same materials for op and pc period.
 2. coarse model only has one resurface_file, but there're two resurface polygons files  
-   fix: use two resurface file in the fine scale model, need check with MLR  
-4. same side aquifer boudnary for pre-hanford and oppc period?  
-   update: I'm use the same aquifer boundaries for pre-hanford and oppc period.
+   fix: use two resurface files in the fine scale model, need check with MLR  
+4. same side aquifer boundary for pre-hanford and oppc period?  
+   update: use the same aquifer boundaries for pre-hanford and oppc period.
 5. There should be scripts/data to automaticlly generate the sources, ask MLR  
    question: didn't find it in project folder
-6. the base model of coarse scale simlation doesn't have tanks even for oppc period  
+6. the base model of coarse scale simulation doesn't have tanks even for oppc period  
    update: I put intera's tanks in 
-7. In coarse scale model setup, the base model has different resolution as the facies model 
+7. In coarse scale models setup, the base model has different resolution as the facies model 
 8. need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
 
 
@@ -22,11 +22,11 @@ Questions
 # DVZ WMA-C FY2018
 
 ## Target 
-1) Remapping material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
+1) Remapp material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
 2) Rerun the simulation and compare results from 4 models (EHM, two facies based, and one water content based model)  
 
 ## Need to 
-1) Generate/compare new source regions for the refined grid 
+1) Generate/compare new source regions/boundaries for the refined grid 
 2) Replace the zonation files in the EHM model with intera one
 3) Regenerate zonation files for facies case
 4) with 3) results, generate zonation files for water content model. 
@@ -51,13 +51,13 @@ Four groups of simulations are conducted
 ## Summary of case setup
 
 ### 1. model zonation ###
-**In MLR's base model, there is no tanks in zonation file, might be a mistake.**
+**In MLR's base model, there is no tanks in zonation file, might be a different setup?**
 #### 1.1 EHM model ####
 
 > the original file was sent by Nazmul Hasan (Intera) on 06/28/2018 as "newgridehm89x93x330original.zon"  
 > this zonation is for past leak simulations
 
-Based on Intera's refined zoantion file. Two zonation files are created for EHM model  
+Based on Intera's refined zonation file. Two zonation files are created for EHM model  
 1. pre_hanford: "wma_c_pre_hanford_ehm_89x93x330.zon"  
    replace all tanks and backfills with H1 in Intera's file  
    **change_oppc_zonation_to_hanford.py**
@@ -65,7 +65,7 @@ Based on Intera's refined zoantion file. Two zonation files are created for EHM 
 
 #### 1.2 Facies Models ####
 **I mainly used MLR's scripts to genearte the facies zonation file**  
-The grids setup in facies/grid.gslib of coarse scale model setup has a bug
+The grids setup in facies/grid.gslib of coarse scale model has a bug
 
 > facies/grid.gslib   
 > Cartesian,  
@@ -89,7 +89,7 @@ This has been confirmed by MLR.
 ### 2. initial condtion ###
 
 
-The revision is maded based the following differences between the fine and coarse model  
+The revision is made based the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
 
 > fine scale model z = [110,209.99]  
@@ -199,8 +199,7 @@ revise the aquifer surface flux coords to keep consistant with the finer grid
 2) Make tank regions inactive   
    Change material id of tanks from 8 to 0 and comment out corresponding sections in input files  
 
-
-============================================================================================  
+======================================================================================  
 
 ## Input files from Mark
 ### InteraFiles
