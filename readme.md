@@ -1,6 +1,6 @@
 Questions  
 1. do we need prepare seperated materials to distingguish op/pc???  
-   upate: I'm use same materials for op and pc period.
+   update: I'm use same materials for op and pc period.
 2. coarse model only has one resurface_file, but there're two resurface polygons files  
    fix: use two resurface file in the fine scale model, need check with MLR  
 4. same side aquifer boudnary for pre-hanford and oppc period?  
