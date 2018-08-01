@@ -1,12 +1,16 @@
 Questions  
-1. do we need prepare seperated one to distingguish pre/op???  
+1. do we need prepare seperated materials to distingguish op/pc???  
+   upate: I'm use same materials for op and pc period.
 2. coarse model only has one resurface_file, but there're two resurface polygons files  
-   use two resurface file in the fine scale model, need check with MLR  
-4. same side boudnary for pre-hanford and oppc period?  
+   fix: use two resurface file in the fine scale model, need check with MLR  
+4. same side aquifer boudnary for pre-hanford and oppc period?  
+   update: I'm use the same aquifer boundaries for pre-hanford and oppc period.
 5. There should be scripts/data to automaticlly generate the sources, ask MLR  
-6. the base model of coarse scale simlation doesn't have tanks  
-7. the base model has different resolution as the facies model
-Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
+   question: didn't find it in project folder
+6. the base model of coarse scale simlation doesn't have tanks even for oppc period  
+   update: I put intera's tanks in 
+7. In coarse scale model setup, the base model has different resolution as the facies model 
+8. need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
 
 
 **eSTOMP constant**  
