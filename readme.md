@@ -1,3 +1,12 @@
+Questions  
+## do we need prepare seperated one to distingguish pre/op??? 
+# coarse model only has one resurface_file, but there're two resurface polygons #
+use two resurface file in the fine scale model, need check with MLR  
+# same side boudnary for pre-hanford and oppc period?
+# There should be scripts/data to automaticlly generate the sources, ask MLR #
+# Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv #
+
+
 **eSTOMP constant**  
 
 > gravity: 9.81  
@@ -34,8 +43,6 @@ Based on Intera's refined zoantion file. Two zonation files are created for EHM 
    replace all tanks and backfills with H1 in Intera's file  
    **change_oppc_zonation_to_hanford.py**
 2. pc,op,oppc:  "wma_c_oppc_ehm_89x93x330.zon",this is the same as Intera's file 
-## do we need prepare seperated one to distingguish pre/op??? 
-
 
 #### 1.2 Facies Models ####
 **I mainly used MLR's scripts to genearte the facies zonation file**  
@@ -134,14 +141,8 @@ For the unsaturated part
 3.5mm/yr for all polygons  
 remove tank areas from MLR's input, the original setup might be reducdant  
 
-# coarse model only has one resurface_file, but there're two resurface polygons #
-use two resurface file in the fine scale model, need check with MLR  
-
 ##### 3.1.3 oppc period #####
 The recharge amount was adjusted based on the coarse scale model setup  
-
-# coarse model only has one resurface_file, but there're two resurface polygons #
-use two resurface file in the fine scale model, need check with MLR  
 
 #### 3.2 side boundary  ####
 ##### 3.2.1 pre_hanford period #####
@@ -173,24 +174,15 @@ however, here I still follow MLR and ZFZ's setup to define the saturated region
 ##### 3.2.2 oppc period #####
 the same as the prehanford period based on the coarse scale model setup  
 
-# is this right? #
-
 #### 3.3 source term  ####
 ##### 3.3.1 pre_hanford period #####
 No source term for steady state simulation period (pre-hanford)
 ##### 3.3.2 oppc period #####
 Because the horizontal resolution doesn't change, so only change z-index to the top cell below tanks
 
-# There should be scripts/data to automaticlly generate the inputs in the future, ask MLR #
-
-
 ### 4. output
 revise the aquifer surface flux coords to keep consistant with the finer grid  
 **Need double check the screen interval of 299-E27-14, 299-E17-15**
-
-# Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv #
-# Check memo:find some mistakes in MLR's setup
-
 
 
 
