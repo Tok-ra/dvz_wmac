@@ -1,10 +1,10 @@
 Questions  
-## do we need prepare seperated one to distingguish pre/op??? 
-# coarse model only has one resurface_file, but there're two resurface polygons #
+do we need prepare seperated one to distingguish pre/op???  
+coarse model only has one resurface_file, but there're two resurface polygons  
 use two resurface file in the fine scale model, need check with MLR  
-# same side boudnary for pre-hanford and oppc period?
-# There should be scripts/data to automaticlly generate the sources, ask MLR #
-# Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv #
+same side boudnary for pre-hanford and oppc period?  
+There should be scripts/data to automaticlly generate the sources, ask MLR  
+Need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
 
 
 **eSTOMP constant**  
@@ -28,6 +28,19 @@ use two resurface file in the fine scale model, need check with MLR
 ## Model simulation scenario
 Tank residual scenario: pre-hanford (ss); operational (op), and post-closure (pc)  
 Tank leak scenario: pre-hanford (ss); operational-post-closure (oppc)  
+
+There were multiple versions of model inputs  
+My revision is based on the inputs in folder **simu_upr2** and **simu_tank_residual2**  
+**simu_upr2** tank leak scenario  
+**simu_tank_residual2** tank residual scenario   
+
+Four groups of simulations are conducted  
+
+> **upr_ss** model spin-up period (from 0~1944) for both scenario  
+> **upr_oppc** operational-post-closure period for **tank leak scenario**  
+> **op** operational period for **Tank residual scenario**
+> **pc** post-closure period for **Tank residual scenario**
+
 
 ## Summary of case setup
 
@@ -57,29 +70,18 @@ The grids setup in facies/grid.gslib of coarse scale model setup has a bug
 
 it should be 
 
-> watercontent/ups/grid.gslib
-> Cartesian,
-> 148,160,116,
-> 574656,m,148@5,m,
-> **136464**,m,160@5,m,
-> 95,m,116@1,m,
+> watercontent/ups/grid.gslib  
+> Cartesian,  
+> 148,160,116,  
+> 574656,m,148@5,m,  
+> **136464**,m,160@5,m,  
+> 95,m,116@1,m,  
 
 This has been confirmed by MLR.
 
 
 ### 2. initial condtion ###
 
-There were multiple versions of model inputs  
-My revision is based on the inputs in folder **simu_upr2** and **simu_tank_residual2**  
-**simu_upr2** tank leak scenario  
-**simu_tank_residual2** tank residual scenario   
-
-Four groups of simulations are conducted  
-
-> **upr_ss** model spin-up period (from 0~1944) for both scenario  
-> **upr_oppc** operational-post-closure period for **tank leak scenario**  
-> **op** operational period for **Tank residual scenario**
-> **pc** post-closure period for **Tank residual scenario**
 
 The revision is maded based the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
