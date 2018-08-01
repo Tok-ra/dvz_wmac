@@ -108,17 +108,34 @@ def    retrieve_grids(input_file):
     return xo, yo, zo, xe, ye, ze, dx, dy, dz, nx, ny, nz, x, y, z
 
 
-input_file = '/people/song884/wmac/fy18/fine_model/upr/upr_base_ss/input'
+
+
+input_file = '/people/song884/wmac/fy18/fine_model/model_setup/grids/fine_grid_card'
 coords = {}
 coords["xo"],coords["yo"] ,coords["zo"] ,coords["xe"] ,coords["ye"],coords["ze"],coords["dx"] ,coords["dy"],coords["dz"] ,coords["nx"] ,coords["ny"],coords["nz"] ,coords["x"] ,coords["y"],coords["z"] = retrieve_grids(input_file
 )
 fine = coords
 
 
-input_file = '/people/song884/wmac/fy18/coarse_model/upr/upr_base_ss/input_ss_upr_hi_wt'
+input_file = '/people/song884/wmac/fy18/fine_model/model_setup/grids/coarse_grid_card'
 coords = {}
 coords["xo"],coords["yo"] ,coords["zo"] ,coords["xe"] ,coords["ye"],coords["ze"],coords["dx"] ,coords["dy"],coords["dz"] ,coords["nx"] ,coords["ny"],coords["nz"] ,coords["x"] ,coords["y"],coords["z"] = retrieve_grids(input_file
 )
 coarse = coords
 
+with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon") as f:
+    pre_hanford_zon = f.read()
+with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_oppc_ehm_89x93x330.zon") as f:
+    oppc_zon = f.read()
+with open("/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_operational_alternative_i_17.zon") as f:
+    coarse_oppc_zon = f.read()
+
+pre_hanford = np.asarray([int(x) for x in re.split(" |\n", pre_hanford_zon) if x])
+oppc = np.asarray([int(x) for x in re.split(" |\n",oppc_zon) if x])
+coarse_oppc = np.asarray([int(x) for x in re.split(" |\n",coarse_oppc_zon) if x])
+
+
+pre_hanford_array = pre_hanford.reshape((fine["nx"],fine["ny"],fine["nz"] ), order="F")
+oppc_array = oppc.reshape((fine["nx"],fine["ny"],fine["nz"] ), order="F")
+coarse_oppc_array = coarse_oppc.reshape((coarse["nx"],coarse["ny"],coarse["nz"]), order="F")
 

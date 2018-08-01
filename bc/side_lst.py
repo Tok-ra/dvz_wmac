@@ -134,7 +134,7 @@ if __name__ == '__main__':
     zid = np.genfromtxt(zonation).flatten(order="C").astype(int)
     zid_array = zid.reshape((nx, ny, nz), order="F")
     
-
+    west_lowest = nz
     # generate lst file for west boundary
     west_lst = []
     for  iz in z_west:    
@@ -143,11 +143,12 @@ if __name__ == '__main__':
                 if zid_array[ix,iy,iz]!=0:
                     line = [ix+1,iy+1,iz+1,fid_west]
                     west_lst.append(" ".join(map(str,line)))
+                    west_lowest = min(west_lowest,iz)
     fname = open(poly_dir+"west_aquifer.lst",'w')
     fname.write("\n".join(west_lst))
     fname.close()
 
-
+    east_lowest = nz
     # generate lst file for east boundary    
     east_lst = []
     for  iz in z_east:    
@@ -156,6 +157,7 @@ if __name__ == '__main__':
                 if zid_array[ix,iy,iz]!=0:
                     line = [ix+1,iy+1,iz+1,fid_east]
                     east_lst.append(" ".join(map(str,line)))
+                    east_lowest = min(east_lowest,iz)                    
     fname = open(poly_dir+"east_aquifer.lst",'w')
     fname.write("\n".join(east_lst))
     fname.close()
