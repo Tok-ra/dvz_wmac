@@ -4,14 +4,14 @@
 # AUTHOR:       Xuehang Song
 # E-MAIL:       xuehang.song@pnnl.gov
 # ORIG-DATE:    Jun-2018
-# DESCRIPTION:  
-# DESCRIPTION:  
-# DESCRIP-END.  
+# DESCRIPTION:
+# DESCRIPTION:
+# DESCRIP-END.
 # COMMENTS:     only deal cartesian sturtured grids
 #
 # Last Change: 2018-07-29
 
-## below is MLR's original description
+# below is MLR's original description
 import numpy as np
 import re
 import sys
@@ -22,6 +22,8 @@ from shapely.geometry import MultiPoint
 from matplotlib import pyplot as plt
 
 # convert length units to m
+
+
 def length_conversion(x):
     return {
         'a': 1e-10,
@@ -59,14 +61,14 @@ def retrieve_grids(grid_card):
         print("Cartesian grids")
     else:
         sys.exit("Unfortunately, this scripts only can deal with cartesian grids")
-        
+
     # read nx, ny, nz
     nx, ny, nz = map(int, re.split('[,]', estomp_input[grid_line + 2])[0:3])
     grid_value = []
     iline = 3
     d_flag = 0
     # loop lines of etomp inputs until have enough entry for grids
-    # while estomp_input[grid_line + iline][0] != "~":    
+    # while estomp_input[grid_line + iline][0] != "~":
     while len(grid_value) < (1 + nx + 1 + ny + 1 + nz):
         line_data = estomp_input[grid_line + iline].split(",")
         ndata = int(math.floor(len(line_data) / 2))
@@ -81,7 +83,7 @@ def retrieve_grids(grid_card):
                                length_conversion(line_data[idata * 2 + 1])]
         iline += 1
 
-    # assign flatten grids values to x, y, z        
+    # assign flatten grids values to x, y, z
     if d_flag == 1:
         xo = grid_value[0]
         dx = np.asarray(grid_value[1:1 + nx])
@@ -102,7 +104,7 @@ def retrieve_grids(grid_card):
         dx = np.diff(grid_value[0:(nx+1)])
         yo = grid_value[nx+1]
         ye = grid_value[nx+1+ny]
-        dy = np.diff(grid_value[nx+1:(nx+1+ny+1)])        
+        dy = np.diff(grid_value[nx+1:(nx+1+ny+1)])
         zo = grid_value[nx+1+ny+1]
         ze = grid_value[nx+1+ny+1+nz]
         dz = np.diff(grid_value[nx+1+ny+1:(nx+1+ny+1+nz+1)])
@@ -112,52 +114,52 @@ def retrieve_grids(grid_card):
     print("Grid retrived from eSTOMP input")
     return xo, yo, zo, xe, ye, ze, dx, dy, dz, nx, ny, nz, x, y, z
 
+
 if __name__ == '__main__':
     grid_card = "/people/song884/wmac/fy18/fine_model/model_setup/grids/fine_grid_card"
     poly_dir = "/people/song884/wmac/fy18/fine_model/model_setup/polygons/"
     zonation = "/people/song884/wmac/fy18/fine_model/model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon"
 
-    
     # boundary type
     fid_east = 1
     fid_west = -1
-    
-    # z range in west/east boundary
-    z_east = np.arange(0, 41)
-    z_west = np.arange(0, 41)    
 
-    # read x, y, z coordinates    
+    # read x, y, z coordinates
     xo, yo, zo, xe, ye, ze, dx, dy, dz, nx, ny, nz, x, y, z = retrieve_grids(
         grid_card)
+
+    # z range in west/east boundary
+    z_east = np.arange(0, nz)
+    z_west = np.arange(0, nz)
 
     # read zonation file
     zid = np.genfromtxt(zonation).flatten(order="C").astype(int)
     zid_array = zid.reshape((nx, ny, nz), order="F")
-    
+
     west_lowest = nz
     # generate lst file for west boundary
     west_lst = []
-    for  iz in z_west:    
+    for iz in z_west:
         for iy in range(ny):
             for ix in [0]:
-                if zid_array[ix,iy,iz]!=0:
-                    line = [ix+1,iy+1,iz+1,fid_west]
-                    west_lst.append(" ".join(map(str,line)))
-                    west_lowest = min(west_lowest,iz)
-    fname = open(poly_dir+"west_aquifer.lst",'w')
+                if zid_array[ix, iy, iz] != 0:
+                    line = [ix+1, iy+1, iz+1, fid_west]
+                    west_lst.append(" ".join(map(str, line)))
+                    west_lowest = min(west_lowest, iz)
+    fname = open(poly_dir+"wmac_west_aquifer.lst", 'w')
     fname.write("\n".join(west_lst))
     fname.close()
 
     east_lowest = nz
-    # generate lst file for east boundary    
+    # generate lst file for east boundary
     east_lst = []
-    for  iz in z_east:    
+    for iz in z_east:
         for iy in range(ny):
             for ix in [nx-1]:
-                if zid_array[ix,iy,iz]!=0:
-                    line = [ix+1,iy+1,iz+1,fid_east]
-                    east_lst.append(" ".join(map(str,line)))
-                    east_lowest = min(east_lowest,iz)                    
-    fname = open(poly_dir+"east_aquifer.lst",'w')
+                if zid_array[ix, iy, iz] != 0:
+                    line = [ix+1, iy+1, iz+1, fid_east]
+                    east_lst.append(" ".join(map(str, line)))
+                    east_lowest = min(east_lowest, iz)
+    fname = open(poly_dir+"wmac_east_aquifer.lst", 'w')
     fname.write("\n".join(east_lst))
     fname.close()

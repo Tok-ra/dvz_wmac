@@ -64,6 +64,17 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 2. pc,op,oppc:  "wma_c_oppc_ehm_89x93x330.zon",this is the same as Intera's file 
 
 #### 1.2 Facies Models ####
+
+##### facies realization #####
+
+Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files  
+
+> Initial thoughts was to use Jason's SISIM.exe files  
+> while it failed there's is a fixed array limit for nx, ny, nz in sisim.inc  
+> We don't have the orginal source code to recomplile the sisim.exe  
+> So I took the lastest GSLIB from www.gslib.com and compile new sisim (linux version)  
+> The input files were slightly different and modifiled.  
+
 **I mainly used MLR's scripts to genearte the facies zonation file**  
 The grids setup in facies/grid.gslib of coarse scale model has a bug
 
@@ -86,8 +97,7 @@ it should be
 This has been confirmed by MLR.
 
 
-### 2. initial condtion ###
-
+### 2. initial condtion ###  
 
 The revision is made based the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
@@ -98,7 +108,43 @@ a. the fine scale model is thiner than coarse model
 
 b. the z index changed  
 
-> fine scale model z = [1,89]  
+> coarse scale model z = [1,89]  
+> fine scale model z = [1,330]  
+> requires to change anything related to Z index  
+
+
+##### 2.1 Coarse scale model #####
+
+IC was defined by  
+
+> Aqueous Pressure, 331472.7,Pa,,,,,-9793.5192,1/m,1,89,1,93,1,89,  
+
+Based on this IC  
+
+> z[1] = 97.5m  
+> The water table is at (331472.7-101325)/9793.52+97.5 = 121  
+> At z=110.1515m (bottom cell center of fine scale model), the pressure is 331472.7-9793.52*(110.1515-97.5) = 207569.98172000004  
+
+##### 2.2 Setup of Fine scale model #####  
+
+IC was defined by  
+> Aqueous Pressure, 207569.98,Pa,,,,,-9793.5192,1/m,1,89,1,93,1,330,  
+
+
+The following part is deprecated, as it's reivsed based on coarse scale EHM model  
+Now we follows setups from coarse scale facies model  
+
+//////////////////////////////////////////////////////////////////////////////////////////
+The revision is made based the following differences between the fine and coarse model  
+a. the fine scale model is thiner than coarse model  
+
+> fine scale model z = [110,209.99]  
+> coarse scale model z = [95,211]  
+> This requires to change the reference points for initial condtion, side condtions  
+
+b. the z index changed  
+
+> fine scale model z = [1,95]  
 > scale model z = [1,330]  
 > requires to change anything related to Z index  
 
@@ -134,7 +180,7 @@ For the saturated part.
 For the unsaturated part  
 
 > z[44] = 123.1805m  
-
+///////////////////////////////////////////////////////////////////////////////////////
 
 ### 3 boundary condtions ###
    
@@ -164,18 +210,13 @@ from MLR and ZFZ's input file:
 > GW elevation at west boundary = 122.25 m  
 > GW elevation at east boundary = 122.25 - 737.90*2E-5 = 122.235242 m  
 
-Then the pressure at the center of bottom cell (110m)  along west boundary is  
+Then the pressure at the center of bottom cell (110.1515 m)  along west boundary is  
 
-> 101325+(122.25-110)*9793.52 = 221295.62 pa  
+> 101325+(122.25-110.1515)*9793.52 = 219811.9017 pa  
 
 the pressure at the center of bottom cell (110m) along east boundary is  
 
-> 101325+(122.235242-110)*9793.52 = 221151.08723184 pa  
-
-It should be fine to just use entire west/east boundary as seepage  
-however, here I still follow MLR and ZFZ's setup to define the saturated region  
-
-> Both east/east lst file end at  z[41] = 122.2715
+> 101325+(122.235242-110.1515)*9793.52 = 219667.36895 pa  
 
 **side_lst.py** is used to generate the **west_aquifer.lst** and **east_aquifer.lst**
 
