@@ -1,0 +1,25 @@
+#-----------------------------------------------------------------------
+#
+#                     Generic GSLIB Makefile
+#                     **********************
+#
+progname=pfsim
+#
+#
+#-----------------------------------------------------------------------
+
+
+PROG   = $(progname)
+FFLAGS = -g
+SRCS   =  $(progname).f
+OBJS   =  $(progname).o
+INCS   =  
+LIBS   = 
+all:$(PROG) 
+$(PROG):$(OBJS)
+	f77 -o $@ $(OBJS) $(LIBS)
+.f.o:
+	f77 -c $(FFLAGS) $<
+$(OBJS):$(INCS)
+clean:
+	rm $(OBJS) $(PROG)

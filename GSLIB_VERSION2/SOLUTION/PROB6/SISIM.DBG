@@ -1,0 +1,60 @@
+
+ Threshold number  1 =        0.340
+           global prob value =   0.2500
+           number of structures =   1
+           nugget effect        =   0.3000
+           type of structure   1 =   1
+           aa parameter         =       9.0000
+           cc parameter         =       0.7000
+           ang1, ang2, ang3     =   0.00  0.00  0.00
+           anis1, anis2         =       1.0000      1.0000
+
+ Threshold number  2 =        1.210
+           global prob value =   0.5000
+           number of structures =   1
+           nugget effect        =   0.2500
+           type of structure   1 =   1
+           aa parameter         =      10.0000
+           cc parameter         =       0.7500
+           ang1, ang2, ang3     =   0.00  0.00  0.00
+           anis1, anis2         =       1.0000      1.0000
+
+ Threshold number  3 =        2.750
+           global prob value =   0.7500
+           number of structures =   1
+           nugget effect        =   0.3500
+           type of structure   1 =   1
+           aa parameter         =       8.0000
+           cc parameter         =       0.6500
+           ang1, ang2, ang3     =   0.00  0.00  0.00
+           anis1, anis2         =       1.0000      1.0000
+
+Data for SISIM: Variable number  3
+  Number of acceptable data  =      140
+  Equal Weighted Average     =       4.3504
+  Equal Weighted Variance    =      44.9243
+
+
+ Finished simulation  1
+     threshold   1 input cdf = 0.2500 realization cdf = 0.3228
+     threshold   2 input cdf = 0.5000 realization cdf = 0.5444
+     threshold   3 input cdf = 0.7500 realization cdf = 0.7356
+
+ Summary of order relations: 
+     threshold 1 number =    741 average =   0.0063 maximum =   0.0433
+     threshold 2 number =    953 average =   0.0086 maximum =   0.0699
+     threshold 3 number =    951 average =   0.0057 maximum =   0.0366
+
+ total of          35.266666% with average of   0.0069
+
+ Finished simulation  2
+     threshold   1 input cdf = 0.2500 realization cdf = 0.3128
+     threshold   2 input cdf = 0.5000 realization cdf = 0.5276
+     threshold   3 input cdf = 0.7500 realization cdf = 0.7676
+
+ Summary of order relations: 
+     threshold 1 number =    901 average =   0.0066 maximum =   0.0402
+     threshold 2 number =    867 average =   0.0085 maximum =   0.0528
+     threshold 3 number =    885 average =   0.0054 maximum =   0.0311
+
+ total of          35.373333% with average of   0.0068

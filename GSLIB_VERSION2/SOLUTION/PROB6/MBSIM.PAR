@@ -1,0 +1,54 @@
+                    Parameters for SISIM
+                    ********************
+ 
+START OF PARAMETERS:
+1                              \1=continuous(cdf), 0=categorical(pdf)
+5                              \number thresholds/categories
+0.50 1.00 2.50 5.00 10.0       \   thresholds / categories
+0.30 0.47 0.72 0.87 0.96       \   global cdf / pdf
+../../data/cluster.dat         \file with data
+1   2   0   3                  \   columns for X,Y,Z, and variable
+bicalib.out                    \file with soft indicator input
+1   2   0   5 6 7 8 9          \   columns for X,Y,Z, and indicators
+1                              \   Markov-Bayes simulation (0=no,1=yes)
+0.599 0.528 0.527 0.522 0.317  \   calibration B(z) values
+-1.0e21    1.0e21              \trimming limits
+0.0   30.0                     \minimum and maximum data value
+3      1.0                     \   lower tail option and parameter
+3      1.0                     \   middle     option and parameter
+3      1.0                     \   upper tail option and parameter
+../../data/cluster.dat         \   file with tabulated values
+3   5                          \      columns for variable, weight
+1                              \debugging level: 0,1,2,3
+mbsim.dbg                      \file for debugging output
+mbsim.out                      \file for simulation output
+2                              \number of realizations
+50   0.5    1.0                \nx,xmn,xsiz
+50   0.5    1.0                \ny,ymn,ysiz
+1    1.0   10.0                \nz,zmn,zsiz
+69069                          \random number seed
+12                             \maximum original data  for each kriging
+12                             \maximum previous nodes for each kriging
+1                              \maximum soft indicator nodes for kriging
+1                              \assign data to nodes? (0=no,1=yes)
+0     3                        \multiple grid search? (0=no,1=yes),num
+0                              \maximum per octant    (0=not used)
+20.0  20.0  20.0               \maximum search radii
+ 0.0   0.0   0.0               \angles for search ellipsoid
+0    2.5                       \0=full IK, 1=median approx. (cutoff)
+0                              \0=SK, 1=OK
+1    0.15                      \One   nst, nugget effect
+1    0.85 0.0   0.0   0.0      \      it,cc,ang1,ang2,ang3
+         10.0  10.0  10.0      \      a_hmax, a_hmin, a_vert
+1    0.15                      \Two   nst, nugget effect
+1    0.85 0.0   0.0   0.0      \      it,cc,ang1,ang2,ang3
+         10.0  10.0  10.0      \      a_hmax, a_hmin, a_vert
+1    0.15                      \Three nst, nugget effect
+1    0.85 0.0   0.0   0.0      \      it,cc,ang1,ang2,ang3
+         10.0  10.0  10.0      \      a_hmax, a_hmin, a_vert
+1    0.15                      \Four  nst, nugget effect
+1    0.85 0.0   0.0   0.0      \      it,cc,ang1,ang2,ang3
+         10.0  10.0  10.0      \      a_hmax, a_hmin, a_vert
+1    0.15                      \Five  nst, nugget effect
+1    0.85 0.0   0.0   0.0      \      it,cc,ang1,ang2,ang3
+         10.0  10.0  10.0      \      a_hmax, a_hmin, a_vert

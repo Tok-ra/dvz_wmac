@@ -47,7 +47,7 @@
       integer, parameter :: sp=selected_real_kind(6)
 
 !gslib grid: grid.gslib
-      parameter( nnxf=148, nnyf=160, nnzf=116 )           ! input grid 
+      parameter( nnxf=148, nnyf=160, nnzf=340 )           ! input grid 
 !stomp grid: grid.stomp, grid.stompmod
       parameter( nnxc=89, nnyc=93, nnzc=330 )           ! output grid full domain
 !refined temporary grid: grid.downscale

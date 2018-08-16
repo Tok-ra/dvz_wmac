@@ -1,0 +1,11 @@
+                     Parameters for DRAW
+                     *******************
+ 
+START OF PARAMETERS:
+histsmth.out                      \file with data
+2                                 \   number of variables
+1   2                             \   columns for variables
+3                                 \   column for probabilities (0=equal)
+-1.0e21   1.0e21                  \   trimming limits
+69069    2500                     \random number seed, number to draw
+draw.out                          \file for realizations

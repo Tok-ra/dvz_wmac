@@ -65,7 +65,7 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 
 #### 1.2 Facies Models ####
 
-##### facies realization #####
+##### 1.2.1 sisim realization #####
 
 Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files  
 
@@ -75,8 +75,31 @@ Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files
 > So I took the lastest GSLIB from www.gslib.com and compile new sisim (linux version)  
 > The input files were slightly different and modifiled.  
 
-**I mainly used MLR's scripts to genearte the facies zonation file**  
-The grids setup in facies/grid.gslib of coarse scale model has a bug
+sisim dimention
+
+> 148     0.0     5  
+> 160     0.0     5  
+> 464    95.0    0.25  
+
+##### 1.2.2 map the facies to zonation #####
+
+The orginal workflow is  
+
+> 1 The sisim realization is generated on a uniform grids for three new facies (runsisim.pl).  
+> 2 use **replace_v2.pl** to replace H1, H2 sand, H2 coarse sand with the three new facies in the uniform grids.  
+> 3  **ups_facies_cellfaces.x** to do the scaling from uniform grids to nonuniform grids  
+> 4  **insert_tanks2.py** to add tanks   
+> 5 **ups_facies.x** to generate files only for plotting and then use Tecplot to generate figure.
+
+The new workflow is
+
+> 1 The sisim realization is generated on a uniform grids for three new facies (runsisim.pl).  
+> 2  **ups_facies_cellfaces.x** to do the scaling   
+> 3 use **replace_v2.pl** to replace H1, H2 sand, H2 coarse sand with the three new facies in the nonuniform grids.  
+> 4 repeat 3 for prehanford and oppc period  
+
+
+*The grids setup in facies/grid.gslib of coarse scale model has a bug*  
 
 > facies/grid.gslib   
 > Cartesian,  
@@ -85,7 +108,7 @@ The grids setup in facies/grid.gslib of coarse scale model has a bug
 > **136454**,m,160@5,m,  
 > 95,m,116@1,m,
 
-it should be 
+*it should be*  
 
 > watercontent/ups/grid.gslib  
 > Cartesian,  
@@ -94,8 +117,21 @@ it should be
 > **136464**,m,160@5,m,  
 > 95,m,116@1,m,  
 
-This has been confirmed by MLR.
+*This has been confirmed by MLR*  
 
+The final coordinates should be used along with the estomp grids is  
+
+> watercontent/ups/grid.gslib  
+> Cartesian,  
+> 148,160,340,  
+> 0,m,148@5,m,  
+> 0,m,160@5,m,  
+> 110,m,340@0.3,m,  
+
+One import tips to use ups_facies_cellfaces.f90  
+The number of indicator classes should be n+1  
+
+> This is a potential bug after MLR revised the original scripts for 0 material
 
 ### 2. initial condtion ###  
 

@@ -1,0 +1,57 @@
+
+
+README file for GSLIB 2.0                Last Revised: March 9, 1997
+
+
+This CD-ROM contains the README file that you are currently reading and
+three high level directories:
+
+1. dosexec  - GSLIB executables compiled for runs of limited size on
+              a PC machine.  These have been provided for convenience
+              only; they may not run on your vintage PC.
+
+2. gslib    - the GSLIB source code, all data files, and plot scripts.
+              Each program is in its own subdirectory.  Remember to
+              either (1) compile the gslib library first and link the
+              program to it, or (2) append all of the needed subroutines
+              to each program source code file before compiling/linking.
+
+3. solution - files relating to Appendix A in the book.  Some of the
+              parameter files will require updating to account for your
+              changes to the programs.
+
+
+
+Important Notes:
+
+1. As explained in the header to the source code: The programs in GSLIB
+   are distributed in the hope that they will be useful, but WITHOUT
+   ANY WARRANTY.  No author or distributor accepts responsibility to
+   anyone for the consequences of using them or for whether they serve
+   any particular purpose or work at all, unless he says so in writing.
+   Everyone is granted permission to copy, modify and redistribute the
+   programs in GSLIB (see source code for additional details).
+
+2. You should NOT try to compile and run these programs without
+   purchasing the related GSLIB book from Oxford University Press.
+   There are important instructions on installation and notes relating
+   to different compilers and computers.  Also, there are detailed
+   notes on the parameter files and the operation of the programs
+   (different from the first 1992 edition).
+
+   Important theoretical and practical notes on each geostatistical
+   algorithm are also contained in the GSLIB book.  These notes explain
+   many of the unexpected results that can result from the GSLIB
+   programs; read the book, do not contact the authors.
+   
+
+3. The programs will be updated periodically.  The latest versions may
+   be available by anonymous ftp from markov.stanford.edu.  The
+   Revisions section of this file will describe any modifications.
+
+
+
+Revisions:
+
+1. March 9, 1997 - date GSLIB 2.0 frozen for Oxford University Press
+   and Master CD-ROM.

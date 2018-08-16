@@ -1,0 +1,707 @@
+ Conditioning Data for SASIM            3
+   Number of acceptable data  =          140
+   Equal Weighted Average     =   0.2456180    
+   Equal Weighted Variance    =   0.4200285    
+
+ Histogram Data: Variable number            3
+   Number   =          140
+   Average  =   1.6633034E-02
+   Variance =   0.3617064    
+
+Closest  51 lags:  Lag number  variogram   offsets
+ 1       0.4047  0  1  0
+ 2       0.4047  1  0  0
+ 3       0.4475  1 -1  0
+ 4       0.4475  1  1  0
+ 5       0.5072  0  2  0
+ 6       0.5072  2  0  0
+ 7       0.5309  1 -2  0
+ 8       0.5309  1  2  0
+ 9       0.5309  2 -1  0
+10       0.5309  2  1  0
+11       0.5891  2 -2  0
+12       0.5891  2  2  0
+13       0.6056  0  3  0
+14       0.6056  3  0  0
+15       0.6210  1 -3  0
+16       0.6210  1  3  0
+17       0.6210  3 -1  0
+18       0.6210  3  1  0
+19       0.6622  2 -3  0
+20       0.6622  2  3  0
+21       0.6622  3 -2  0
+22       0.6622  3  2  0
+23       0.6976  0  4  0
+24       0.6976  4  0  0
+25       0.7084  1 -4  0
+26       0.7084  1  4  0
+27       0.7084  4 -1  0
+28       0.7084  4  1  0
+29       0.7187  3 -3  0
+30       0.7187  3  3  0
+31       0.7383  2 -4  0
+32       0.7383  2  4  0
+33       0.7383  4 -2  0
+34       0.7383  4  2  0
+35       0.7812  0  5  0
+36       0.7812  3 -4  0
+37       0.7812  3  4  0
+38       0.7812  4 -3  0
+39       0.7812  4  3  0
+40       0.7812  5  0  0
+41       0.7890  1 -5  0
+42       0.7890  1  5  0
+43       0.7890  5 -1  0
+44       0.7890  5  1  0
+45       0.8108  2 -5  0
+46       0.8108  2  5  0
+47       0.8108  5 -2  0
+48       0.8108  5  2  0
+49       0.8306  4 -4  0
+50       0.8306  4  4  0
+51       0.8429  5  3  0
+
+Initial Model
+   Number    =     2500
+   mean      =       0.044980
+   std.dev.  =       0.595215
+   minimum   =      -1.221849
+   maximum   =       1.765818
+
+
+Histogram Reproduction at this time:
+ Quantile   1 z value      -1.1866 target  0.0204 actual  0.0116
+ Quantile   2 z value      -1.0458 target  0.0408 actual  0.0372
+ Quantile   3 z value      -1.0000 target  0.0612 actual  0.0528
+ Quantile   4 z value      -0.9586 target  0.0816 actual  0.0692
+ Quantile   5 z value      -0.7959 target  0.1020 actual  0.0936
+ Quantile   6 z value      -0.7513 target  0.1224 actual  0.1080
+ Quantile   7 z value      -0.7212 target  0.1429 actual  0.1336
+ Quantile   8 z value      -0.6444 target  0.1633 actual  0.1448
+ Quantile   9 z value      -0.5808 target  0.1837 actual  0.1644
+ Quantile  10 z value      -0.5472 target  0.2041 actual  0.1828
+ Quantile  11 z value      -0.4955 target  0.2245 actual  0.2044
+ Quantile  12 z value      -0.4707 target  0.2449 actual  0.2240
+ Quantile  13 z value      -0.4685 target  0.2653 actual  0.2492
+ Quantile  14 z value      -0.3490 target  0.2857 actual  0.2716
+ Quantile  15 z value      -0.2735 target  0.3061 actual  0.2968
+ Quantile  16 z value      -0.1921 target  0.3265 actual  0.3160
+ Quantile  17 z value      -0.1604 target  0.3469 actual  0.3408
+ Quantile  18 z value      -0.0977 target  0.3673 actual  0.3596
+ Quantile  19 z value      -0.0783 target  0.3878 actual  0.3784
+ Quantile  20 z value      -0.0416 target  0.4082 actual  0.4008
+ Quantile  21 z value      -0.0293 target  0.4286 actual  0.4204
+ Quantile  22 z value      -0.0119 target  0.4490 actual  0.4424
+ Quantile  23 z value      -0.0009 target  0.4694 actual  0.4584
+ Quantile  24 z value       0.0356 target  0.4898 actual  0.4764
+ Quantile  25 z value       0.0817 target  0.5102 actual  0.4984
+ Quantile  26 z value       0.1014 target  0.5306 actual  0.5208
+ Quantile  27 z value       0.1309 target  0.5510 actual  0.5464
+ Quantile  28 z value       0.1391 target  0.5714 actual  0.5648
+ Quantile  29 z value       0.2215 target  0.5918 actual  0.5896
+ Quantile  30 z value       0.2424 target  0.6122 actual  0.6076
+ Quantile  31 z value       0.2592 target  0.6327 actual  0.6276
+ Quantile  32 z value       0.2829 target  0.6531 actual  0.6540
+ Quantile  33 z value       0.3092 target  0.6735 actual  0.6704
+ Quantile  34 z value       0.3463 target  0.6939 actual  0.6872
+ Quantile  35 z value       0.3688 target  0.7143 actual  0.7032
+ Quantile  36 z value       0.4196 target  0.7347 actual  0.7244
+ Quantile  37 z value       0.4462 target  0.7551 actual  0.7416
+ Quantile  38 z value       0.4739 target  0.7755 actual  0.7660
+ Quantile  39 z value       0.5164 target  0.7959 actual  0.7860
+ Quantile  40 z value       0.5358 target  0.8163 actual  0.8044
+ Quantile  41 z value       0.5645 target  0.8367 actual  0.8264
+ Quantile  42 z value       0.6640 target  0.8571 actual  0.8444
+ Quantile  43 z value       0.7044 target  0.8776 actual  0.8668
+ Quantile  44 z value       0.7301 target  0.8980 actual  0.8860
+ Quantile  45 z value       0.8838 target  0.9184 actual  0.9020
+ Quantile  46 z value       0.9492 target  0.9388 actual  0.9268
+ Quantile  47 z value       0.9911 target  0.9592 actual  0.9488
+ Quantile  48 z value       1.2184 target  0.9796 actual  0.9728
+
+Variogram Reproduction at this time:
+    Lag:   1 model       0.1434 actual       0.3405
+    Lag:   2 model       0.1434 actual       0.3502
+    Lag:   3 model       0.1585 actual       0.3675
+    Lag:   4 model       0.1585 actual       0.3588
+    Lag:   5 model       0.1797 actual       0.3474
+    Lag:   6 model       0.1797 actual       0.3401
+    Lag:   7 model       0.1881 actual       0.3680
+    Lag:   8 model       0.1881 actual       0.3684
+    Lag:   9 model       0.1881 actual       0.3591
+    Lag:  10 model       0.1881 actual       0.3429
+    Lag:  11 model       0.2087 actual       0.3588
+    Lag:  12 model       0.2087 actual       0.3554
+    Lag:  13 model       0.2145 actual       0.3589
+    Lag:  14 model       0.2145 actual       0.3522
+    Lag:  15 model       0.2200 actual       0.3640
+    Lag:  16 model       0.2200 actual       0.3565
+    Lag:  17 model       0.2200 actual       0.3598
+    Lag:  18 model       0.2200 actual       0.3535
+    Lag:  19 model       0.2346 actual       0.3554
+    Lag:  20 model       0.2346 actual       0.3574
+    Lag:  21 model       0.2346 actual       0.3627
+    Lag:  22 model       0.2346 actual       0.3507
+    Lag:  23 model       0.2471 actual       0.3516
+    Lag:  24 model       0.2471 actual       0.3687
+    Lag:  25 model       0.2510 actual       0.3549
+    Lag:  26 model       0.2510 actual       0.3696
+    Lag:  27 model       0.2510 actual       0.3536
+    Lag:  28 model       0.2510 actual       0.3516
+    Lag:  29 model       0.2546 actual       0.3524
+    Lag:  30 model       0.2546 actual       0.3652
+    Lag:  31 model       0.2616 actual       0.3468
+    Lag:  32 model       0.2616 actual       0.3500
+    Lag:  33 model       0.2616 actual       0.3606
+    Lag:  34 model       0.2616 actual       0.3487
+    Lag:  35 model       0.2768 actual       0.3524
+    Lag:  36 model       0.2768 actual       0.3633
+    Lag:  37 model       0.2768 actual       0.3629
+    Lag:  38 model       0.2768 actual       0.3609
+    Lag:  39 model       0.2768 actual       0.3597
+    Lag:  40 model       0.2768 actual       0.3618
+    Lag:  41 model       0.2795 actual       0.3475
+    Lag:  42 model       0.2795 actual       0.3449
+    Lag:  43 model       0.2795 actual       0.3512
+    Lag:  44 model       0.2795 actual       0.3604
+    Lag:  45 model       0.2872 actual       0.3495
+    Lag:  46 model       0.2872 actual       0.3519
+    Lag:  47 model       0.2872 actual       0.3526
+    Lag:  48 model       0.2872 actual       0.3493
+    Lag:  49 model       0.2943 actual       0.3527
+    Lag:  50 model       0.2943 actual       0.3553
+    Lag:  51 model       0.2986 actual       0.3656
+
+Initial Objective Function Values
+   Histogram             :       0.167709
+   Variogram             :      19.947537
+   Indicator Variograms  :       0.000000
+   Correlation Coeficient:       0.000000
+   Bivariate Histogram   :       0.000000
+
+
+Scaling of Objective Function Values
+   Histogram             :     533.652845
+   Variogram             :      21.109021
+   Indicator Variograms  :       1.000000
+   Correlation Coeficient:       1.000000
+   Bivariate Histogram   :       1.000000
+
+0            0 0.040776 0.959224 0.000000 0.000000 0.000000
+1         2500 0.015537 0.946281 0.000000 0.000000 0.000000
+1         5000 0.012520 0.969549 0.000000 0.000000 0.000000
+1         7500 0.035643 1.031001 0.000000 0.000000 0.000000
+1        10000 0.035964 0.938797 0.000000 0.000000 0.000000
+1        12500 0.030004 1.181071 0.000000 0.000000 0.000000
+0        12513 0.029481 1.171239 0.000000 0.000000 0.000000
+1        15000 0.022167 0.987778 0.000000 0.000000 0.000000
+1        17500 0.017023 0.868142 0.000000 0.000000 0.000000
+1        20000 0.010956 0.944414 0.000000 0.000000 0.000000
+1        22500 0.041470 0.967335 0.000000 0.000000 0.000000
+1        25000 0.015633 0.835652 0.000000 0.000000 0.000000
+0        25079 0.014924 0.867207 0.000000 0.000000 0.000000
+1        27500 0.019094 0.887260 0.000000 0.000000 0.000000
+1        30000 0.012861 0.866139 0.000000 0.000000 0.000000
+1        32500 0.026728 0.675086 0.000000 0.000000 0.000000
+1        35000 0.023077 0.773965 0.000000 0.000000 0.000000
+1        37500 0.030236 0.615184 0.000000 0.000000 0.000000
+0        37784 0.035156 0.587552 0.000000 0.000000 0.000000
+1        40000 0.046523 0.550532 0.000000 0.000000 0.000000
+1        42500 0.051234 0.491130 0.000000 0.000000 0.000000
+1        45000 0.059000 0.562258 0.000000 0.000000 0.000000
+1        47500 0.064747 0.557918 0.000000 0.000000 0.000000
+1        50000 0.085299 0.623590 0.000000 0.000000 0.000000
+0        50920 0.053100 0.609929 0.000000 0.000000 0.000000
+1        52500 0.071153 0.342896 0.000000 0.000000 0.000000
+1        55000 0.081106 0.261530 0.000000 0.000000 0.000000
+1        57500 0.081976 0.248015 0.000000 0.000000 0.000000
+1        60000 0.079092 0.278737 0.000000 0.000000 0.000000
+1        62500 0.081625 0.268997 0.000000 0.000000 0.000000
+0        64792 0.078877 0.246852 0.000000 0.000000 0.000000
+1        65000 0.085616 0.220903 0.000000 0.000000 0.000000
+1        67500 0.102350 0.137969 0.000000 0.000000 0.000000
+1        70000 0.093500 0.133638 0.000000 0.000000 0.000000
+1        72500 0.092795 0.118728 0.000000 0.000000 0.000000
+1        75000 0.099558 0.111749 0.000000 0.000000 0.000000
+1        77500 0.089531 0.128990 0.000000 0.000000 0.000000
+0        79701 0.088939 0.133281 0.000000 0.000000 0.000000
+1        80000 0.092419 0.113277 0.000000 0.000000 0.000000
+1        82500 0.083414 0.061739 0.000000 0.000000 0.000000
+1        85000 0.061589 0.042211 0.000000 0.000000 0.000000
+1        87500 0.048072 0.044848 0.000000 0.000000 0.000000
+1        90000 0.046452 0.034349 0.000000 0.000000 0.000000
+1        92500 0.033779 0.040508 0.000000 0.000000 0.000000
+1        95000 0.020473 0.032490 0.000000 0.000000 0.000000
+1        97500 0.017249 0.034135 0.000000 0.000000 0.000000
+0        98949 0.018475 0.036594 0.000000 0.000000 0.000000
+1       100000 0.014675 0.020572 0.000000 0.000000 0.000000
+1       102500 0.008078 0.007153 0.000000 0.000000 0.000000
+1       105000 0.005257 0.004170 0.000000 0.000000 0.000000
+1       107500 0.005003 0.003183 0.000000 0.000000 0.000000
+1       110000 0.003985 0.002792 0.000000 0.000000 0.000000
+1       112500 0.003744 0.003602 0.000000 0.000000 0.000000
+1       115000 0.003469 0.003358 0.000000 0.000000 0.000000
+1       117500 0.003607 0.003736 0.000000 0.000000 0.000000
+1       120000 0.002849 0.003872 0.000000 0.000000 0.000000
+1       122500 0.003238 0.003452 0.000000 0.000000 0.000000
+0       123950 0.003325 0.003724 0.000000 0.000000 0.000000
+1       125000 0.002375 0.002662 0.000000 0.000000 0.000000
+1       127500 0.001322 0.002284 0.000000 0.000000 0.000000
+1       130000 0.001103 0.001789 0.000000 0.000000 0.000000
+1       132500 0.001024 0.001454 0.000000 0.000000 0.000000
+1       135000 0.000999 0.001264 0.000000 0.000000 0.000000
+1       137500 0.000973 0.001075 0.000000 0.000000 0.000000
+1       140000 0.001022 0.001013 0.000000 0.000000 0.000000
+1       142500 0.000804 0.000997 0.000000 0.000000 0.000000
+1       145000 0.000677 0.000933 0.000000 0.000000 0.000000
+1       147500 0.000589 0.000891 0.000000 0.000000 0.000000
+0       148951 0.000645 0.000895 0.000000 0.000000 0.000000
+1       150000 0.000472 0.000910 0.000000 0.000000 0.000000
+1       152500 0.000377 0.000910 0.000000 0.000000 0.000000
+1       155000 0.000404 0.000880 0.000000 0.000000 0.000000
+1       157500 0.000356 0.000848 0.000000 0.000000 0.000000
+1       160000 0.000361 0.000799 0.000000 0.000000 0.000000
+1       162500 0.000358 0.000793 0.000000 0.000000 0.000000
+1       165000 0.000362 0.000788 0.000000 0.000000 0.000000
+1       167500 0.000376 0.000788 0.000000 0.000000 0.000000
+1       170000 0.000365 0.000784 0.000000 0.000000 0.000000
+1       172500 0.000388 0.000776 0.000000 0.000000 0.000000
+0       173952 0.000365 0.000763 0.000000 0.000000 0.000000
+1       175000 0.000360 0.000752 0.000000 0.000000 0.000000
+1       177500 0.000354 0.000741 0.000000 0.000000 0.000000
+1       180000 0.000351 0.000733 0.000000 0.000000 0.000000
+1       182500 0.000357 0.000720 0.000000 0.000000 0.000000
+1       185000 0.000357 0.000695 0.000000 0.000000 0.000000
+1       187500 0.000351 0.000686 0.000000 0.000000 0.000000
+1       190000 0.000348 0.000682 0.000000 0.000000 0.000000
+1       192500 0.000349 0.000676 0.000000 0.000000 0.000000
+1       195000 0.000350 0.000670 0.000000 0.000000 0.000000
+1       197500 0.000350 0.000665 0.000000 0.000000 0.000000
+0       198953 0.000351 0.000661 0.000000 0.000000 0.000000
+1       200000 0.000350 0.000658 0.000000 0.000000 0.000000
+ Stopped because of obj lt omin
+
+Histogram Reproduction at this time:
+ Quantile   1 z value      -1.1866 target  0.0204 actual  0.0204
+ Quantile   2 z value      -1.0458 target  0.0408 actual  0.0408
+ Quantile   3 z value      -1.0000 target  0.0612 actual  0.0612
+ Quantile   4 z value      -0.9586 target  0.0816 actual  0.0816
+ Quantile   5 z value      -0.7959 target  0.1020 actual  0.1020
+ Quantile   6 z value      -0.7513 target  0.1224 actual  0.1224
+ Quantile   7 z value      -0.7212 target  0.1429 actual  0.1428
+ Quantile   8 z value      -0.6444 target  0.1633 actual  0.1632
+ Quantile   9 z value      -0.5808 target  0.1837 actual  0.1836
+ Quantile  10 z value      -0.5472 target  0.2041 actual  0.2040
+ Quantile  11 z value      -0.4955 target  0.2245 actual  0.2244
+ Quantile  12 z value      -0.4707 target  0.2449 actual  0.2448
+ Quantile  13 z value      -0.4685 target  0.2653 actual  0.2652
+ Quantile  14 z value      -0.3490 target  0.2857 actual  0.2856
+ Quantile  15 z value      -0.2735 target  0.3061 actual  0.3060
+ Quantile  16 z value      -0.1921 target  0.3265 actual  0.3264
+ Quantile  17 z value      -0.1604 target  0.3469 actual  0.3468
+ Quantile  18 z value      -0.0977 target  0.3673 actual  0.3672
+ Quantile  19 z value      -0.0783 target  0.3878 actual  0.3876
+ Quantile  20 z value      -0.0416 target  0.4082 actual  0.4080
+ Quantile  21 z value      -0.0293 target  0.4286 actual  0.4284
+ Quantile  22 z value      -0.0119 target  0.4490 actual  0.4488
+ Quantile  23 z value      -0.0009 target  0.4694 actual  0.4692
+ Quantile  24 z value       0.0356 target  0.4898 actual  0.4896
+ Quantile  25 z value       0.0817 target  0.5102 actual  0.5104
+ Quantile  26 z value       0.1014 target  0.5306 actual  0.5308
+ Quantile  27 z value       0.1309 target  0.5510 actual  0.5512
+ Quantile  28 z value       0.1391 target  0.5714 actual  0.5716
+ Quantile  29 z value       0.2215 target  0.5918 actual  0.5920
+ Quantile  30 z value       0.2424 target  0.6122 actual  0.6124
+ Quantile  31 z value       0.2592 target  0.6327 actual  0.6328
+ Quantile  32 z value       0.2829 target  0.6531 actual  0.6532
+ Quantile  33 z value       0.3092 target  0.6735 actual  0.6736
+ Quantile  34 z value       0.3463 target  0.6939 actual  0.6940
+ Quantile  35 z value       0.3688 target  0.7143 actual  0.7144
+ Quantile  36 z value       0.4196 target  0.7347 actual  0.7348
+ Quantile  37 z value       0.4462 target  0.7551 actual  0.7552
+ Quantile  38 z value       0.4739 target  0.7755 actual  0.7756
+ Quantile  39 z value       0.5164 target  0.7959 actual  0.7960
+ Quantile  40 z value       0.5358 target  0.8163 actual  0.8164
+ Quantile  41 z value       0.5645 target  0.8367 actual  0.8368
+ Quantile  42 z value       0.6640 target  0.8571 actual  0.8572
+ Quantile  43 z value       0.7044 target  0.8776 actual  0.8776
+ Quantile  44 z value       0.7301 target  0.8980 actual  0.8980
+ Quantile  45 z value       0.8838 target  0.9184 actual  0.9184
+ Quantile  46 z value       0.9492 target  0.9388 actual  0.9388
+ Quantile  47 z value       0.9911 target  0.9592 actual  0.9592
+ Quantile  48 z value       1.2184 target  0.9796 actual  0.9796
+
+Variogram Reproduction at this time:
+    Lag:   1 model       0.1434 actual       0.1489
+    Lag:   2 model       0.1434 actual       0.1488
+    Lag:   3 model       0.1585 actual       0.1654
+    Lag:   4 model       0.1585 actual       0.1622
+    Lag:   5 model       0.1797 actual       0.1840
+    Lag:   6 model       0.1797 actual       0.1838
+    Lag:   7 model       0.1881 actual       0.1873
+    Lag:   8 model       0.1881 actual       0.1910
+    Lag:   9 model       0.1881 actual       0.1906
+    Lag:  10 model       0.1881 actual       0.1892
+    Lag:  11 model       0.2087 actual       0.2097
+    Lag:  12 model       0.2087 actual       0.2112
+    Lag:  13 model       0.2145 actual       0.2160
+    Lag:  14 model       0.2145 actual       0.2183
+    Lag:  15 model       0.2200 actual       0.2190
+    Lag:  16 model       0.2200 actual       0.2204
+    Lag:  17 model       0.2200 actual       0.2236
+    Lag:  18 model       0.2200 actual       0.2229
+    Lag:  19 model       0.2346 actual       0.2345
+    Lag:  20 model       0.2346 actual       0.2335
+    Lag:  21 model       0.2346 actual       0.2309
+    Lag:  22 model       0.2346 actual       0.2364
+    Lag:  23 model       0.2471 actual       0.2485
+    Lag:  24 model       0.2471 actual       0.2483
+    Lag:  25 model       0.2510 actual       0.2470
+    Lag:  26 model       0.2510 actual       0.2495
+    Lag:  27 model       0.2510 actual       0.2506
+    Lag:  28 model       0.2510 actual       0.2479
+    Lag:  29 model       0.2546 actual       0.2557
+    Lag:  30 model       0.2546 actual       0.2557
+    Lag:  31 model       0.2616 actual       0.2591
+    Lag:  32 model       0.2616 actual       0.2616
+    Lag:  33 model       0.2616 actual       0.2586
+    Lag:  34 model       0.2616 actual       0.2595
+    Lag:  35 model       0.2768 actual       0.2751
+    Lag:  36 model       0.2768 actual       0.2736
+    Lag:  37 model       0.2768 actual       0.2729
+    Lag:  38 model       0.2768 actual       0.2739
+    Lag:  39 model       0.2768 actual       0.2759
+    Lag:  40 model       0.2768 actual       0.2757
+    Lag:  41 model       0.2795 actual       0.2756
+    Lag:  42 model       0.2795 actual       0.2803
+    Lag:  43 model       0.2795 actual       0.2760
+    Lag:  44 model       0.2795 actual       0.2749
+    Lag:  45 model       0.2872 actual       0.2825
+    Lag:  46 model       0.2872 actual       0.2804
+    Lag:  47 model       0.2872 actual       0.2807
+    Lag:  48 model       0.2872 actual       0.2801
+    Lag:  49 model       0.2943 actual       0.2838
+    Lag:  50 model       0.2943 actual       0.2924
+    Lag:  51 model       0.2986 actual       0.2967
+
+Initial Model
+   Number    =     2500
+   mean      =       0.040922
+   std.dev.  =       0.596574
+   minimum   =      -1.221849
+   maximum   =       1.765818
+
+
+Histogram Reproduction at this time:
+ Quantile   1 z value      -1.1866 target  0.0204 actual  0.0168
+ Quantile   2 z value      -1.0458 target  0.0408 actual  0.0424
+ Quantile   3 z value      -1.0000 target  0.0612 actual  0.0556
+ Quantile   4 z value      -0.9586 target  0.0816 actual  0.0728
+ Quantile   5 z value      -0.7959 target  0.1020 actual  0.0944
+ Quantile   6 z value      -0.7513 target  0.1224 actual  0.1092
+ Quantile   7 z value      -0.7212 target  0.1429 actual  0.1316
+ Quantile   8 z value      -0.6444 target  0.1633 actual  0.1484
+ Quantile   9 z value      -0.5808 target  0.1837 actual  0.1712
+ Quantile  10 z value      -0.5472 target  0.2041 actual  0.1916
+ Quantile  11 z value      -0.4955 target  0.2245 actual  0.2084
+ Quantile  12 z value      -0.4707 target  0.2449 actual  0.2336
+ Quantile  13 z value      -0.4685 target  0.2653 actual  0.2576
+ Quantile  14 z value      -0.3490 target  0.2857 actual  0.2724
+ Quantile  15 z value      -0.2735 target  0.3061 actual  0.2948
+ Quantile  16 z value      -0.1921 target  0.3265 actual  0.3180
+ Quantile  17 z value      -0.1604 target  0.3469 actual  0.3388
+ Quantile  18 z value      -0.0977 target  0.3673 actual  0.3588
+ Quantile  19 z value      -0.0783 target  0.3878 actual  0.3780
+ Quantile  20 z value      -0.0416 target  0.4082 actual  0.3992
+ Quantile  21 z value      -0.0293 target  0.4286 actual  0.4204
+ Quantile  22 z value      -0.0119 target  0.4490 actual  0.4404
+ Quantile  23 z value      -0.0009 target  0.4694 actual  0.4632
+ Quantile  24 z value       0.0356 target  0.4898 actual  0.4840
+ Quantile  25 z value       0.0817 target  0.5102 actual  0.5020
+ Quantile  26 z value       0.1014 target  0.5306 actual  0.5208
+ Quantile  27 z value       0.1309 target  0.5510 actual  0.5424
+ Quantile  28 z value       0.1391 target  0.5714 actual  0.5588
+ Quantile  29 z value       0.2215 target  0.5918 actual  0.5748
+ Quantile  30 z value       0.2424 target  0.6122 actual  0.5952
+ Quantile  31 z value       0.2592 target  0.6327 actual  0.6152
+ Quantile  32 z value       0.2829 target  0.6531 actual  0.6368
+ Quantile  33 z value       0.3092 target  0.6735 actual  0.6544
+ Quantile  34 z value       0.3463 target  0.6939 actual  0.6756
+ Quantile  35 z value       0.3688 target  0.7143 actual  0.7004
+ Quantile  36 z value       0.4196 target  0.7347 actual  0.7200
+ Quantile  37 z value       0.4462 target  0.7551 actual  0.7428
+ Quantile  38 z value       0.4739 target  0.7755 actual  0.7632
+ Quantile  39 z value       0.5164 target  0.7959 actual  0.7868
+ Quantile  40 z value       0.5358 target  0.8163 actual  0.8072
+ Quantile  41 z value       0.5645 target  0.8367 actual  0.8272
+ Quantile  42 z value       0.6640 target  0.8571 actual  0.8448
+ Quantile  43 z value       0.7044 target  0.8776 actual  0.8656
+ Quantile  44 z value       0.7301 target  0.8980 actual  0.8892
+ Quantile  45 z value       0.8838 target  0.9184 actual  0.9112
+ Quantile  46 z value       0.9492 target  0.9388 actual  0.9364
+ Quantile  47 z value       0.9911 target  0.9592 actual  0.9560
+ Quantile  48 z value       1.2184 target  0.9796 actual  0.9764
+
+Variogram Reproduction at this time:
+    Lag:   1 model       0.1440 actual       0.3490
+    Lag:   2 model       0.1440 actual       0.3550
+    Lag:   3 model       0.1593 actual       0.3564
+    Lag:   4 model       0.1593 actual       0.3543
+    Lag:   5 model       0.1805 actual       0.3582
+    Lag:   6 model       0.1805 actual       0.3518
+    Lag:   7 model       0.1889 actual       0.3490
+    Lag:   8 model       0.1889 actual       0.3676
+    Lag:   9 model       0.1889 actual       0.3640
+    Lag:  10 model       0.1889 actual       0.3385
+    Lag:  11 model       0.2096 actual       0.3569
+    Lag:  12 model       0.2096 actual       0.3615
+    Lag:  13 model       0.2155 actual       0.3548
+    Lag:  14 model       0.2155 actual       0.3654
+    Lag:  15 model       0.2210 actual       0.3539
+    Lag:  16 model       0.2210 actual       0.3651
+    Lag:  17 model       0.2210 actual       0.3569
+    Lag:  18 model       0.2210 actual       0.3659
+    Lag:  19 model       0.2357 actual       0.3572
+    Lag:  20 model       0.2357 actual       0.3590
+    Lag:  21 model       0.2357 actual       0.3675
+    Lag:  22 model       0.2357 actual       0.3455
+    Lag:  23 model       0.2483 actual       0.3565
+    Lag:  24 model       0.2483 actual       0.3614
+    Lag:  25 model       0.2521 actual       0.3440
+    Lag:  26 model       0.2521 actual       0.3550
+    Lag:  27 model       0.2521 actual       0.3444
+    Lag:  28 model       0.2521 actual       0.3598
+    Lag:  29 model       0.2558 actual       0.3645
+    Lag:  30 model       0.2558 actual       0.3504
+    Lag:  31 model       0.2628 actual       0.3529
+    Lag:  32 model       0.2628 actual       0.3471
+    Lag:  33 model       0.2628 actual       0.3583
+    Lag:  34 model       0.2628 actual       0.3560
+    Lag:  35 model       0.2780 actual       0.3491
+    Lag:  36 model       0.2780 actual       0.3682
+    Lag:  37 model       0.2780 actual       0.3502
+    Lag:  38 model       0.2780 actual       0.3576
+    Lag:  39 model       0.2780 actual       0.3541
+    Lag:  40 model       0.2780 actual       0.3541
+    Lag:  41 model       0.2808 actual       0.3475
+    Lag:  42 model       0.2808 actual       0.3550
+    Lag:  43 model       0.2808 actual       0.3421
+    Lag:  44 model       0.2808 actual       0.3582
+    Lag:  45 model       0.2886 actual       0.3609
+    Lag:  46 model       0.2886 actual       0.3540
+    Lag:  47 model       0.2886 actual       0.3636
+    Lag:  48 model       0.2886 actual       0.3414
+    Lag:  49 model       0.2956 actual       0.3514
+    Lag:  50 model       0.2956 actual       0.3553
+    Lag:  51 model       0.3000 actual       0.3533
+
+Initial Objective Function Values
+   Histogram             :       0.157392
+   Variogram             :      19.606298
+   Indicator Variograms  :       0.000000
+   Correlation Coeficient:       0.000000
+   Bivariate Histogram   :       0.000000
+
+
+Scaling of Objective Function Values
+   Histogram             :     535.434282
+   Variogram             :      21.991154
+   Indicator Variograms  :       1.000000
+   Correlation Coeficient:       1.000000
+   Bivariate Histogram   :       1.000000
+
+0            0 0.037620 0.962380 0.000000 0.000000 0.000000
+1         2500 0.022962 0.851272 0.000000 0.000000 0.000000
+1         5000 0.048725 0.776203 0.000000 0.000000 0.000000
+1         7500 0.049051 0.957949 0.000000 0.000000 0.000000
+1        10000 0.037987 1.039118 0.000000 0.000000 0.000000
+1        12500 0.024938 0.981795 0.000000 0.000000 0.000000
+0        12517 0.026375 0.970984 0.000000 0.000000 0.000000
+1        15000 0.022914 0.805975 0.000000 0.000000 0.000000
+1        17500 0.014992 0.998425 0.000000 0.000000 0.000000
+1        20000 0.037326 0.976049 0.000000 0.000000 0.000000
+1        22500 0.038896 0.954966 0.000000 0.000000 0.000000
+1        25000 0.032543 0.948899 0.000000 0.000000 0.000000
+0        25073 0.028405 0.946909 0.000000 0.000000 0.000000
+1        27500 0.017977 0.901515 0.000000 0.000000 0.000000
+1        30000 0.026975 0.764371 0.000000 0.000000 0.000000
+1        32500 0.032000 0.982496 0.000000 0.000000 0.000000
+1        35000 0.067333 0.749198 0.000000 0.000000 0.000000
+1        37500 0.019999 0.697966 0.000000 0.000000 0.000000
+0        37748 0.015361 0.782688 0.000000 0.000000 0.000000
+1        40000 0.028846 0.601211 0.000000 0.000000 0.000000
+1        42500 0.060178 0.507868 0.000000 0.000000 0.000000
+1        45000 0.041643 0.604738 0.000000 0.000000 0.000000
+1        47500 0.041672 0.529517 0.000000 0.000000 0.000000
+1        50000 0.047049 0.502377 0.000000 0.000000 0.000000
+0        50847 0.050682 0.514619 0.000000 0.000000 0.000000
+1        52500 0.076322 0.278925 0.000000 0.000000 0.000000
+1        55000 0.060546 0.326369 0.000000 0.000000 0.000000
+1        57500 0.083221 0.221891 0.000000 0.000000 0.000000
+1        60000 0.080626 0.247955 0.000000 0.000000 0.000000
+1        62500 0.073014 0.280696 0.000000 0.000000 0.000000
+0        64700 0.064273 0.306762 0.000000 0.000000 0.000000
+1        65000 0.074342 0.236398 0.000000 0.000000 0.000000
+1        67500 0.087882 0.135829 0.000000 0.000000 0.000000
+1        70000 0.092951 0.129499 0.000000 0.000000 0.000000
+1        72500 0.088076 0.119146 0.000000 0.000000 0.000000
+1        75000 0.085670 0.132528 0.000000 0.000000 0.000000
+1        77500 0.093208 0.118038 0.000000 0.000000 0.000000
+0        79682 0.091855 0.111201 0.000000 0.000000 0.000000
+1        80000 0.094407 0.096846 0.000000 0.000000 0.000000
+1        82500 0.076708 0.056137 0.000000 0.000000 0.000000
+1        85000 0.060860 0.041111 0.000000 0.000000 0.000000
+1        87500 0.044887 0.037836 0.000000 0.000000 0.000000
+1        90000 0.040594 0.028322 0.000000 0.000000 0.000000
+1        92500 0.030238 0.030837 0.000000 0.000000 0.000000
+1        95000 0.023362 0.032190 0.000000 0.000000 0.000000
+1        97500 0.019973 0.034087 0.000000 0.000000 0.000000
+0        98835 0.018773 0.033364 0.000000 0.000000 0.000000
+1       100000 0.014613 0.016725 0.000000 0.000000 0.000000
+1       102500 0.006352 0.007399 0.000000 0.000000 0.000000
+1       105000 0.005811 0.004941 0.000000 0.000000 0.000000
+1       107500 0.004990 0.004546 0.000000 0.000000 0.000000
+1       110000 0.004377 0.004400 0.000000 0.000000 0.000000
+1       112500 0.003965 0.003528 0.000000 0.000000 0.000000
+1       115000 0.004074 0.002969 0.000000 0.000000 0.000000
+1       117500 0.004489 0.002819 0.000000 0.000000 0.000000
+1       120000 0.004049 0.004199 0.000000 0.000000 0.000000
+1       122500 0.004180 0.003122 0.000000 0.000000 0.000000
+0       123836 0.003918 0.003393 0.000000 0.000000 0.000000
+1       125000 0.002712 0.002317 0.000000 0.000000 0.000000
+1       127500 0.002242 0.001889 0.000000 0.000000 0.000000
+1       130000 0.001997 0.001591 0.000000 0.000000 0.000000
+1       132500 0.001576 0.001242 0.000000 0.000000 0.000000
+1       135000 0.001489 0.001181 0.000000 0.000000 0.000000
+1       137500 0.001067 0.001166 0.000000 0.000000 0.000000
+1       140000 0.000715 0.001122 0.000000 0.000000 0.000000
+1       142500 0.001089 0.000996 0.000000 0.000000 0.000000
+1       145000 0.000874 0.000928 0.000000 0.000000 0.000000
+1       147500 0.000909 0.000885 0.000000 0.000000 0.000000
+0       148837 0.000771 0.000846 0.000000 0.000000 0.000000
+1       150000 0.000530 0.000855 0.000000 0.000000 0.000000
+1       152500 0.000495 0.000822 0.000000 0.000000 0.000000
+1       155000 0.000411 0.000832 0.000000 0.000000 0.000000
+1       157500 0.000403 0.000809 0.000000 0.000000 0.000000
+1       160000 0.000365 0.000799 0.000000 0.000000 0.000000
+1       162500 0.000379 0.000799 0.000000 0.000000 0.000000
+1       165000 0.000375 0.000752 0.000000 0.000000 0.000000
+1       167500 0.000346 0.000744 0.000000 0.000000 0.000000
+1       170000 0.000356 0.000731 0.000000 0.000000 0.000000
+1       172500 0.000356 0.000739 0.000000 0.000000 0.000000
+0       173838 0.000365 0.000728 0.000000 0.000000 0.000000
+1       175000 0.000358 0.000727 0.000000 0.000000 0.000000
+1       177500 0.000349 0.000722 0.000000 0.000000 0.000000
+1       180000 0.000345 0.000708 0.000000 0.000000 0.000000
+1       182500 0.000341 0.000702 0.000000 0.000000 0.000000
+1       185000 0.000341 0.000707 0.000000 0.000000 0.000000
+1       187500 0.000341 0.000698 0.000000 0.000000 0.000000
+1       190000 0.000342 0.000691 0.000000 0.000000 0.000000
+1       192500 0.000345 0.000680 0.000000 0.000000 0.000000
+1       195000 0.000343 0.000677 0.000000 0.000000 0.000000
+1       197500 0.000343 0.000672 0.000000 0.000000 0.000000
+0       198839 0.000342 0.000659 0.000000 0.000000 0.000000
+ Stopped because of obj lt omin
+
+Histogram Reproduction at this time:
+ Quantile   1 z value      -1.1866 target  0.0204 actual  0.0204
+ Quantile   2 z value      -1.0458 target  0.0408 actual  0.0408
+ Quantile   3 z value      -1.0000 target  0.0612 actual  0.0612
+ Quantile   4 z value      -0.9586 target  0.0816 actual  0.0816
+ Quantile   5 z value      -0.7959 target  0.1020 actual  0.1020
+ Quantile   6 z value      -0.7513 target  0.1224 actual  0.1224
+ Quantile   7 z value      -0.7212 target  0.1429 actual  0.1428
+ Quantile   8 z value      -0.6444 target  0.1633 actual  0.1632
+ Quantile   9 z value      -0.5808 target  0.1837 actual  0.1836
+ Quantile  10 z value      -0.5472 target  0.2041 actual  0.2040
+ Quantile  11 z value      -0.4955 target  0.2245 actual  0.2244
+ Quantile  12 z value      -0.4707 target  0.2449 actual  0.2448
+ Quantile  13 z value      -0.4685 target  0.2653 actual  0.2652
+ Quantile  14 z value      -0.3490 target  0.2857 actual  0.2856
+ Quantile  15 z value      -0.2735 target  0.3061 actual  0.3060
+ Quantile  16 z value      -0.1921 target  0.3265 actual  0.3264
+ Quantile  17 z value      -0.1604 target  0.3469 actual  0.3468
+ Quantile  18 z value      -0.0977 target  0.3673 actual  0.3672
+ Quantile  19 z value      -0.0783 target  0.3878 actual  0.3876
+ Quantile  20 z value      -0.0416 target  0.4082 actual  0.4080
+ Quantile  21 z value      -0.0293 target  0.4286 actual  0.4284
+ Quantile  22 z value      -0.0119 target  0.4490 actual  0.4488
+ Quantile  23 z value      -0.0009 target  0.4694 actual  0.4692
+ Quantile  24 z value       0.0356 target  0.4898 actual  0.4900
+ Quantile  25 z value       0.0817 target  0.5102 actual  0.5100
+ Quantile  26 z value       0.1014 target  0.5306 actual  0.5304
+ Quantile  27 z value       0.1309 target  0.5510 actual  0.5512
+ Quantile  28 z value       0.1391 target  0.5714 actual  0.5716
+ Quantile  29 z value       0.2215 target  0.5918 actual  0.5920
+ Quantile  30 z value       0.2424 target  0.6122 actual  0.6124
+ Quantile  31 z value       0.2592 target  0.6327 actual  0.6328
+ Quantile  32 z value       0.2829 target  0.6531 actual  0.6532
+ Quantile  33 z value       0.3092 target  0.6735 actual  0.6736
+ Quantile  34 z value       0.3463 target  0.6939 actual  0.6940
+ Quantile  35 z value       0.3688 target  0.7143 actual  0.7144
+ Quantile  36 z value       0.4196 target  0.7347 actual  0.7348
+ Quantile  37 z value       0.4462 target  0.7551 actual  0.7552
+ Quantile  38 z value       0.4739 target  0.7755 actual  0.7756
+ Quantile  39 z value       0.5164 target  0.7959 actual  0.7960
+ Quantile  40 z value       0.5358 target  0.8163 actual  0.8164
+ Quantile  41 z value       0.5645 target  0.8367 actual  0.8368
+ Quantile  42 z value       0.6640 target  0.8571 actual  0.8572
+ Quantile  43 z value       0.7044 target  0.8776 actual  0.8776
+ Quantile  44 z value       0.7301 target  0.8980 actual  0.8980
+ Quantile  45 z value       0.8838 target  0.9184 actual  0.9184
+ Quantile  46 z value       0.9492 target  0.9388 actual  0.9388
+ Quantile  47 z value       0.9911 target  0.9592 actual  0.9592
+ Quantile  48 z value       1.2184 target  0.9796 actual  0.9796
+
+Variogram Reproduction at this time:
+    Lag:   1 model       0.1440 actual       0.1515
+    Lag:   2 model       0.1440 actual       0.1499
+    Lag:   3 model       0.1593 actual       0.1631
+    Lag:   4 model       0.1593 actual       0.1634
+    Lag:   5 model       0.1805 actual       0.1809
+    Lag:   6 model       0.1805 actual       0.1802
+    Lag:   7 model       0.1889 actual       0.1871
+    Lag:   8 model       0.1889 actual       0.1914
+    Lag:   9 model       0.1889 actual       0.1886
+    Lag:  10 model       0.1889 actual       0.1907
+    Lag:  11 model       0.2096 actual       0.2075
+    Lag:  12 model       0.2096 actual       0.2121
+    Lag:  13 model       0.2155 actual       0.2187
+    Lag:  14 model       0.2155 actual       0.2168
+    Lag:  15 model       0.2210 actual       0.2199
+    Lag:  16 model       0.2210 actual       0.2216
+    Lag:  17 model       0.2210 actual       0.2234
+    Lag:  18 model       0.2210 actual       0.2217
+    Lag:  19 model       0.2357 actual       0.2352
+    Lag:  20 model       0.2357 actual       0.2368
+    Lag:  21 model       0.2357 actual       0.2357
+    Lag:  22 model       0.2357 actual       0.2416
+    Lag:  23 model       0.2483 actual       0.2489
+    Lag:  24 model       0.2483 actual       0.2489
+    Lag:  25 model       0.2521 actual       0.2521
+    Lag:  26 model       0.2521 actual       0.2447
+    Lag:  27 model       0.2521 actual       0.2504
+    Lag:  28 model       0.2521 actual       0.2550
+    Lag:  29 model       0.2558 actual       0.2523
+    Lag:  30 model       0.2558 actual       0.2574
+    Lag:  31 model       0.2628 actual       0.2599
+    Lag:  32 model       0.2628 actual       0.2582
+    Lag:  33 model       0.2628 actual       0.2603
+    Lag:  34 model       0.2628 actual       0.2602
+    Lag:  35 model       0.2780 actual       0.2767
+    Lag:  36 model       0.2780 actual       0.2730
+    Lag:  37 model       0.2780 actual       0.2747
+    Lag:  38 model       0.2780 actual       0.2757
+    Lag:  39 model       0.2780 actual       0.2735
+    Lag:  40 model       0.2780 actual       0.2737
+    Lag:  41 model       0.2808 actual       0.2804
+    Lag:  42 model       0.2808 actual       0.2772
+    Lag:  43 model       0.2808 actual       0.2769
+    Lag:  44 model       0.2808 actual       0.2719
+    Lag:  45 model       0.2886 actual       0.2838
+    Lag:  46 model       0.2886 actual       0.2821
+    Lag:  47 model       0.2886 actual       0.2818
+    Lag:  48 model       0.2886 actual       0.2862
+    Lag:  49 model       0.2956 actual       0.2926
+    Lag:  50 model       0.2956 actual       0.2993
+    Lag:  51 model       0.3000 actual       0.3030

@@ -128,12 +128,13 @@ c
       do i=1,512
             str(i:i) = ' '
       end do
-      call getarg(1,str)
-      if(str(1:1).eq.' ')then
-            write(*,*) 'Which parameter file do you want to use?'
-            read (*,'(a)') str
-      end if
-      if(str(1:1).eq.' ') str(1:20) = 'sisim.par           '
+c$$$      call getarg(1,str)
+c$$$      if(str(1:1).eq.' ')then
+c$$$            write(*,*) 'Which parameter file do you want to use?'
+c$$$            read (*,'(a)') str
+c$$$      end if
+c$$$  if(str(1:1).eq.' ') str(1:20) = 'sisim.par           '
+      str(1:20) = 'sisim.par           '      
       inquire(file=str,exist=testfl)
       if(.not.testfl) then
             write(*,*) 'ERROR - the parameter file does not exist,'

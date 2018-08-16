@@ -1,12 +1,13 @@
+
 # SUMMARY:      change_oppc_zonation_to_prehanford.py
 # USAGE:        convert tanks and backfill material to hanford
 # ORG:          Pacific Northwest National Laboratory
 # AUTHOR:       Xuehang Song
 # E-MAIL:       xuehang.song@pnnl.gov
 # ORIG-DATE:    July-2018
-# DESCRIPTION:  
+# DESCRIPTION:
 # DESCRIP-END.
-# COMMENTS:     
+# COMMENTS:
 #
 # Last Change: 2018-07-24
 
@@ -28,16 +29,16 @@ oppc_0 = np.asarray(np.where(oppc_array == 0))
 tank_cells = []
 for ipoint in range(len(oppc_0[0, ])):
     bottom_material = oppc_array[oppc_0[0, ipoint],
-                                      oppc_0[1, ipoint],
-                                      np.arange(0,oppc_0[2, ipoint])]
+                                 oppc_0[1, ipoint],
+                                 np.arange(0, oppc_0[2, ipoint])]
     top_material = oppc_array[oppc_0[0, ipoint],
-                                   oppc_0[1, ipoint],
-                    np.arange(oppc_0[2, ipoint]+1, nz)]
+                              oppc_0[1, ipoint],
+                              np.arange(oppc_0[2, ipoint]+1, nz)]
     if (any(bottom_material != 0) and any(top_material != 0)):
         print(ipoint)
         tank_cells.append(ipoint)
-tank_index = oppc_0[:,tank_cells]
-tank_index = tank_index[0,:]+tank_index[1,:]*nx+tank_index[2,:]*nx*ny
+tank_index = oppc_0[:, tank_cells]
+tank_index = tank_index[0, :]+tank_index[1, :]*nx+tank_index[2, :]*nx*ny
 
 
 # find backfill locations
@@ -47,6 +48,6 @@ pre_hanford = oppc
 pre_hanford[tank_index] = 7
 pre_hanford[backfill_index] = 7
 
-fout = open(pre_hanford_zon,'w')
-fout.write("\n".join(map(str,pre_hanford)))
+fout = open(pre_hanford_zon, 'w')
+fout.write("\n".join(map(str, pre_hanford)))
 fout.close()

@@ -1,0 +1,385 @@
+%!PS                                 %    Remove     
+90 234 translate 1.5 1.5 scale       %  these lines  
+                                     % for EPSF file 
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 288 216
+%%Creator: GSLIB
+%%Title:   Q-Q Plot: Equal Weig
+%%CreationDate: 
+%%EndComments
+
+
+%
+%
+%
+
+/m {moveto} def /l {lineto} def /r {rlineto} def
+/s {stroke} def /n {newpath} def /c {closepath} def
+/rtext{ dup stringwidth pop -1 div 0 rmoveto show } def
+/ctext{ dup stringwidth pop -2 div 0 rmoveto show } def
+/ltext{show} def /gr{grestore} def /gs{gsave} def
+/tr{translate} def /setc{setrgbcolor} def
+/bullet{ 6 0 360 arc c fill } def
+
+
+%72 72 translate
+
+
+0.240000 0.240000 scale
+/Helvetica             findfont   31 scalefont setfont
+   29   501 translate
+   90 rotate
+    0     0 m
+(primary - Z or U) ctext
+  -90 rotate
+  -29  -501 translate
+  514    16 m
+(Primary) ctext
+/Helvetica-BoldOblique findfont   33 scalefont setfont
+  141   881 m
+(Q-Q Plot: Equal Weighted) ltext
+ 3.708 setlinewidth
+n
+  141   874 m
+  141   128 l
+  887   128 l
+s
+n
+  141   128 m
+  887   874 l
+s
+ 1.975 setlinewidth
+n
+  141   128 m
+  141   109 l
+s
+/Helvetica             findfont   31 scalefont setfont
+  141    80 m
+(0.0) ctext
+n
+  178   128 m
+  178   118 l
+s
+n
+  216   128 m
+  216   118 l
+s
+n
+  253   128 m
+  253   118 l
+s
+n
+  290   128 m
+  290   109 l
+s
+  290    80 m
+(4.0) ctext
+n
+  327   128 m
+  327   118 l
+s
+n
+  365   128 m
+  365   118 l
+s
+n
+  402   128 m
+  402   118 l
+s
+n
+  439   128 m
+  439   109 l
+s
+  439    80 m
+(8.0) ctext
+n
+  477   128 m
+  477   118 l
+s
+n
+  514   128 m
+  514   118 l
+s
+n
+  551   128 m
+  551   118 l
+s
+n
+  589   128 m
+  589   109 l
+s
+  589    80 m
+(12.0) ctext
+n
+  626   128 m
+  626   118 l
+s
+n
+  663   128 m
+  663   118 l
+s
+n
+  700   128 m
+  700   118 l
+s
+n
+  738   128 m
+  738   109 l
+s
+  738    80 m
+(16.0) ctext
+n
+  775   128 m
+  775   118 l
+s
+n
+  812   128 m
+  812   118 l
+s
+n
+  850   128 m
+  850   118 l
+s
+n
+  887   128 m
+  887   109 l
+s
+  887    80 m
+(20.0) ctext
+n
+  141   128 m
+  122   128 l
+s
+  118   128 m
+(0.0) rtext
+n
+  141   165 m
+  131   165 l
+s
+n
+  141   203 m
+  131   203 l
+s
+n
+  141   240 m
+  131   240 l
+s
+n
+  141   277 m
+  122   277 l
+s
+  118   277 m
+(4.0) rtext
+n
+  141   315 m
+  131   315 l
+s
+n
+  141   352 m
+  131   352 l
+s
+n
+  141   389 m
+  131   389 l
+s
+n
+  141   426 m
+  122   426 l
+s
+  118   426 m
+(8.0) rtext
+n
+  141   464 m
+  131   464 l
+s
+n
+  141   501 m
+  131   501 l
+s
+n
+  141   538 m
+  131   538 l
+s
+n
+  141   576 m
+  122   576 l
+s
+  118   576 m
+(12.0) rtext
+n
+  141   613 m
+  131   613 l
+s
+n
+  141   650 m
+  131   650 l
+s
+n
+  141   687 m
+  131   687 l
+s
+n
+  141   725 m
+  122   725 l
+s
+  118   725 m
+(16.0) rtext
+n
+  141   762 m
+  131   762 l
+s
+n
+  141   799 m
+  131   799 l
+s
+n
+  141   837 m
+  131   837 l
+s
+n
+  141   874 m
+  122   874 l
+s
+  118   874 m
+(20.0) rtext
+n   143   129 bullet
+n   143   130 bullet
+n   144   130 bullet
+n   144   130 bullet
+n   144   131 bullet
+n   145   131 bullet
+n   145   131 bullet
+n   145   131 bullet
+n   145   132 bullet
+n   147   132 bullet
+n   147   133 bullet
+n   147   133 bullet
+n   148   133 bullet
+n   148   133 bullet
+n   148   134 bullet
+n   148   134 bullet
+n   149   134 bullet
+n   150   134 bullet
+n   151   135 bullet
+n   151   135 bullet
+n   151   135 bullet
+n   153   136 bullet
+n   153   136 bullet
+n   153   136 bullet
+n   154   137 bullet
+n   154   137 bullet
+n   154   137 bullet
+n   156   138 bullet
+n   158   138 bullet
+n   158   139 bullet
+n   160   139 bullet
+n   162   139 bullet
+n   164   140 bullet
+n   165   140 bullet
+n   166   140 bullet
+n   167   141 bullet
+n   170   141 bullet
+n   171   142 bullet
+n   172   143 bullet
+n   172   143 bullet
+n   174   143 bullet
+n   175   144 bullet
+n   176   145 bullet
+n   176   145 bullet
+n   177   146 bullet
+n   178   146 bullet
+n   178   147 bullet
+n   179   147 bullet
+n   179   148 bullet
+n   182   149 bullet
+n   182   149 bullet
+n   186   149 bullet
+n   186   150 bullet
+n   188   151 bullet
+n   191   152 bullet
+n   192   152 bullet
+n   192   153 bullet
+n   192   154 bullet
+n   192   155 bullet
+n   203   155 bullet
+n   204   156 bullet
+n   205   157 bullet
+n   207   158 bullet
+n   208   159 bullet
+n   209   159 bullet
+n   211   161 bullet
+n   214   161 bullet
+n   215   162 bullet
+n   220   163 bullet
+n   222   163 bullet
+n   224   165 bullet
+n   226   166 bullet
+n   228   167 bullet
+n   228   168 bullet
+n   228   169 bullet
+n   233   169 bullet
+n   235   171 bullet
+n   235   171 bullet
+n   236   172 bullet
+n   243   174 bullet
+n   244   176 bullet
+n   244   178 bullet
+n   246   179 bullet
+n   247   180 bullet
+n   251   181 bullet
+n   252   183 bullet
+n   253   184 bullet
+n   254   185 bullet
+n   261   187 bullet
+n   265   189 bullet
+n   266   191 bullet
+n   272   193 bullet
+n   274   195 bullet
+n   275   197 bullet
+n   276   199 bullet
+n   277   201 bullet
+n   283   203 bullet
+n   301   206 bullet
+n   313   208 bullet
+n   323   210 bullet
+n   324   212 bullet
+n   329   215 bullet
+n   333   217 bullet
+n   337   219 bullet
+n   339   222 bullet
+n   342   226 bullet
+n   348   229 bullet
+n   348   232 bullet
+n   374   238 bullet
+n   380   242 bullet
+n   383   247 bullet
+n   422   250 bullet
+n   423   255 bullet
+n   429   259 bullet
+n   436   263 bullet
+n   437   269 bullet
+n   440   274 bullet
+n   452   281 bullet
+n   457   289 bullet
+n   466   298 bullet
+n   473   308 bullet
+n   477   318 bullet
+n   480   325 bullet
+n   480   334 bullet
+n   487   342 bullet
+n   492   362 bullet
+n   521   369 bullet
+n   524   378 bullet
+n   554   398 bullet
+n   616   423 bullet
+n   729   441 bullet
+n   729   460 bullet
+n   782   480 bullet
+n   836   523 bullet
+n   841   558 bullet
+n   866   635 bullet
+%END OF POSTSCRIPT FILE
+4.166667 4.166667 scale
+
+%%EOF
+showpage

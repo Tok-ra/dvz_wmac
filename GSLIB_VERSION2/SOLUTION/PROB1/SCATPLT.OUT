@@ -1,0 +1,300 @@
+%!PS                                 %    Remove     
+90 234 translate 1.5 1.5 scale       %  these lines  
+                                     % for EPSF file 
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 288 216
+%%Creator: GSLIB
+%%Title:   Declustered Mean ver
+%%CreationDate: 
+%%EndComments
+
+
+%
+%
+%
+
+/m {moveto} def /l {lineto} def /r {rlineto} def
+/s {stroke} def /n {newpath} def /c {closepath} def
+/rtext{ dup stringwidth pop -1 div 0 rmoveto show } def
+/ctext{ dup stringwidth pop -2 div 0 rmoveto show } def
+/ltext{show} def /gr{grestore} def /gs{gsave} def
+/tr{translate} def /setc{setrgbcolor} def
+/bullet{  6.00 0 360 arc c fill } def
+
+
+%72 72 translate
+
+
+0.240000 0.240000 scale
+/Helvetica             findfont   31 scalefont setfont
+   29   501 translate
+   90 rotate
+    0     0 m
+(Declustered Mean) ctext
+  -90 rotate
+  -29  -501 translate
+  514    16 m
+(Cell Size) ctext
+/Helvetica-BoldOblique findfont   33 scalefont setfont
+  141   881 m
+(Declustered Mean versus Cell Size) ltext
+ 3.708 setlinewidth
+n
+  141   874 m
+  141   128 l
+  887   128 l
+s
+ 1.975 setlinewidth
+n
+  141   128 m
+  141   109 l
+s
+/Helvetica             findfont   31 scalefont setfont
+  141    80 m
+(0.0) ctext
+n
+  171   128 m
+  171   118 l
+s
+n
+  201   128 m
+  201   118 l
+s
+n
+  230   128 m
+  230   118 l
+s
+n
+  260   128 m
+  260   118 l
+s
+n
+  290   128 m
+  290   109 l
+s
+  290    80 m
+(5.0) ctext
+n
+  320   128 m
+  320   118 l
+s
+n
+  350   128 m
+  350   118 l
+s
+n
+  379   128 m
+  379   118 l
+s
+n
+  409   128 m
+  409   118 l
+s
+n
+  439   128 m
+  439   109 l
+s
+  439    80 m
+(10.0) ctext
+n
+  469   128 m
+  469   118 l
+s
+n
+  499   128 m
+  499   118 l
+s
+n
+  529   128 m
+  529   118 l
+s
+n
+  558   128 m
+  558   118 l
+s
+n
+  588   128 m
+  588   109 l
+s
+  588    80 m
+(15.0) ctext
+n
+  618   128 m
+  618   118 l
+s
+n
+  648   128 m
+  648   118 l
+s
+n
+  678   128 m
+  678   118 l
+s
+n
+  707   128 m
+  707   118 l
+s
+n
+  737   128 m
+  737   109 l
+s
+  737    80 m
+(20.0) ctext
+n
+  767   128 m
+  767   118 l
+s
+n
+  797   128 m
+  797   118 l
+s
+n
+  827   128 m
+  827   118 l
+s
+n
+  856   128 m
+  856   118 l
+s
+n
+  886   128 m
+  886   109 l
+s
+  886    80 m
+(25.0) ctext
+n
+  141   128 m
+  122   128 l
+s
+  118   128 m
+(2.00) rtext
+n
+  141   178 m
+  131   178 l
+s
+n
+  141   227 m
+  131   227 l
+s
+n
+  141   277 m
+  131   277 l
+s
+n
+  141   327 m
+  131   327 l
+s
+n
+  141   376 m
+  122   376 l
+s
+  118   376 m
+(3.00) rtext
+n
+  141   426 m
+  131   426 l
+s
+n
+  141   476 m
+  131   476 l
+s
+n
+  141   525 m
+  131   525 l
+s
+n
+  141   575 m
+  131   575 l
+s
+n
+  141   625 m
+  122   625 l
+s
+  118   625 m
+(4.00) rtext
+n
+  141   674 m
+  131   674 l
+s
+n
+  141   724 m
+  131   724 l
+s
+n
+  141   774 m
+  131   774 l
+s
+n
+  141   823 m
+  131   823 l
+s
+n
+  141   873 m
+  122   873 l
+s
+  118   873 m
+(5.00) rtext
+n   141   712 bullet
+n   171   712 bullet
+n   201   474 bullet
+n   230   372 bullet
+n   260   294 bullet
+n   290   258 bullet
+n   320   278 bullet
+n   350   267 bullet
+n   379   267 bullet
+n   409   302 bullet
+n   439   345 bullet
+n   469   332 bullet
+n   499   359 bullet
+n   529   358 bullet
+n   558   368 bullet
+n   588   373 bullet
+n   618   384 bullet
+n   648   403 bullet
+n   678   414 bullet
+n   707   490 bullet
+n   737   448 bullet
+n   767   455 bullet
+n   797   469 bullet
+n   827   518 bullet
+n   856   433 bullet
+n   886   488 bullet
+/Helvetica             findfont   29 scalefont setfont
+ 1054   842 m
+(Number of data) rtext
+ 1067   842 m
+(26) ltext
+ 1054   810 m
+(Number plotted) rtext
+ 1067   810 m
+(26) ltext
+ 1054   726 m
+(X Variable: mean) rtext
+ 1067   726 m
+(12.500) ltext
+ 1054   694 m
+(std. dev.) rtext
+ 1067   694 m
+(7.500) ltext
+ 1054   642 m
+(Y Variable: mean) rtext
+ 1067   642 m
+(3.122) ltext
+ 1054   610 m
+(std. dev.) rtext
+ 1067   610 m
+(0.464) ltext
+ 1054   559 m
+(correlation) rtext
+ 1067   559 m
+(0.061) ltext
+ 1054   527 m
+(rank correlation) rtext
+ 1067   527 m
+(0.350) ltext
+%END OF POSTSCRIPT FILE
+4.166667 4.166667 scale
+
+%%EOF
+showpage

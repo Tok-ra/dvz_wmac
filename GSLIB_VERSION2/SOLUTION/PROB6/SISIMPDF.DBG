@@ -1,0 +1,40 @@
+
+ Category  number  1 =        0.000
+           global prob value =   0.7500
+           number of structures =   1
+           nugget effect        =   0.0000
+           type of structure   1 =   1
+           aa parameter         =      40.0000
+           cc parameter         =       1.0000
+           ang1, ang2, ang3     =  90.00  0.00  0.00
+           anis1, anis2         =       0.2000      0.0250
+
+ Category  number  2 =        1.000
+           global prob value =   0.2500
+           number of structures =   1
+           nugget effect        =   0.0000
+           type of structure   1 =   1
+           aa parameter         =      40.0000
+           cc parameter         =       1.0000
+           ang1, ang2, ang3     =  90.00  0.00  0.00
+           anis1, anis2         =       0.2000      0.0250
+
+ Finished simulation  1
+     threshold   1 input cdf = 0.7500 realization cdf = 0.7700
+     threshold   2 input cdf = 0.2500 realization cdf = 0.2300
+
+ Summary of order relations: 
+     threshold 1 number =   8250 average =   0.0049 maximum =   0.1710
+     threshold 2 number =   8250 average =   0.0049 maximum =   0.1710
+
+ total of          82.500000% with average of   0.0049
+
+ Finished simulation  2
+     threshold   1 input cdf = 0.7500 realization cdf = 0.6944
+     threshold   2 input cdf = 0.2500 realization cdf = 0.3056
+
+ Summary of order relations: 
+     threshold 1 number =   8188 average =   0.0055 maximum =   0.2327
+     threshold 2 number =   8188 average =   0.0055 maximum =   0.2327
+
+ total of          81.879997% with average of   0.0055

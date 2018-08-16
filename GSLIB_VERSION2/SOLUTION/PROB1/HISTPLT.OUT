@@ -1,0 +1,800 @@
+%!PS                                 %    Remove     
+90 234 translate 1.5 1.5 scale       %  these lines  
+                                     % for EPSF file 
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: 0 0 288 216
+%%Creator: GSLIB
+%%Title:   Clustered Data      
+%%CreationDate: 
+%%EndComments
+
+
+%
+%
+%
+
+/m {moveto} def /l {lineto} def /r {rlineto} def
+/s {stroke} def /n {newpath} def /c {closepath} def
+/rtext{ dup stringwidth pop -1 div 0 rmoveto show } def
+/ctext{ dup stringwidth pop -2 div 0 rmoveto show } def
+/ltext{show} def /gr{grestore} def /gs{gsave} def
+/tr{translate} def /setc{setrgbcolor} def
+/bullet{ 6 0 360 arc c fill } def
+
+
+%72 72 translate
+
+
+0.240000 0.240000 scale
+/Helvetica             findfont   31 scalefont setfont
+   38   501 translate
+   90 rotate
+    0     0 m
+(Frequency) ctext
+  -90 rotate
+  -38  -501 translate
+  690    16 m
+(Primary) ctext
+ 3.719 setlinewidth
+n
+  188   874 m
+  188   128 l
+ 1191   128 l
+s
+ 1.981 setlinewidth
+n
+  188   128 m
+  188   109 l
+s
+/Helvetica             findfont   31 scalefont setfont
+  188    79 m
+(0.0) ctext
+n
+  235   128 m
+  235   118 l
+s
+n
+  281   128 m
+  281   118 l
+s
+n
+  328   128 m
+  328   118 l
+s
+n
+  375   128 m
+  375   118 l
+s
+n
+  421   128 m
+  421   109 l
+s
+  421    79 m
+(5.0) ctext
+n
+  468   128 m
+  468   118 l
+s
+n
+  515   128 m
+  515   118 l
+s
+n
+  561   128 m
+  561   118 l
+s
+n
+  608   128 m
+  608   118 l
+s
+n
+  655   128 m
+  655   109 l
+s
+  655    79 m
+(10.0) ctext
+n
+  701   128 m
+  701   118 l
+s
+n
+  748   128 m
+  748   118 l
+s
+n
+  794   128 m
+  794   118 l
+s
+n
+  841   128 m
+  841   118 l
+s
+n
+  888   128 m
+  888   109 l
+s
+  888    79 m
+(15.0) ctext
+n
+  934   128 m
+  934   118 l
+s
+n
+  981   128 m
+  981   118 l
+s
+n
+ 1028   128 m
+ 1028   118 l
+s
+n
+ 1074   128 m
+ 1074   118 l
+s
+n
+ 1121   128 m
+ 1121   109 l
+s
+ 1121    79 m
+(20.0) ctext
+n
+ 1168   128 m
+ 1168   118 l
+s
+n
+  188   128 m
+  162   128 l
+s
+  157   128 m
+(0.000) rtext
+n
+  188   162 m
+  174   162 l
+s
+n
+  188   196 m
+  174   196 l
+s
+n
+  188   229 m
+  174   229 l
+s
+n
+  188   263 m
+  174   263 l
+s
+n
+  188   297 m
+  162   297 l
+s
+  157   297 m
+(0.050) rtext
+n
+  188   331 m
+  174   331 l
+s
+n
+  188   365 m
+  174   365 l
+s
+n
+  188   398 m
+  174   398 l
+s
+n
+  188   432 m
+  174   432 l
+s
+n
+  188   466 m
+  162   466 l
+s
+  157   466 m
+(0.100) rtext
+n
+  188   500 m
+  174   500 l
+s
+n
+  188   534 m
+  174   534 l
+s
+n
+  188   567 m
+  174   567 l
+s
+n
+  188   601 m
+  174   601 l
+s
+n
+  188   635 m
+  162   635 l
+s
+  157   635 m
+(0.150) rtext
+n
+  188   669 m
+  174   669 l
+s
+n
+  188   702 m
+  174   702 l
+s
+n
+  188   736 m
+  174   736 l
+s
+n
+  188   770 m
+  174   770 l
+s
+n
+  188   804 m
+  162   804 l
+s
+  157   804 m
+(0.200) rtext
+n
+  188   838 m
+  174   838 l
+s
+n
+  188   871 m
+  174   871 l
+s
+ 1.250 setlinewidth
+n
+  165   128 m
+  165   128 l
+  188   128 l
+  188   128 l
+  165   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  188   128 m
+  188   852 l
+  211   852 l
+  211   128 l
+  188   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  211   128 m
+  211   538 l
+  235   538 l
+  235   128 l
+  211   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  235   128 m
+  235   418 l
+  258   418 l
+  258   128 l
+  235   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  258   128 m
+  258   345 l
+  281   345 l
+  281   128 l
+  258   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  281   128 m
+  281   321 l
+  305   321 l
+  305   128 l
+  281   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  305   128 m
+  305   394 l
+  328   394 l
+  328   128 l
+  305   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  328   128 m
+  328   225 l
+  351   225 l
+  351   128 l
+  328   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  351   128 m
+  351   273 l
+  375   273 l
+  375   128 l
+  351   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  375   128 m
+  375   152 l
+  398   152 l
+  398   128 l
+  375   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  398   128 m
+  398   200 l
+  421   200 l
+  421   128 l
+  398   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  421   128 m
+  421   249 l
+  445   249 l
+  445   128 l
+  421   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  445   128 m
+  445   176 l
+  468   176 l
+  468   128 l
+  445   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  468   128 m
+  468   200 l
+  491   200 l
+  491   128 l
+  468   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  491   128 m
+  491   128 l
+  515   128 l
+  515   128 l
+  491   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  515   128 m
+  515   128 l
+  538   128 l
+  538   128 l
+  515   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  538   128 m
+  538   249 l
+  561   249 l
+  561   128 l
+  538   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  561   128 m
+  561   200 l
+  585   200 l
+  585   128 l
+  561   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  585   128 m
+  585   176 l
+  608   176 l
+  608   128 l
+  585   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  608   128 m
+  608   249 l
+  631   249 l
+  631   128 l
+  608   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  631   128 m
+  631   128 l
+  655   128 l
+  655   128 l
+  631   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  655   128 m
+  655   176 l
+  678   176 l
+  678   128 l
+  655   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  678   128 m
+  678   128 l
+  701   128 l
+  701   128 l
+  678   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  701   128 m
+  701   152 l
+  724   152 l
+  724   128 l
+  701   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  724   128 m
+  724   128 l
+  748   128 l
+  748   128 l
+  724   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  748   128 m
+  748   128 l
+  771   128 l
+  771   128 l
+  748   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  771   128 m
+  771   152 l
+  794   152 l
+  794   128 l
+  771   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  794   128 m
+  794   128 l
+  818   128 l
+  818   128 l
+  794   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  818   128 m
+  818   128 l
+  841   128 l
+  841   128 l
+  818   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  841   128 m
+  841   128 l
+  864   128 l
+  864   128 l
+  841   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  864   128 m
+  864   128 l
+  888   128 l
+  888   128 l
+  864   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  888   128 m
+  888   128 l
+  911   128 l
+  911   128 l
+  888   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  911   128 m
+  911   176 l
+  934   176 l
+  934   128 l
+  911   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  934   128 m
+  934   128 l
+  958   128 l
+  958   128 l
+  934   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  958   128 m
+  958   128 l
+  981   128 l
+  981   128 l
+  958   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+  981   128 m
+  981   152 l
+ 1004   152 l
+ 1004   128 l
+  981   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1004   128 m
+ 1004   128 l
+ 1028   128 l
+ 1028   128 l
+ 1004   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1028   128 m
+ 1028   128 l
+ 1051   128 l
+ 1051   128 l
+ 1028   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1051   128 m
+ 1051   176 l
+ 1074   176 l
+ 1074   128 l
+ 1051   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1074   128 m
+ 1074   152 l
+ 1098   152 l
+ 1098   128 l
+ 1074   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1098   128 m
+ 1098   128 l
+ 1121   128 l
+ 1121   128 l
+ 1098   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+ 1.250 setlinewidth
+n
+ 1121   128 m
+ 1121   225 l
+ 1144   225 l
+ 1144   128 l
+ 1121   128 l
+c gsave 
+0.90 setgray
+fill
+grestore s
+0.00 setgray
+/Helvetica-BoldOblique findfont   33 scalefont setfont
+  188   881 m
+(Clustered Data) ltext
+
+gsave   225.0   -30.0 translate
+
+/Helvetica             findfont   29 scalefont setfont
+  930   881 m
+(Number of Data) rtext
+  950   881 m
+(140) ltext
+  930   837 m
+(mean) rtext
+  950   837 m
+(4.35) ltext
+  930   804 m
+(std. dev.) rtext
+  950   804 m
+(6.70) ltext
+  930   771 m
+(coef. of var) rtext
+  950   771 m
+(1.54) ltext
+  930   726 m
+(maximum) rtext
+  950   726 m
+(58.32) ltext
+  930   693 m
+(upper quartile) rtext
+  950   693 m
+(5.35) ltext
+  930   661 m
+(median) rtext
+  950   661 m
+(2.19) ltext
+  930   628 m
+(lower quartile) rtext
+  950   628 m
+(0.69) ltext
+  930   595 m
+(minimum) rtext
+  950   595 m
+(0.06) ltext
+
+grestore
+
+%END OF POSTSCRIPT FILE
+4.166667 4.166667 scale
+
+%%EOF
+showpage
