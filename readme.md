@@ -1,18 +1,3 @@
-Questions  
-1. do we need prepare different materials to distingguish op/pc???  
-   update: use same materials for op and pc period.
-2. coarse model only has one resurface_file, but there're two resurface polygons files  
-   fix: use two resurface files in the fine scale model, need check with MLR  
-4. same side aquifer boundary for pre-hanford and oppc period?  
-   update: use the same aquifer boundaries for pre-hanford and oppc period.
-5. There should be scripts/data to automaticlly generate the sources, ask MLR  
-   question: didn't find it in project folder
-6. the base model of coarse scale simulation doesn't have tanks even for oppc period  
-   update: I put intera's tanks in 
-7. In coarse scale models setup, the base model has different resolution as the facies model 
-8. need attension:how MLR choose the model origin? why it's slightly different from xpiv and ypiv  
-
-
 **eSTOMP constant**  
 
 > gravity: 9.81  
