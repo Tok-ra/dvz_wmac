@@ -70,10 +70,11 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files  
 
 > Initial thoughts was to use Jason's SISIM.exe files  
-> while it failed there's is a fixed array limit for nx, ny, nz in sisim.inc  
+> while it failed since there's is a fixed array limit for nx, ny, nz in sisim.inc  
 > We don't have the orginal source code to recomplile the sisim.exe  
 > So I took the lastest GSLIB from www.gslib.com and compile new sisim (linux version)  
-> The input files were slightly different and modifiled.  
+> The lastest GSLIB produce the same results as the old one, the major difference is the lastest Gslib use allocatable array  
+> The format of the input files were slightly different and modifiled.  
 
 sisim dimention
 
@@ -119,7 +120,7 @@ The new workflow is
 
 *This has been confirmed by MLR*  
 
-The final coordinates should be used along with the estomp grids is  
+The final coordinates used is  
 
 > watercontent/ups/grid.gslib  
 > Cartesian,  
