@@ -29,8 +29,8 @@ Four groups of simulations are conducted
 
 > **upr_ss** model spin-up period (from 0~1944) for both scenario  
 > **upr_oppc** operational-post-closure period for **tank leak scenario**  
-> **op** operational period for **Tank residual scenario**
-> **pc** post-closure period for **Tank residual scenario**
+> **op** operational period for **Tank residual scenario (not included)**
+> **pc** post-closure period for **Tank residual scenario (not included)**
 
 
 ## Summary of case setup
