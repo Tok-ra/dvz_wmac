@@ -117,7 +117,7 @@ The number of indicator classes should be n+1
 > This is a potential bug after MLR revised the original scripts for 0 material
 
 #### 1.3 Intera's binned models ####
-Two kinds of 
+Two kinds of fLyMd-mAkEr
 
 
 
