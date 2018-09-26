@@ -17,28 +17,34 @@ nx = 89
 ny = 93
 nz = 330
 
-ehm_zon = "/people/song884/wmac/fy18/fine_model_setup/ehm/wma_c_pre_hanford_ehm_89x93x330.zon"
-# bin_zon = "/people/song884/wmac/fy18/fine_model_setup/bin/new_grid_heterogeneous_vz_ss.zon"
+file1 = "/people/song884/wmac/fy18/InteraFiles/new_grid_heterogeneous_89x93x330.zon"
+file2_1 = "/people/song884/wmac/fy18/for_vicky/Fine_grid_with_polmann/ss/new_grid_heterogeneous_vz_ss.zon"
+file2_2 = "/people/song884/wmac/fy18/for_vicky/Fine_grid_with_polmann/C-105-leak/new_grid_heterogeneous_vz.zon"
 
 
-# ehm_zon = "/people/song884/wmac/fy18/InteraFiles/new_grid_ehm_89x93x330_original.zon"
-ehm_zon = "/people/song884/wmac/fy18/InteraFiles/new_grid_heterogeneous_89x93x330.zon"
+zon1 = np.genfromtxt(file1).flatten(order="C").astype(int)
+zon2_1 = np.genfromtxt(file2_1).flatten(order="C").astype(int)
+zon2_2 = np.genfromtxt(file2_2).flatten(order="C").astype(int)
+
+print(pd.Series(zon1).value_counts(sort=False))
+print(pd.Series(zon2_1).value_counts(sort=False))
+print(pd.Series(zon2_2).value_counts(sort=False))
+
+
 # ehm_zon = "/people/song884/wmac/fy18/InteraFiles/new_grid_heterogeneous_vz.zon"
-
+# bin_zon = "/people/song884/wmac/fy18/fine_model_setup/bin/new_grid_heterogeneous_vz_ss.zon"
+# ehm_zon = "/people/song884/wmac/fy18/InteraFiles/new_grid_ehm_89x93x330_original.zon"
 #ehm_zon = "/people/song884/wmac/fy18/for_vicky/Fine_grid_with_polmann/ss/new_grid_heterogeneous_vz_ss.zon"
-bin_zon = "/people/song884/wmac/fy18/for_vicky/Fine_grid_with_polmann/C-105-leak/new_grid_heterogeneous_vz.zon"
+# ehm_zon = "/people/song884/wmac/fy18/InteraFiles/new_grid_heterogeneous_89x93x330.zon"
+# bin_zon = "/people/song884/wmac/fy18/for_vicky/Fine_grid_with_polmann/C-105-leak/new_grid_heterogeneous_vz.zon"
 
-ehm = np.genfromtxt(ehm_zon).flatten(order="C").astype(int)
-ehm_array = ehm.reshape((nx, ny, nz), order="F")
-ehm_0 = np.asarray(np.where(ehm_array == 0))
+# ehm = np.genfromtxt(ehm_zon).flatten(order="C").astype(int)
+# ehm_array = ehm.reshape((nx, ny, nz), order="F")
+# ehm_0 = np.asarray(np.where(ehm_array == 0))
 
-bin = np.genfromtxt(bin_zon).flatten(order="C").astype(int)
-bin_array = bin.reshape((nx, ny, nz), order="F")
-bin_0 = np.asarray(np.where(bin_array == 0))
-
-
-print(pd.Series(bin).value_counts(sort=False))
-print(pd.Series(ehm).value_counts(sort=False))
+# bin = np.genfromtxt(bin_zon).flatten(order="C").astype(int)
+# bin_array = bin.reshape((nx, ny, nz), order="F")
+# bin_0 = np.asarray(np.where(bin_array == 0))
 
 
 # # find tank locations

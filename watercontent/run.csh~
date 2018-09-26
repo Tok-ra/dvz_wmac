@@ -1,8 +1,0 @@
-# initial upscaling and writing of cell face coordinates 
-module load tecplot
-echo "grid.stompmod" >> temp
-echo "grid.gslib" >> temp
-echo "y" >> temp
-echo "filelist" >> temp
-./ups_theta.x < temp
-rm temp

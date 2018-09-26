@@ -1,5 +1,5 @@
 # SUMMARY:      map zonation to new material
-# USAGE:        this is only a temperoary tool to read grids from two omdels
+# USAGE:        this is only a temperoary tool to read grids from two models
 # ORG:          Pacific Northwest National Laboratory
 # AUTHOR:       Xuehang Song
 # E-MAIL:       xuehang.song@pnnl.gov

@@ -47,7 +47,7 @@
       integer, parameter :: sp=selected_real_kind(6)
 
 !gslib grid: grid.gslib
-      parameter( nnxf=148, nnyf=160, nnzf=116 )           ! input grid 
+      parameter( nnxf=148, nnyf=160, nnzf=340 )           ! input grid 
 !stomp grid: grid.stomp, grid.stompmod
       parameter( nnxc=89, nnyc=93, nnzc=330 )           ! output grid full domain
 !refined temporary grid: grid.downscale
@@ -316,20 +316,42 @@
 !
 !        write(*,*)' flipping z for read since data are top to bottom'
 !        read(2,*) (vari(n,i),n=nntf,1,-1)
-!
-        do j = 1,11
-          read(2,'(a)') header
+
+        !!----------------------------
+        ! modifiied by Xuehang 09/26/2018
+        ! do j = 1,11
+        !    read(2,'(a)') header
+        ! end do
+        ! if( tens.eq.'i' .or. tens.eq.'I') then
+        !    do n = 1,nntf
+        !       !            read(2,*) tjnk, tjnk, tjnk, itmp(n)
+        !       read(2,*) itmp(n)
+        !    end do
+        ! else
+        !    do n = 1,nntf
+        !       read(2,*) tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, vari(n)
+        !    end do
+        ! endif
+        do j = 1,3
+           read(2,'(a)') header
         end do
+        
         if( tens.eq.'i' .or. tens.eq.'I') then
-          do n = 1,nntf
-!            read(2,*) tjnk, tjnk, tjnk, itmp(n)
-            read(2,*) itmp(n)
-          end do
+           do n = 1,nntf
+              !            read(2,*) tjnk, tjnk, tjnk, itmp(n)
+              read(2,*) itmp(n)
+           end do
         else
-          do n = 1,nntf
-            read(2,*) tmp1, tmp2, tmp3, tmp4, tmp5, tmp6, tmp7, vari(n)
-          end do
+           do n = 1,nntf
+              read(2,*) vari(n)
+           end do
         endif
+        !!----------------------------
+        ! modifiied by Xuehang 09/26/2018
+
+        
+
+       
         write(*,*)' finished reading file...'
 !        read(2,*) (vari(n,i),n=1,nntf)
         do k = 1,nntf

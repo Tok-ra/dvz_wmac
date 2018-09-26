@@ -115,9 +115,23 @@ One import tips to use ups_facies_cellfaces.f90
 The number of indicator classes should be n+1  
 
 > This is a potential bug after MLR revised the original scripts for 0 material
+#### 1.3 MLR's water content model ####
 
-#### 1.3 Intera's binned models ####
-Two kinds of 
+
+
+
+#### 1.4 Intera's binned models ####
+Intera sent two set of soil moisture model
+
+> (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "n**ew_grid_heterogenous_89*93*330.zon**"  
+> (2) forward by Vikcy 06/20/2018, email title **"eSTOMP installation testing on Tellus"**,file name "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon**
+
+(1) and (2) was compared using script bin/check_zonation.py, the results clearly showd the units "Aquifer" (1) was set to be inactive (0) in set (2), and the zonation file in **"new_grid_heterogenous_89*93*330.zon"** is for oppc period.  
+
+In the simulation, use **new_grid_heterogenous_89*93*330.zon** in (2) is used for oppc period  
+the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1)  was extracted and assigned to **new_grid_heterogenous_89*93*330.zon** in (2) to create a new zonation file named as **new_grid_heterogenous_89*93*330.zon**, this file is used for ss period.
+
+
 
 
 
@@ -296,7 +310,7 @@ Workflow is controlled by a csh file
 
 #### Scale water content data ####
 
-**ups/ups_theta.x** to convert gslib to pflotran zonation files for water content data  
+**ups/ups_theta.x** to convert gslib to estomp zonation files for water content data  
 
 #### Convert water content data to hydraulic conductivity ####
 
@@ -310,9 +324,7 @@ Workflow is controlled by a csh file
 Store some Tecplot files to generate geologic surface  
 
 #### Theta ####
-
 Store results from GSLIB  
-
 
 =========================================================================================================================
 ## This is the index of updated model.
