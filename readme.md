@@ -58,11 +58,11 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 
 Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files after modifing discretization  
 
-> Initial thoughts were to use Jason's SISIM.exe files  
+> Initial thoughts were to use Jason's SISIM.exe(Fortran program)  
 > while it failed since there's is a fixed array limit for nx, ny, nz in the GSLIB codes sisim.inc  
 > We don't have the orginal source code to recomplile the sisim.exe  
 > So I took the lastest GSLIB from www.gslib.com and compile new sisim (linux version)  
-> The lastest GSLIB produce the same results as the old one, the major difference is the lastest Gslib use allocatable array  
+> The lastest GSLIB produces the same results as the old one, the major difference is the lastest Gslib use allocatable array  
 > The format of the input files were slightly different and modified.  
 
 Dimention for the new SISIM simulations  
@@ -131,7 +131,7 @@ This has been confirmed by MLR, it doesn't impact current results as we use rota
 
 #### 1.3 MLR's water content model 
 
-Regenerate the facies realizations using Ju-Yi's files after modify discretzation  
+Regenerate the theta realizations using Ju-Yi's files after modifing discretzation  
 
 > Initial thoughts were to use Intera's water content data to re-select pseduo-wells and conduct SGSIM simultion.  
 > However, we still use Ju-Yi's data to redo the SGSIM for following three reasons:
