@@ -242,7 +242,7 @@ def main():
                             print>>fou11, ''.join(map(str, l2p))
                             l2p = [float(H3_gravelly_sand_krel[2])]
                             print>>fou12, ''.join(map(str, l2p))
-                        elif zid2 == 3:
+                        elif zid2 == 4:
                             l2p = [float(H2_fine_sand_perm[0])]
                             print>>fou2, ''.join(map(str, l2p))
                             l2p = [float(H2_fine_sand_perm[1])]
