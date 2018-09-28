@@ -4,19 +4,19 @@
 > water density: 998.32  
 > air pressure: 101325  
 
-# DVZ WMA-C FY2018
+# DVZ WMA-C FY2018, summary
 
 ## (A). Target 
 1) Remap material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
-2) Map the boundary setup in PNNL-24740 to Intera's binned water content model.
+2) Map the boundary setup in PNNL-24740 to Intera's binned water content model.  
 3) Rerun the simulation and compare results from 6 models (EHM, two facies based, water content based model,intera's binned model w/o polmann)  
 
 ## (B). Need to 
-1) Generate/compare new source regions/boundaries for the refined grid 
-2) Replace the zonation files in the EHM model with intera one
-3) Regenerate zonation files for facies case
-4) Regnerate zonation files for water content model. 
-5) Check and modify intera's zonation file (if necessary)
+1) Generate/compare new source regions/boundaries for the refined grid   
+2) Replace the zonation files in the EHM model with intera one  
+3) Regenerate zonation files for facies case  
+4) Regnerate zonation files for water content model   
+5) Check and modify intera's zonation file (if necessary)  
 
 ## (C). Data folder
 Simulations are stored in **/pic/projects/dvz/xhs_simus/wmac/fy18/ascii/**  
@@ -57,7 +57,7 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 
 ##### 1.2.1 sisim realization #####
 
-Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files  
+Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files after modify discretzation  
 
 > Initial thoughts were to use Jason's SISIM.exe files  
 > while it failed since there's is a fixed array limit for nx, ny, nz in the GSLIB codes sisim.inc  
@@ -132,25 +132,42 @@ This has been confirmed by MLR, it doesn't impact current results as we use rota
 
 #### 1.3 MLR's water content model 
 
+Regenerate the facies realizations using Ju-Yi's files after modify discretzation  
 
+> Initial thoughts were to use Intera's water content data to re-select pseduo-wells and conduct SGSIM simultion.  
+> However, we still use Ju-Yi's data to redo the SGSIM for following three reasons:
+> 1. Intera's data is for WMAC only, Ju-Yi's data include some AX wells which is valueable for generating variogram in long distance.  
+> 2. Intera use same 124 boreholes for WMAC as Ju-YI.
+> 3. The model domain has a complex history of rotation and shifting, I didn't find the explicit correct parameters for these transformes  
+>    Thus it is possbile to create some addtional errors if we re-select the raw data from scratch.
 
+Dimention for the new SGSIM simulations  
+> 148     0.0     5  
+> 160     0.0     5  
+> 364    110.0    0.3  
+
+Ju-Yi and MLR's SGSIM and upscaling approach were examined and current workflow is  
+1. use (Fortran program) **sgsim** to generate water content fields  
+2. scale and transform water content fields to hydrualic properties  
+   The workflow is controlled by (Shell script)**watercontent_scale.sh**  
+   Call (Fortran program) **ups_theta.x** to scale SGSIM simulations to eSTOMP grid  
+   Call (Python script) **wmac_parameter_step1.py** to scale water content fields to parameter fields  
+   Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input datafile  
 
 #### 1.4 Intera's binned models ####
-Intera sent two set of soil moisture model
 
-> (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "n**ew_grid_heterogenous_89*93*330.zon**"  
+Intera sent us two sets of zonation file for the  soil moisture model
+
+> (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "**new_grid_heterogenous_89*93*330.zon**"  
 > (2) forward by Vikcy 06/20/2018, email title **"eSTOMP installation testing on Tellus"**,file name "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon**
 
-(1) and (2) was compared using script bin/check_zonation.py, the results clearly showd the units "Aquifer" (1) was set to be inactive (0) in set (2), and the zonation file in **"new_grid_heterogenous_89*93*330.zon"** is for oppc period.  
+(1) and (2) was compared using (Python script) **check_zonation.py**, the results clearly showd the units "Aquifer" in set (1) was set to be inactive (0) in set (2), and set (1) is for oppc period  
 
-In the simulation, use **new_grid_heterogenous_89*93*330.zon** in (2) is used for oppc period  
-the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1)  was extracted and assigned to **new_grid_heterogenous_89*93*330.zon** in (2) to create a new zonation file named as **new_grid_heterogenous_89*93*330.zon**, this file is used for ss period.
-
-
+In the simulation, use **new_grid_heterogenous_89*93*330.zon** in set (1) for oppc period  
+the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1) was extracted and assigned to **new_grid_heterogenous_89*93*330.zon** in (2) tocreate a new zonation file named as **new_grid_heterogenous_89*93*330.zon**, this file is used for ss period. (Python script) create_ss_zonation.py  
 
 
-
-### 2. initial condtion   
+### 2. initial condtion setup   
 
 The revision is made based the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
@@ -164,7 +181,6 @@ b. the z index changed
 > coarse scale model z = [1,89]  
 > fine scale model z = [1,330]  
 > requires to change anything related to Z index  
-
 
 ##### 2.1 Coarse scale model 
 
@@ -240,8 +256,7 @@ For the unsaturated part
 #### 3.1 uppper recharge boundary  ####
 
 ##### 3.1.1 remap the recharge area #####
-**upper_lst.py** is written with **wmac_bc.py** as reference.  
-**upper_lst.py** use polygon functions from shapele package  
+(Python script) **upper_lst.py** is re-written with MLR's **wmac_bc.py** as reference.  
 
 ##### 3.1.2 pre_hanford period #####
 
@@ -271,31 +286,34 @@ the pressure at the center of bottom cell (110m) along east boundary is
 
 > 101325+(122.235242-110.1515)*9793.52 = 219667.36895 pa  
 
-**side_lst.py** is used to generate the **west_aquifer.lst** and **east_aquifer.lst**
+(Python script) **side_lst.py** is used to generate the **west_aquifer.lst** and **east_aquifer.lst**
 
 ##### 3.2.2 oppc period #####
-the same as the prehanford period based on the coarse scale model setup  
+the same as the prehanford period (based on the coarse scale model setup)  
 
 #### 3.3 source term  ####
 ##### 3.3.1 pre_hanford period #####
-No source term for steady state simulation period (pre-hanford)
+No source term for steady state simulation period (pre-hanford)  
 ##### 3.3.2 oppc period #####
-Because the horizontal resolution doesn't change, so only change z-index to the top cell below tanks
+Because the horizontal resolution doesn't change, so only change z-index to the top cell below tanks  
 
 ### 4. output
 revise the aquifer surface flux coords to keep consistant with the finer grid  
-**Need double check the screen interval of 299-E27-14, 299-E17-15**
+**Need double check the screen interval of 299-E27-14, 299-E17-15**  
 
 ### 5. Other changes
-### the final tank shapes were taken from intera
-1) Change tank regions to curved domes (done by Mark)  
-   Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
-2) Make tank regions inactive   
-   Change material id of tanks from 8 to 0 and comment out corresponding sections in input files  
+### Thanks
+The final tank shapes were taken from intera  
+
+> Initial thoughts is 
+> 1) Change tank regions to curved domes (done by Mark)  
+>    Use insert_tanks2.py in. /facies: generate tank regions with curved domes.  
+> 2) Make tank regions inactive   
+>    Change material id of tanks from 8 to 0 and comment out corresponding sections in input files  
 
 =========================================================================  
 =========================================================================  
-## (F) Some note after checking the input files from Mark
+## (F) Some backup note after checking the input files from Mark
 ### InteraFiles
 Inputs from intera, including input deck, zonation file, source region  
 
