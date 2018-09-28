@@ -217,7 +217,7 @@ b. the z index changed
 > need to change anything related to Z index  
 
 
-##### 2.1 Coarse scale model #####
+##### 2.1 Coarse scale model
 
 IC is defined by using two condtions, saturated part and unsaturated part  
 
@@ -235,7 +235,7 @@ For the unsaturated part.
 > z[18] = 123.25m  
 > At z=123.1805m, the pressure is 73000-97.9352(123.1805-123.25)=73006.80650  
 
-##### 2.2 Setup of Fine scale model #####
+##### 2.2 Setup of Fine scale model
 
 > Aqueous Pressure,201204.21372,Pa,,,,,-9793.52,1/m,1,89,1,93,1,43,  
 > Aqueous Pressure,73006.80650,Pa,,,,,-97.9352,1/m,1,89,1,93,44,330,  
@@ -248,25 +248,25 @@ For the saturated part.
 For the unsaturated part  
 
 > z[44] = 123.1805m  
-///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////  
 
-### 3 boundary condtions ###
+### 3 boundary condtions 
    
-#### 3.1 uppper recharge boundary  ####
+#### 3.1 uppper recharge boundary
 
-##### 3.1.1 remap the recharge area #####
+##### 3.1.1 remap the recharge area
 (Python script) **upper_lst.py** is re-written with MLR's **wmac_bc.py** as reference.  
 
-##### 3.1.2 pre_hanford period #####
+##### 3.1.2 pre_hanford period
 
 3.5mm/yr for all polygons  
 remove tank areas from MLR's input, the original setup might be reducdant  
 
-##### 3.1.3 oppc period #####
+##### 3.1.3 oppc period 
 The recharge amount was adjusted based on the coarse scale model setup  
 
-#### 3.2 side boundary  ####
-##### 3.2.1 pre_hanford period #####
+#### 3.2 side boundary 
+##### 3.2.1 pre_hanford period 
 Map MLR and ZFZ's setup to the new grids  
 from MLR and ZFZ's input file:  
 
@@ -287,13 +287,13 @@ the pressure at the center of bottom cell (110m) along east boundary is
 
 (Python script) **side_lst.py** is used to generate the **west_aquifer.lst** and **east_aquifer.lst**
 
-##### 3.2.2 oppc period #####
+##### 3.2.2 oppc period 
 the same as the prehanford period (based on the coarse scale model setup)  
 
-#### 3.3 source term  ####
-##### 3.3.1 pre_hanford period #####
+#### 3.3 source term
+##### 3.3.1 pre_hanford period
 No source term for steady state simulation period (pre-hanford)  
-##### 3.3.2 oppc period #####
+##### 3.3.2 oppc period
 Because the horizontal resolution doesn't change, so only change z-index to the top cell below tanks  
 
 ### 4. output
@@ -312,7 +312,7 @@ The final tank shapes were taken from intera
 
 =========================================================================  
 =========================================================================  
-## (F) Some backup note after checking the input files from Mark
+## (F) Some backup notes after checking the input files from Mark
 ### InteraFiles
 Inputs from intera, including input deck, zonation file, source region  
 
@@ -357,15 +357,5 @@ Store some Tecplot files to generate geologic surface
 
 #### Theta 
 Store results from GSLIB  
-
-=========================================================================================================================  
-## This is the index of updated model.
-**upr/**                 upr model  
-**upr/base_ss**          model spin-up for base model, revised from upr_base_ss  
-**upr/base_oppc**        oppc simulation, revsied from upr_base_oppc  
-**upr/facies003_ss**     model spin-up for facies-based model (realization 003)  
-**upr/facies003_oppc**   oppc simulation for facies-based model (realization 003)  
-**upr/facies004_ss**     model spin-up for facies-based model (realization 004)  
-**upr/facies004_oppc**   oppc simulation for facies-based model (realization 004)  
 
 **In MLR's base model, there is no tanks in zonation file, might be a different setup?**
