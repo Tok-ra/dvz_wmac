@@ -155,7 +155,7 @@ Ju-Yi and MLR's SGSIM and upscaling approach were examined and current workflow 
 
 #### 1.4 Intera's binned models ####
 
-Intera sent us two sets of zonation file for the  soil moisture model
+Intera sent us two sets of zonation file for their soil moisture model (here named as binned model)
 
 > (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "**new_grid_heterogenous_89x93x330.zon**"  
 > (2) forward by Vikcy 06/20/2018, email title **"eSTOMP installation testing on Tellus"**,file name "**new_grid_heterogeneous_vz_ss.zon**" and "**new_grid_heterogeneous_vz.zon**".
