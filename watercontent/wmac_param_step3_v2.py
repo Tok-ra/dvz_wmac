@@ -1,5 +1,5 @@
 #!/share/apps/python/2.7.2/bin/python
-#import numpy as np
+import numpy as np
 #import matplotlib as mpl
 #import matplotlib.pyplot as plt
 import csv
@@ -133,26 +133,30 @@ def main():
         end_of_zonation_file_list = 1
         w1 = fin1.readline().split()
         if len(w1) > 0:
-            end_of_zonation_file_list = 0
-            #
-            # Read zone ids for all grid blocks
             infile = w1[0]
-            print 'infile= ', infile
-            #name_parts = infile.split('.')
-            fin2 = open(infile, 'r')
-            #outfile = name_parts[0] + '_plustanks_clip3.ups'
-            #fou2 = open(outfile,'w')
-            # print infile,' ',outfile
-            while(6):
-                end_of_zone_file = 1
-                w2 = fin2.readline().split()
-                if len(w2) > 0:
-                    end_of_zone_file = 0
-                    zid.append(int(w2[0]))
-                    n += 1
-                if end_of_zone_file == 1:
-                    break
-            fin2.close()
+            zid = np.genfromtxt(infile).flatten(order="C").astype(int)
+            #             end_of_zonation_file_list = 0
+            #             #
+            #             # Read zone ids for all grid blocks
+            #             infile = w1[0]
+            #             print 'infile= ', infile
+            #             #name_parts = infile.split('.')
+            #             fin2 = open(infile, 'r')
+            #             #outfile = name_parts[0] + '_plustanks_clip3.ups'
+            #             #fou2 = open(outfile,'w')
+            #             # print infile,' ',outfile
+            #             while(6):
+            #                 end_of_zone_file = 1
+            #                 w2 = fin2.readline().split()
+            #                 if len(w2) > 0:
+            #                     end_of_zone_file = 0
+            # #                    zid.append(int(w2[0]))
+            #                     zid = zid+[int(x) for x in w2]
+            #                     n += 1
+            #                     print(n)
+            #                 if end_of_zone_file == 1:
+            #                     break
+            #             fin2.close()
             #
             # need two sets of parameter fields, one pre-hanford (no tanks or backfill)
             fou2 = open('ksx.dat', 'w')

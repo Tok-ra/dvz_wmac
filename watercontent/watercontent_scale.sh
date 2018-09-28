@@ -34,4 +34,4 @@ cd $setup_dir
 module remove python*
 module load python/2.7.8
 # python2 $scripts_dir"wmac_param_step1.py"
-python $scripts_dir"wmac_param_step3.py"
+python $scripts_dir"wmac_param_step3_v2.py"
