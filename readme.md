@@ -6,24 +6,24 @@
 
 # DVZ WMA-C FY2018, summary
 
-## (A). Target 
+## (A) Target 
 1) Remap material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
 2) Map the boundary setup in PNNL-24740 to Intera's binned water content model.  
 3) Rerun the simulation and compare results from 6 models (EHM, two facies based, water content based model,intera's binned model w/o polmann)  
 
-## (B). Need to 
+## (B) Need to 
 1) Generate/compare new source regions/boundaries for the refined grid   
 2) Replace the zonation files in the EHM model with intera one  
 3) Regenerate zonation files for facies case  
 4) Regnerate zonation files for water content model   
 5) Check and modify intera's zonation file (if necessary)  
 
-## (C). Data folder
+## (C) Data folder
 Simulations are stored in **/pic/projects/dvz/xhs_simus/wmac/fy18/ascii/**  
 Files used for generating model inputs are stored in **/people/song884/wmac/fy18/fine_model_setup/**  
 Scripts for generating the model are stored in this Github repository  
 
-## (D). Model simulation scenario
+## (D) Model simulation scenario
 In this task, we simulated **Tank leak scenario**  
 Including two-stage simulation: pre-hanford (ss); operational-post-closure (oppc)  
 
@@ -31,12 +31,11 @@ Model boundary setup were revised based on the inputs of **simu_upr2** (previous
 > **upr_ss** model spin-up period (from 0~1944)  
 > **upr_oppc** operational-post-closure period for **tank leak scenario**  
 
-> There was another unused scenario **Tank residual scenario**  
-> Including three-stage simulation: pre-hanford (ss); operational (op), and post-closure (pc)  
-> Model boundary setup were revised based on the inputs of **simu_tank_residual2** (previous simulations conducted by MLR and ZFZ)  
-> > **ss** model spin-up period (from 0~1944) for  
-> > **op** operational period for **Tank residual scenario (not included)**
-> > **pc** post-closure period for **Tank residual scenario (not included)**
+There was another unused scenario **Tank residual scenario**  
+Including three-stage simulation: pre-hanford (ss); operational (op), and post-closure (pc)  
+> **ss** model spin-up period (from 0~1944) for  
+> **op** operational period for **Tank residual scenario (not included)**
+> **pc** post-closure period for **Tank residual scenario (not included)**
 
 ## (E) Summary of case setup
 
@@ -76,7 +75,7 @@ I found the original workflow for mapping the SISIM results to eSTOMP is redunda
 
 The orginal workflow is  
 
-> 1 The sisim realization is generated on a uniform grids for three new facies (runsisim.pl).  
+> 1 The sisim realization is generated on a uniform grids for three new facies (Python Script) **runsisim.pl**.  
 > 2 use **replace_v2.pl** to replace H1, H2 sand, H2 coarse sand with the three new facies in the uniform grids.  
 > 3  **ups_facies_cellfaces.x** to do the scaling from uniform grids to nonuniform grids  
 > 4  **insert_tanks2.py** to add tanks   
@@ -87,7 +86,7 @@ The new workflow is
 > 1 The sisim realization is generated on a uniform grids for three new facies (runsisim.pl).  
 > 2 Scaling  
     (Shell script) **facies_scale.sh** is used to control the scaling process:  
-	call (Python script) **extract_sisim_v2.py** to extract SISIM data
+	call (Python script) **extract_sisim_v2.py** to extract SISIM data  
 	Call (Fortran program) **ups_facies_cellfaces.x** to scale mutiple SISIM simulations  
 > 3 Mapping  
     (Shell script) **facies_mapping.sh** is used to control the mapping process:  
@@ -126,8 +125,8 @@ It should be
 This has been confirmed by MLR, it doesn't impact current results as we use rotated grid  
 
 **ups_facies_cellfaces.f90**
-> This is a potential bug after MLR revised the original scripts for 0 material
-> A temporary solution is to increase the number of indicator classes by 1, n->n+1
+> This is a potential bug after MLR revised the original scripts for 0 material  
+> A temporary solution is to increase the number of indicator classes by 1, n->n+1  
 
 
 #### 1.3 MLR's water content model 
@@ -136,9 +135,9 @@ Regenerate the facies realizations using Ju-Yi's files after modify discretzatio
 
 > Initial thoughts were to use Intera's water content data to re-select pseduo-wells and conduct SGSIM simultion.  
 > However, we still use Ju-Yi's data to redo the SGSIM for following three reasons:
-> 1. Intera's data is for WMAC only, Ju-Yi's data include some AX wells which is valueable for generating variogram in long distance.  
+> 1. Intera's data is for WMAC only, Ju-Yi's data includes some AX wells which is valueable for generating variogram in long distance.  
 > 2. Intera use same 124 boreholes for WMAC as Ju-YI.
-> 3. The model domain has a complex history of rotation and shifting, I didn't find the explicit correct parameters for these transformes  
+> 3. The model domain has a complex history of rotation and shifting, I didn't find the explicit correct parameters for these transformes.  
 >    Thus it is possbile to create some addtional errors if we re-select the raw data from scratch.
 
 Dimention for the new SGSIM simulations  
@@ -158,13 +157,13 @@ Ju-Yi and MLR's SGSIM and upscaling approach were examined and current workflow 
 
 Intera sent us two sets of zonation file for the  soil moisture model
 
-> (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "**new_grid_heterogenous_89*93*330.zon**"  
-> (2) forward by Vikcy 06/20/2018, email title **"eSTOMP installation testing on Tellus"**,file name "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon**
+> (1) forwarded by Vicky 06/27/2018, email title "Intera zonation file", file name "**new_grid_heterogenous_89x93x330.zon**"  
+> (2) forward by Vikcy 06/20/2018, email title **"eSTOMP installation testing on Tellus"**,file name "**new_grid_heterogeneous_vz_ss.zon**" and "**new_grid_heterogeneous_vz.zon**".
 
-(1) and (2) was compared using (Python script) **check_zonation.py**, the results clearly showd the units "Aquifer" in set (1) was set to be inactive (0) in set (2), and set (1) is for oppc period  
+(1) and (2) was compared using (Python script) **check_zonation.py**, the results clearly showed the units "Aquifer" in set (1) was set to be inactive (0) in set (2), and set (1) is for oppc period  
 
 In the simulation, use **new_grid_heterogenous_89*93*330.zon** in set (1) for oppc period  
-the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1) was extracted and assigned to **new_grid_heterogenous_89*93*330.zon** in (2) tocreate a new zonation file named as **new_grid_heterogenous_89*93*330.zon**, this file is used for ss period. (Python script) create_ss_zonation.py  
+the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1) was extracted and assigned to **new_grid_heterogenous_89x93x330.zon** in (2) tocreate a new zonation file named as **new_grid_heterogenous_89x93x330.zon**, this file is used for ss period. (Python script) create_ss_zonation.py  
 
 
 ### 2. initial condtion setup   
@@ -302,7 +301,7 @@ revise the aquifer surface flux coords to keep consistant with the finer grid
 **Need double check the screen interval of 299-E27-14, 299-E17-15**  
 
 ### 5. Other changes
-### Thanks
+### Tanks
 The final tank shapes were taken from intera  
 
 > Initial thoughts is 
