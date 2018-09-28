@@ -7,15 +7,15 @@
 # DVZ WMA-C FY2018, summary
 
 ## (A) Target 
-1) Remap material types and parameters used in PNNL-24740 to a finer model, this finer model is developed by Intera with more details in shape of geologic units.  
+1) Remap material types and parameters used in PNNL-24740 to a finer model domain, this finer model domain is developed by Intera with more details in shape of geologic units.  
 2) Map the boundary setup in PNNL-24740 to Intera's binned water content model.  
 3) Rerun the simulation and compare results from 6 models (EHM, two facies based, water content based model,intera's binned model w/o polmann)  
 
 ## (B) Need to 
 1) Generate/compare new source regions/boundaries for the refined grid   
-2) Replace the zonation files in the EHM model with intera one  
+2) Replace the zonation files in the EHM model with the Intera one  
 3) Regenerate zonation files for facies case  
-4) Regnerate zonation files for water content model   
+4) Regenerate zonation files for water content model   
 5) Check and modify intera's zonation file (if necessary)  
 
 ## (C) Data folder
@@ -25,14 +25,14 @@ Scripts for generating the model are stored in this Github repository
 
 ## (D) Model simulation scenario
 In this task, we simulated **Tank leak scenario**  
-Including two-stage simulation: pre-hanford (ss); operational-post-closure (oppc)  
+Including two-stage simulations: pre-hanford (ss); operational-post-closure (oppc)  
 
 Model boundary setup were revised based on the inputs of **simu_upr2** (previous simulations conducted by MLR and ZFZ)  
 > **upr_ss** model spin-up period (from 0~1944)  
 > **upr_oppc** operational-post-closure period for **tank leak scenario**  
 
 There was another unused scenario **Tank residual scenario**  
-Including three-stage simulation: pre-hanford (ss); operational (op), and post-closure (pc)  
+Including three-stage simulations: pre-hanford (ss); operational (op), and post-closure (pc)  
 > **ss** model spin-up period (from 0~1944) for  
 > **op** operational period for **Tank residual scenario (not included)**
 > **pc** post-closure period for **Tank residual scenario (not included)**
@@ -56,7 +56,7 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
 
 ##### 1.2.1 sisim realization #####
 
-Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files after modify discretzation  
+Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files after modifing discretization  
 
 > Initial thoughts were to use Jason's SISIM.exe files  
 > while it failed since there's is a fixed array limit for nx, ny, nz in the GSLIB codes sisim.inc  
@@ -168,7 +168,7 @@ the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_het
 
 ### 2. initial condtion setup   
 
-The revision is made based the following differences between the fine and coarse model  
+The revision is made based on the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
 
 > fine scale model z = [110,209.99]  
@@ -203,7 +203,7 @@ The following part is deprecated, as it's reivsed based on coarse scale **EHM** 
 Now we follows setups from coarse scale **facies** model  
 
 //////////////////////////////////////////////////////////////////////////////////////////
-The revision is made based the following differences between the fine and coarse model  
+The revision is made based on the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
 
 > fine scale model z = [110,209.99]  
