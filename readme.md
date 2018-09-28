@@ -163,7 +163,7 @@ Intera sent us two sets of zonation file for their soil moisture model (here nam
 (1) and (2) was compared using (Python script) **check_zonation.py**, the results clearly showed the units "Aquifer" in set (1) was set to be inactive (0) in set (2), and set (1) is for oppc period  
 
 In the simulation, use **new_grid_heterogenous_89*93*330.zon** in set (1) for oppc period  
-the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1) was extracted and assigned to **new_grid_heterogenous_89x93x330.zon** in (2) tocreate a new zonation file named as **new_grid_heterogenous_89x93x330.zon**, this file is used for ss period. (Python script) create_ss_zonation.py  
+the difference between "**new_grid_heterogeneous_vz_ss.zon**" and **new_grid_heterogeneous_vz.zon** in (1) was extracted and assigned to **new_grid_heterogenous_89x93x330.zon** in (2) to create a new zonation file named as **new_grid_heterogenous_89x93x330.zon**, this file is used for ss period. (Python script) create_ss_zonation.py  
 
 
 ### 2. initial condtion setup   
@@ -199,10 +199,10 @@ IC was defined by
 > Aqueous Pressure, 207569.98,Pa,,,,,-9793.5192,1/m,1,89,1,93,1,330,  
 
 
-The following part is deprecated, as it's reivsed based on coarse scale **EHM** model  
-Now we follows setups from coarse scale **facies** model  
+The following part is deprecated, as it's revised based on coarse scale **EHM** model  
+Now we follow setups of coarse scale **facies** model  
 
-//////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////  
 The revision is made based on the following differences between the fine and coarse model  
 a. the fine scale model is thiner than coarse model  
 
