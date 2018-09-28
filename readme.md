@@ -214,7 +214,7 @@ b. the z index changed
 
 > fine scale model z = [1,95]  
 > scale model z = [1,330]  
-> requires to change anything related to Z index  
+> need to change anything related to Z index  
 
 
 ##### 2.1 Coarse scale model #####
