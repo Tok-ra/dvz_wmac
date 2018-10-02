@@ -242,29 +242,29 @@ def main():
                             print>>fou11, ''.join(map(str, l2p))
                             l2p = [float(H3_gravelly_sand_krel[2])]
                             print>>fou12, ''.join(map(str, l2p))
-                        elif zid2 == 4:
-                            l2p = [float(H2_fine_sand_perm[0])]
-                            print>>fou2, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_perm[1])]
-                            print>>fou3, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_perm[2])]
-                            print>>fou4, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_mech[1])]
-                            print>>fou5, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_sat[2])]
-                            print>>fou6, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_sat[0])]
-                            print>>fou7, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_sat[1])]
-                            print>>fou8, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_mech[0])]
-                            print>>fou9, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_krel[0])]
-                            print>>fou10, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_krel[1])]
-                            print>>fou11, ''.join(map(str, l2p))
-                            l2p = [float(H2_fine_sand_krel[2])]
-                            print>>fou12, ''.join(map(str, l2p))
+                        # elif zid2 == 4:
+                        #     l2p = [float(H2_fine_sand_perm[0])]
+                        #     print>>fou2, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_perm[1])]
+                        #     print>>fou3, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_perm[2])]
+                        #     print>>fou4, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_mech[1])]
+                        #     print>>fou5, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_sat[2])]
+                        #     print>>fou6, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_sat[0])]
+                        #     print>>fou7, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_sat[1])]
+                        #     print>>fou8, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_mech[0])]
+                        #     print>>fou9, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_krel[0])]
+                        #     print>>fou10, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_krel[1])]
+                        #     print>>fou11, ''.join(map(str, l2p))
+                        #     l2p = [float(H2_fine_sand_krel[2])]
+                        #     print>>fou12, ''.join(map(str, l2p))
                         elif zid2 == 8:
                             l2p = [float(backfill_perm[0])]
                             print>>fou2, ''.join(map(str, l2p))

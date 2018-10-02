@@ -32,7 +32,10 @@ def main():
     H2_coarse_sand_perm = [4.15e-3, 4.15e-3, 4.15e-3]
     H2_sand_perm = [4.15e-3, 4.15e-3, 4.15e-3]
     H1_gravelly_sand_perm = [7.7e-4, 7.7e-4, 7.7e-4]
-    backfill_perm = [1.56e-3, 1.56e-3, 1.56e-3]
+    backfill_perm = [0.56e-3, 0.56e-3, 0.56e-3]
+    # backfill_perm = [1.56e-3, 1.56e-3, 1.56e-3]
+    # tank_perm1 = [1.56e-3, 1.56e-3, 1.56e-3]
+    # tank_perm2 = [1.e-16, 1.e-16, 1.e-16]
 
     # vga[1/cm],vgn,Sr
     aquifer_sat = [0.036, 1.491, 0.064]
@@ -41,7 +44,9 @@ def main():
     H2_coarse_sand_sat = [0.063, 2.047, 0.124]
     H2_sand_sat = [0.063, 2.047, 0.124]
     H1_gravelly_sand_sat = [0.036, 1.491, 0.064]
-    backfill_sat = [0.081, 2.18, 0.088]
+    backfill_sat = [0.0210, 1.374, 0.080]
+    # backfill_sat = [0.081, 2.18, 0.088]
+    # tank_sat = [0.081, 2.18, 0.088]
 
     # rhos,difpor,totpor,compress
     aquifer_mech = [2.47, 0.2, 0.2, 1.e-7]
@@ -50,7 +55,9 @@ def main():
     H2_coarse_sand_mech = [2.49, 0.315, 0.315, 1.e-7]
     H2_sand_mech = [2.49, 0.315, 0.315, 1.e-7]
     H1_gravelly_sand_mech = [2.47, 0.171, 0.171, 1.e-7]
-    backfill_mech = [2.72, 0.34, 0.34, 1.e-7]
+    backfill_mech = [2.47, 0.138, 0.138, 1.e-7]
+#    backfill_mech = [2.72, 0.34, 0.34, 1.e-7]
+#    tank_mech = [2.72, 0.34, 0.34, 1.e-7]
 
     # ell_x, ell_y, ell_z
     aquifer_krel = [0.5, 0.5, 0.5]

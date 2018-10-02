@@ -145,13 +145,23 @@ Dimention for the new SGSIM simulations
 > 160     0.0     5  
 > 364    110.0    0.3  
 
-Ju-Yi and MLR's SGSIM and upscaling approach were examined and current workflow is  
+Ju-Yi and MLR's SGSIM and upscaling approach were examined/rewritten and current workflow is  
 1. use (Fortran program) **sgsim** to generate water content fields  
 2. scale and transform water content fields to hydrualic properties  
    The workflow is controlled by (Shell script)**watercontent_scale.sh**  
    Call (Fortran program) **ups_theta.x** to scale SGSIM simulations to eSTOMP grid  
-   Call (Python script) **wmac_parameter_step1.py** to scale water content fields to parameter fields  
-   Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input datafile  
+   Call (**wmac_param_combined_corrected_param.py**) calculate and mapping paramter field  
+
+MLR's orginal workflow for computing the hydraulic properties are:  
+> Call (Python script) **wmac_parameter_step1.py** to compute water content fields to parameter fields  
+> Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input datafile  
+The new script **wmac_param_combined_corrected_param.py** was written based on MLR's scripts with the following modifications  
+1) keep consistent properties of backfill with ehm and facies model  
+2) only replace H1 and the top two H2 layers with the new heterogenous fields (MLR replaced H1 and all three H2), so it's consistent with facies model now  
+3) remove the parts of IDW in **wmac_parameter_step1.py** to make sure "step1" and "step3" use consistent grids  
+4) define the upper bound (0.25) of alpha (vg model) explictly  
+5) use different "rhos" values for different units (MLR used the same 2.72 for H1, H2 and Backfill)  
+6) use different zonation files for ss and oppc period (MLR used same zonation and only change permeablity)  
 
 #### 1.4 Intera's binned models ####
 

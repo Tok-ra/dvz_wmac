@@ -39,9 +39,9 @@ Including three-stage simulations: pre-hanford (ss); operational (op), and post-
 
 ## (E) Summary of case setup
 
-### 1. Model zonation ###
+### 1. Model zonation 
 
-#### 1.1 EHM model ####
+#### 1.1 EHM model 
 
 > The original file was sent by Nazmul Hasan (Intera) on 06/28/2018 as "**new_grid_ehm_89x93x330_original.zon**"  
 > This zonation is for past leak simulations  
@@ -52,17 +52,17 @@ Based on Intera's refined zonation file. Two zonation files are created for EHM 
    (Python scripts) **change_oppc_zonation_to_hanford.py**
 2. pc,op,oppc: **wma_c_oppc_ehm_89x93x330.zon**, this is the same as Intera's file  
 
-#### 1.2 Facies Models ####
+#### 1.2 Facies Models 
 
-##### 1.2.1 sisim realization #####
+##### 1.2.1 sisim realization
 
 Regenerate the facies realizations using Zhuangshuang (Jason) Hou's files after modifing discretization  
 
 > Initial thoughts were to use Jason's SISIM.exe(Fortran program)  
 > while it failed since there's is a fixed array limit for nx, ny, nz in the GSLIB codes sisim.inc  
-> We don't have the orginal source code to recomplile the sisim.exe  
+> We don't have the orginal source code to recomplile the sisim.exe (confirmed by Jason)  
 > So I took the lastest GSLIB from www.gslib.com and compile new sisim (linux version)  
-> The lastest GSLIB produces the same results as the old one, the major difference is the lastest Gslib use allocatable array  
+> The lastest GSLIB produces the same results as the old one, the major difference is the lastest GSlib use allocatable array  
 > The format of the input files were slightly different and modified.  
 
 Dimention for the new SISIM simulations  
@@ -133,25 +133,25 @@ This has been confirmed by MLR, it doesn't impact current results as we use rota
 
 Regenerate the theta realizations using Ju-Yi's files after modifing discretzation  
 
-> Initial thoughts were to use Intera's water content data to re-select pseduo-wells and conduct SGSIM simultion.  
-> However, we still use Ju-Yi's data to redo the SGSIM for following three reasons:
+> Initial thoughts were to use Intera's water content data to re-select pseduo-wells and conduct SGSIM simulation.  
+> However, here we still use Ju-Yi's data to redo the SGSIM for following three reasons:
 > 1. Intera's data is for WMAC only, Ju-Yi's data includes some AX wells which is valueable for generating variogram in long distance.  
-> 2. Intera use same 124 boreholes for WMAC as Ju-YI.
-> 3. The model domain has a complex history of rotation and shifting, I didn't find the explicit correct parameters for these transformes.  
->    Thus it is possbile to create some addtional errors if we re-select the raw data from scratch.
+> 2. Intera use the same 124 boreholes for WMAC as Ju-YI.
+> 3. The model domain has a complex history of rotation and shifting, I didn't find the explicit correct parameters for these transforms.  
+>    Thus it is possible to create some addtional errors if we re-select the raw data from scratch.
 
 Dimention for the new SGSIM simulations  
 > 148     0.0     5  
 > 160     0.0     5  
 > 364    110.0    0.3  
 
-Ju-Yi and MLR's SGSIM and upscaling approach were examined and current workflow is  
+Ju-Yi and MLR's SGSIM and up-scaling approaches were examined and current workflow is  
 1. use (Fortran program) **sgsim** to generate water content fields  
-2. scale and transform water content fields to hydrualic properties  
+2. scale and transform water content fields to hydraulic properties  
    The workflow is controlled by (Shell script)**watercontent_scale.sh**  
    Call (Fortran program) **ups_theta.x** to scale SGSIM simulations to eSTOMP grid  
    Call (Python script) **wmac_parameter_step1.py** to scale water content fields to parameter fields  
-   Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input datafile  
+   Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input data file  
 
 #### 1.4 Intera's binned models ####
 
@@ -173,7 +173,7 @@ a. the fine scale model is thiner than coarse model
 
 > fine scale model z = [110,209.99]  
 > coarse scale model z = [95,211]  
-> This requires to change the reference points for initial condtion, side condtions  
+> This requires to change the reference points for initial condtion, side conditions  
 
 b. the z index changed  
 
@@ -260,7 +260,7 @@ For the unsaturated part
 ##### 3.1.2 pre_hanford period
 
 3.5mm/yr for all polygons  
-remove tank areas from MLR's input, the original setup might be reducdant  
+Remove tank areas from MLR's input, the original setup might be reducdant  
 
 ##### 3.1.3 oppc period 
 The recharge amount was adjusted based on the coarse scale model setup  
@@ -268,7 +268,7 @@ The recharge amount was adjusted based on the coarse scale model setup
 #### 3.2 side boundary 
 ##### 3.2.1 pre_hanford period 
 Map MLR and ZFZ's setup to the new grids  
-from MLR and ZFZ's input file:  
+From MLR and ZFZ's input file:  
 
 > From Bill McMahon:  
 > dh/dx {northwest - southeast}  =  0.2000E-04 m/m (= 0.195870 pa/m)  
@@ -297,12 +297,12 @@ No source term for steady state simulation period (pre-hanford)
 Because the horizontal resolution doesn't change, so only change z-index to the top cell below tanks  
 
 ### 4. output
-revise the aquifer surface flux coords to keep consistant with the finer grid  
+Revise the aquifer surface flux coords to keep consistant with the finer grid  
 **Need double check the screen interval of 299-E27-14, 299-E17-15**  
 
 ### 5. Other changes
 ### Tanks
-The final tank shapes were taken from intera  
+The final tank shapes were taken from Intera's zonation file.
 
 > Initial thoughts is 
 > 1) Change tank regions to curved domes (done by Mark)  
@@ -313,7 +313,7 @@ The final tank shapes were taken from intera
 =========================================================================  
 =========================================================================  
 ## (F) Some backup notes after checking the input files from Mark
-### InteraFiles
+### Intera Files
 Inputs from intera, including input deck, zonation file, source region  
 
 ### Simulations
