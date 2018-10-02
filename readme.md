@@ -150,8 +150,18 @@ Ju-Yi and MLR's SGSIM and up-scaling approaches were examined and current workfl
 2. scale and transform water content fields to hydraulic properties  
    The workflow is controlled by (Shell script)**watercontent_scale.sh**  
    Call (Fortran program) **ups_theta.x** to scale SGSIM simulations to eSTOMP grid  
-   Call (Python script) **wmac_parameter_step1.py** to scale water content fields to parameter fields  
-   Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input data file  
+   Call (Python script) **wmac_param_combined_corrected_param.py** to calculate the heterogenous hydraulic properties based cell id and water content data  
+   
+(Python script) **wmac_param_combined_corrected_param.py** is revised based on MLR's two scripts with following modifications  
+> Call (Python script)**wmac_parameter_step1.py** to scale water content fields to parameter fields  
+> Call (Python script) **wmac_parameter_step3.py** to write parameter fields to eSTOMP input data file  
+1. use different zonation file for ss and oppc period  
+2. use same backfill properties as ehm and facies model  
+3. use different "rhos" values for heterogenous  H1/H2 units  
+4. set max values for alpha (0.25) explicitly  
+5. lump the two scripts so we can keep better consistency of caculated hydraulic properties and material types  
+
+
 
 #### 1.4 Intera's binned models ####
 
