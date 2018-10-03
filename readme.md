@@ -158,8 +158,9 @@ Ju-Yi and MLR's SGSIM and up-scaling approaches were examined and current workfl
 1. use different zonation file for ss and oppc period  
 2. use same backfill properties as ehm and facies model  
 3. use different "rhos" values for heterogenous  H1/H2 units  
-4. set max values for alpha (0.25) explicitly  
-5. lump the two scripts so we can keep better consistency of caculated hydraulic properties and material types  
+4. set min/max values for alpha (0.01/0.25) explicitly  
+5. add upper/lower boundary of heterogenous permeablity field (0.001/1000 of mean value)
+6. lump the two scripts so we can keep better consistency of caculated hydraulic properties and material types  
 
 
 

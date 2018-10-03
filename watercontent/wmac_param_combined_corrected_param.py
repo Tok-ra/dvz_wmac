@@ -8,7 +8,9 @@ import numpy as np
    Written by ML Rockhold, 14-Sept-2015.
    Project WMA C Alternative Conceptual Models, client WRPS.
 
+   rewritten By Xuehang 09/30/2018
 """
+
 
 # example useage: Kh.append(MualemVG_Kh(p,h[nf]))
 
@@ -52,8 +54,8 @@ if 1 == 1:
     zon_file = setup_dir + "wma_c_pre_hanford_ehm_89x93x330.zon"
     output_prefix = "theta001_ss_"
 
-    zon_file = setup_dir + "wma_c_oppc_ehm_89x93x330.zon"
-    output_prefix = "theta001_oppc_"
+    # zon_file = setup_dir + "wma_c_oppc_ehm_89x93x330.zon"
+    # output_prefix = "theta001_oppc_"
 
     # read data file
     ehm_id = np.genfromtxt(zon_file).flatten(order="C").astype(int)
@@ -76,6 +78,9 @@ if 1 == 1:
 
     # vga should not be too large
     vga_max = 0.25
+    vga_min = 0.01
+    k_ratio_max = 1000
+    k_ratio_min = 0.001
 
     # parameter to calculate hydraulic property
     params = dict()
@@ -141,6 +146,18 @@ if 1 == 1:
 
     # output fields
     fields = dict()
+    # fields["ksx"] = np.ones(len(ehm_id))*homos[1]["perm"][0]
+    # fields["ksy"] = np.ones(len(ehm_id))*homos[1]["perm"][1]
+    # fields["ksz"] = np.ones(len(ehm_id))*homos[1]["perm"][2]
+    # fields["por"] = np.ones(len(ehm_id))*homos[1]["mech"][1]
+    # fields["sr"] = np.ones(len(ehm_id))*homos[1]["sat"][2]
+    # fields["vga"] = np.ones(len(ehm_id))*homos[1]["sat"][0]
+    # fields["vgn"] = np.ones(len(ehm_id))*homos[1]["sat"][1]
+    # fields["rhos"] = np.ones(len(ehm_id))*homos[1]["mech"][0]
+    # fields["ellx"] = np.ones(len(ehm_id))*homos[1]["kerl"][0]
+    # fields["elly"] = np.ones(len(ehm_id))*homos[1]["kerl"][1]
+    # fields["ellz"] = np.ones(len(ehm_id))*homos[1]["kerl"][2]
+
     fields["ksx"] = np.zeros(len(ehm_id))
     fields["ksy"] = np.zeros(len(ehm_id))
     fields["ksz"] = np.zeros(len(ehm_id))
@@ -177,10 +194,17 @@ if 1 == 1:
                 hb = 1.0/vga/sfh
                 vga_new = 1.0/hb
                 ksz_new = ksz*sfk**2
+
+                # truncate K
+                ksz_new = min(ksz_new, ksz*k_ratio_max)
+                ksz_new = max(ksz_new, ksz*k_ratio_min)
+
                 ksx_new = ksz_new*(ksx/ksz)
                 ksy_new = ksz_new*(ksy/ksz)
 
+                # truncate vga
                 vga_new = min(vga_new, vga_max)
+                vga_new = max(vga_new, vga_min)
 
                 fields["ksx"][icell] = ksx_new
                 fields["ksy"][icell] = ksy_new
