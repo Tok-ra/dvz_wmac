@@ -54,8 +54,8 @@ if 1 == 1:
     zon_file = setup_dir + "wma_c_pre_hanford_ehm_89x93x330.zon"
     output_prefix = "theta001_ss_"
 
-    # zon_file = setup_dir + "wma_c_oppc_ehm_89x93x330.zon"
-    # output_prefix = "theta001_oppc_"
+    zon_file = setup_dir + "wma_c_oppc_ehm_89x93x330.zon"
+    output_prefix = "theta001_oppc_"
 
     # read data file
     ehm_id = np.genfromtxt(zon_file).flatten(order="C").astype(int)
@@ -79,8 +79,6 @@ if 1 == 1:
     # vga should not be too large
     vga_max = 0.25
     vga_min = 0.01
-    k_ratio_max = 1000
-    k_ratio_min = 0.001
 
     # parameter to calculate hydraulic property
     params = dict()
@@ -193,18 +191,16 @@ if 1 == 1:
                 sfk = sfh
                 hb = 1.0/vga/sfh
                 vga_new = 1.0/hb
-                ksz_new = ksz*sfk**2
-
-                # truncate K
-                ksz_new = min(ksz_new, ksz*k_ratio_max)
-                ksz_new = max(ksz_new, ksz*k_ratio_min)
-
-                ksx_new = ksz_new*(ksx/ksz)
-                ksy_new = ksz_new*(ksy/ksz)
-
                 # truncate vga
                 vga_new = min(vga_new, vga_max)
                 vga_new = max(vga_new, vga_min)
+
+                # re-calculate sfh to keep consistent betwen K and vga
+                sfk = vga_new/vga
+
+                ksz_new = ksz*sfk**2
+                ksx_new = ksz_new*(ksx/ksz)
+                ksy_new = ksz_new*(ksy/ksz)
 
                 fields["ksx"][icell] = ksx_new
                 fields["ksy"][icell] = ksy_new
